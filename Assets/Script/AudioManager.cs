@@ -9,8 +9,9 @@ public class AudioManager : MonoBehaviour
     public AudioSource[] accessibleSoundNameSource;
     public AudioSource[] accessibleObjectSoundSource;
 
-    // Add your sound effects clips here
-    // public AudioClip[] sfxClips;
+    //Add your sound effects clips here
+    public AudioClip[] sfxClips;
+    public AudioSource sfxSource;
 
     private void Awake()
     {
@@ -32,18 +33,18 @@ public class AudioManager : MonoBehaviour
     //     musicSource.Play();
     // }
 
-    // public void PlaySFX(int sfxIndex)
-    // {
-    //     if (sfxIndex >= 0 && sfxIndex < sfxClips.Length)
-    //     {
-    //         sfxSource.clip = sfxClips[sfxIndex];
-    //         sfxSource.Play();
-    //     }
-    //     else
-    //     {
-    //         Debug.LogWarning("SFX index out of range");
-    //     }
-    // }
+    public void PlaySFX(int sfxIndex)
+    {
+        if (sfxIndex >= 0 && sfxIndex < sfxClips.Length)
+        {
+            sfxSource.clip = sfxClips[sfxIndex];
+            sfxSource.Play();
+        }
+        else
+        {
+            Debug.LogWarning("SFX index out of range");
+        }
+    }
 
     // public void SetMusicVolume(float volume)
     // {
