@@ -97,10 +97,29 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
         Pose m_LeftMovementPose = Pose.identity;
         Pose m_RightMovementPose = Pose.identity;
 
+        //Creating the LastStepVariable for footsteps
+        private float lastStepTime;
+        // Access the AudioManager through its instance
+        //private AudioManager audioManager;
+
         /// <inheritdoc />
         protected override void Awake()
         {
             base.Awake();
+
+            //Initializing variables for footsteps
+            lastStepTime = Time.time;
+            // audioManager = AudioManager.instance;
+            // if (audioManager == null)
+            // {
+            //     // If AudioManager instance doesn't exist, create one
+            //     GameObject audioManagerObject = new GameObject("AudioManager");
+            //     audioManager = audioManagerObject.AddComponent<AudioManager>();
+            //     AudioManager.instance = audioManager;
+            //     DontDestroyOnLoad(audioManagerObject);
+
+            // }
+
 
             m_CombinedTransform = new GameObject("[Dynamic Move Provider] Combined Forward Source").transform;
             m_CombinedTransform.SetParent(transform, false);
@@ -150,6 +169,20 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
                     break;
             }
 
+            // Combine the two poses into the forward source based on the magnitude of input
+            var leftHandValue = leftHandMoveAction.action?.ReadValue<Vector2>() ?? Vector2.zero;
+            var rightHandValue = rightHandMoveAction.action?.ReadValue<Vector2>() ?? Vector2.zero;
+
+            var totalSqrMagnitude = leftHandValue.sqrMagnitude + rightHandValue.sqrMagnitude;
+            var leftHandBlend = 0.5f;
+            if (totalSqrMagnitude > Mathf.Epsilon)
+                leftHandBlend = leftHandValue.sqrMagnitude / totalSqrMagnitude;
+
+            var combinedPosition = Vector3.Lerp(m_RightMovementPose.position, m_LeftMovementPose.position, leftHandBlend);
+            var combinedRotation = Quaternion.Slerp(m_RightMovementPose.rotation, m_LeftMovementPose.rotation, leftHandBlend);
+            m_CombinedTransform.SetPositionAndRotation(combinedPosition, combinedRotation);
+
+
             // Get the forward source for the right hand input
             switch (m_RightHandMovementDirection)
             {
@@ -170,20 +203,31 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
                     break;
             }
 
-            // Combine the two poses into the forward source based on the magnitude of input
-            var leftHandValue = leftHandMoveAction.action?.ReadValue<Vector2>() ?? Vector2.zero;
-            var rightHandValue = rightHandMoveAction.action?.ReadValue<Vector2>() ?? Vector2.zero;
 
-            var totalSqrMagnitude = leftHandValue.sqrMagnitude + rightHandValue.sqrMagnitude;
-            var leftHandBlend = 0.5f;
-            if (totalSqrMagnitude > Mathf.Epsilon)
-                leftHandBlend = leftHandValue.sqrMagnitude / totalSqrMagnitude;
+            Debug.Log($"LeftHandValue: {leftHandValue}, RightHandValue: {rightHandValue}, TotalSqrMagnitude: {totalSqrMagnitude}");
+            // //Adding Footsteps sounds
+            bool isWalking = totalSqrMagnitude > Mathf.Epsilon;
 
-            var combinedPosition = Vector3.Lerp(m_RightMovementPose.position, m_LeftMovementPose.position, leftHandBlend);
-            var combinedRotation = Quaternion.Slerp(m_RightMovementPose.rotation, m_LeftMovementPose.rotation, leftHandBlend);
-            m_CombinedTransform.SetPositionAndRotation(combinedPosition, combinedRotation);
+            // Play step sounds when walking
+            //if (isWalking && audioManager != null )
+            if (isWalking )
+            {
+                // You can adjust the frequency of step sounds based on the input magnitude
+                float stepSoundInterval = 0.5f; // Adjust as needed
+                if (Time.time - lastStepTime > stepSoundInterval)
+                {
+                    //int randomIndex = 0;
+                    //audioManager.PlaySFX(randomIndex);
+                    Debug.Log("I am walking!");
+
+                    lastStepTime = Time.time; // Update the last step time
+                }
+            }
+
 
             return base.ComputeDesiredMove(input);
+
+            
         }
     }
 }

@@ -5367,6 +5367,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   accessibleSoundNameSource: []
   accessibleObjectSoundSource: []
+  sfxClips:
+  - {fileID: 8300000, guid: e85e8cddc3ae5ce49aaf3682a2cf2051, type: 3}
+  - {fileID: 8300000, guid: b286510a0293a9e49ba06ed56a3a5906, type: 3}
+  sfxSource: {fileID: 1110039003}
 --- !u!4 &724862543
 Transform:
   m_ObjectHideFlags: 0
