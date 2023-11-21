@@ -204,7 +204,7 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
             }
 
 
-            Debug.Log($"LeftHandValue: {leftHandValue}, RightHandValue: {rightHandValue}, TotalSqrMagnitude: {totalSqrMagnitude}");
+            // Debug.Log($"LeftHandValue: {leftHandValue}, RightHandValue: {rightHandValue}, TotalSqrMagnitude: {totalSqrMagnitude}");
             // //Adding Footsteps sounds
             bool isWalking = totalSqrMagnitude > Mathf.Epsilon;
 
