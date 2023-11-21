@@ -223,6 +223,7 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
                 float stepSoundInterval = 0.5f; // Adjust as needed
                 if (Time.time - lastStepTime > stepSoundInterval)
                 {
+                    footstepAudioSource.pitch = 1.5f; 
                     footstepAudioSource.clip = footstepClip;
                     footstepAudioSource.Play();
                     //audioManager.PlaySFX(randomIndex);
