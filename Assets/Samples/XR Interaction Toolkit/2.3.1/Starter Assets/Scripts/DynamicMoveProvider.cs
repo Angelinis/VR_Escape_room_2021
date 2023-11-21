@@ -102,6 +102,12 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
         // Access the AudioManager through its instance
         //private AudioManager audioManager;
 
+        [SerializeField]
+        private AudioSource footstepAudioSource;
+        
+        [SerializeField]
+        private AudioClip footstepClip;
+
         /// <inheritdoc />
         protected override void Awake()
         {
@@ -109,6 +115,8 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
 
             //Initializing variables for footsteps
             lastStepTime = Time.time;
+
+            footstepAudioSource = gameObject.AddComponent<AudioSource>();
             // audioManager = AudioManager.instance;
             // if (audioManager == null)
             // {
@@ -210,15 +218,17 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
 
             // Play step sounds when walking
             //if (isWalking && audioManager != null )
-            if (isWalking )
+            if (isWalking && footstepAudioSource != null)
             {
-                // You can adjust the frequency of step sounds based on the input magnitude
                 float stepSoundInterval = 0.5f; // Adjust as needed
                 if (Time.time - lastStepTime > stepSoundInterval)
                 {
-                    //int randomIndex = 0;
+                    footstepAudioSource.clip = footstepClip;
+                    footstepAudioSource.Play();
                     //audioManager.PlaySFX(randomIndex);
                     Debug.Log("I am walking!");
+                    Debug.Log("Is playing: " + footstepAudioSource.isPlaying);
+                    Debug.Log("Clip: " + footstepAudioSource.clip);
 
                     lastStepTime = Time.time; // Update the last step time
                 }
