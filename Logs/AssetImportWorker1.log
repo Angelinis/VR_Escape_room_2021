@@ -240,3 +240,23 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 94551.327446 seconds.
+  path: Assets/Materials/Materials/Drawer_Texture_Lab_256_2 4.mat
+  artifactKey: Guid(e4ca5352a178e3a429abd42015ada4af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Materials/Materials/Drawer_Texture_Lab_256_2 4.mat using Guid(e4ca5352a178e3a429abd42015ada4af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e0a69cf6c344152d62b6d011060bc75b') in 0.166380 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000055 seconds.
+  path: Assets/Materials/Materials/wildtextures-brown-leather-texture.mat
+  artifactKey: Guid(c9cb69d834409554bb6d00cb0cfd47b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Materials/Materials/wildtextures-brown-leather-texture.mat using Guid(c9cb69d834409554bb6d00cb0cfd47b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '898c991660cd768a54c5e0c8e4064db9') in 0.027144 seconds 
+Number of asset objects unloaded after import = 2
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
