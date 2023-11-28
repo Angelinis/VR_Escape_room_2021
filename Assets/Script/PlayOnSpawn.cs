@@ -6,78 +6,64 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class PlayOnSpawn : MonoBehaviour
 {
     private AudioManager audioManager;
-    public ActionBasedController xrController; // Attach the ActionBasedController directly in the Inspector
+    public ActionBasedController xrController;
 
-    // Start is called before the first frame update
+    private Queue<int> clipQueue = new Queue<int>();
+    private Coroutine currentCoroutine;
+
     void Start()
     {
         audioManager = AudioManager.instance;
-
-        // Play the introduction when the object is spawned
         PlayIntro();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        // Check for button press
         if (xrController.selectAction.action.ReadValue<float>() > 0.5f)
         {
-            // Trigger the repeat of the second and third audio clips
-            RepeatSecondAndThirdClips();
+            RepeatIntroductionClips();
         }
     }
 
     void PlayIntro()
     {
-        if (audioManager != null)
-        {
-            audioManager.PlayDescription(0);
-            StartCoroutine(WaitForClipEnd(0));
-        }
+        clipQueue.Clear();
+        EnqueueClip(0);
+        EnqueueClip(1);
+        EnqueueClip(2);
+        PlayNextClip();
     }
 
-    IEnumerator WaitForClipEnd(int clipIndex)
+    void RepeatIntroductionClips()
     {
-        yield return new WaitForSeconds(audioManager.descriptionSource.clip.length);
-
-        // Play the next clip after the current one has finished
-        if (clipIndex == 0)
-        {
-            PlaySecondClip();
-        }
-        else if (clipIndex == 1)
-        {
-            PlayThirdClip();
-        }
-        // Add more conditions for additional clips if needed
+        clipQueue.Clear();
+        EnqueueClip(1);
+        EnqueueClip(2);
+        PlayNextClip();
     }
 
-    void PlaySecondClip()
+    void EnqueueClip(int clipIndex)
     {
-        if (audioManager != null)
+        clipQueue.Enqueue(clipIndex);
+    }
+
+    void PlayNextClip()
+    {
+        if (clipQueue.Count > 0)
         {
-            Debug.Log("Playing the second clip!");
-            audioManager.PlayDescription(1); // Adjust the index as needed
-            StartCoroutine(WaitForClipEnd(1));
+            int clipIndex = clipQueue.Dequeue();
+            currentCoroutine = StartCoroutine(PlayClip(clipIndex, PlayNextClip));
         }
     }
 
-    void PlayThirdClip()
+    IEnumerator PlayClip(int clipIndex, System.Action callback)
     {
         if (audioManager != null)
         {
-            Debug.Log("Playing the third clip!");
-            audioManager.PlayDescription(2); // Adjust the index as needed
-            // Add StartCoroutine(WaitForClipEnd(2)); if you want to continue the pattern
-        }
-    }
+            audioManager.PlayDescription(clipIndex);
+            yield return new WaitForSeconds(audioManager.descriptionSource.clip.length);
 
-    void RepeatSecondAndThirdClips()
-    {
-        // You may need to adjust the logic here based on your specific requirements
-        StopAllCoroutines(); // Stop the current audio sequence
-        PlaySecondClip();    // Start playing the second clip
-        PlayThirdClip();     // Start playing the third clip
+            callback?.Invoke(); // Invoke the callback to play the next clip
+        }
     }
 }
