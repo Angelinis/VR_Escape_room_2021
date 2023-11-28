@@ -19,7 +19,9 @@ public class PlayOnSpawn : MonoBehaviour
 
     void Update()
     {
-        if (xrController.selectAction.action.ReadValue<float>() > 0.5f)
+        //if (xrController.selectAction.action.ReadValue<float>() > 0.5f)
+        bool aButtonPressed = xrController.activateAction.action.triggered;
+        if (aButtonPressed)
         {
             RepeatIntroductionClips();
         }
