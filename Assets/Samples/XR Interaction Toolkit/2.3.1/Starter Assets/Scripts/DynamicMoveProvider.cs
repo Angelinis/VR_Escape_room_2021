@@ -227,9 +227,9 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
                     footstepAudioSource.clip = footstepClip;
                     footstepAudioSource.Play();
                     //audioManager.PlaySFX(randomIndex);
-                    Debug.Log("I am walking!");
-                    Debug.Log("Is playing: " + footstepAudioSource.isPlaying);
-                    Debug.Log("Clip: " + footstepAudioSource.clip);
+                    //Debug.Log("I am walking!");
+                    //Debug.Log("Is playing: " + footstepAudioSource.isPlaying);
+                    //Debug.Log("Clip: " + footstepAudioSource.clip);
 
                     lastStepTime = Time.time; // Update the last step time
                 }

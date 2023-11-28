@@ -13,6 +13,9 @@ public class AudioManager : MonoBehaviour
     public AudioClip[] sfxClips;
     public AudioSource sfxSource;
 
+      public AudioClip[] descriptionClips;
+    public AudioSource descriptionSource;
+
     private void Awake()
     {
         // Ensure there is only one instance of AudioManager
@@ -43,6 +46,20 @@ public class AudioManager : MonoBehaviour
         else
         {
             Debug.LogWarning("SFX index out of range");
+        }
+    }
+
+    
+    public void PlayDescription(int descriptionIndex)
+    {
+        if (descriptionIndex >= 0 && descriptionIndex < descriptionClips.Length)
+        {
+            descriptionSource.clip = descriptionClips[descriptionIndex];
+            descriptionSource.Play();
+        }
+        else
+        {
+            Debug.LogWarning("Description index out of range");
         }
     }
 
