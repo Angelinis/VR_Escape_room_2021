@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - SurfaceCollider
+  - GameOverCollider
   layers:
   - Default
   - TransparentFX

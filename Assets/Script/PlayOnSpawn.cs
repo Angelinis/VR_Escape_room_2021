@@ -7,7 +7,7 @@ public class PlayOnSpawn : MonoBehaviour
 {
     private AudioManager audioManager;
     public ActionBasedController xrController;
-
+    private int pressedTimes = 1;
     private Queue<int> clipQueue = new Queue<int>();
     private Coroutine currentCoroutine;
 
@@ -19,11 +19,24 @@ public class PlayOnSpawn : MonoBehaviour
 
     void Update()
     {
-        //if (xrController.selectAction.action.ReadValue<float>() > 0.5f)
         bool aButtonPressed = xrController.activateAction.action.triggered;
+
         if (aButtonPressed)
         {
-            RepeatIntroductionClips();
+            if (pressedTimes == 0)
+            {
+                // If it's the first press, stop the audio and then stop the coroutine
+                StopCoroutine(currentCoroutine);
+                pressedTimes = 1;
+                RepeatIntroductionClips();
+            }
+            else
+            {
+                // If it's the second press, stop all audio
+                audioManager.StopDescription();
+                StopAllCoroutines();
+                pressedTimes = 0;
+            }
         }
     }
 
