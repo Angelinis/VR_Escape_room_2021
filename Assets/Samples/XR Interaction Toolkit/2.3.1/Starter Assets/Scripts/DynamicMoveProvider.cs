@@ -1,6 +1,6 @@
 using Unity.XR.CoreUtils;
 using UnityEngine.Assertions;
-using System;
+//using System;
 
 namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
 {
@@ -228,36 +228,32 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
             {
                 if (sourceObject != null)
                 {
-                    Vector3 newPosition = new Vector3(sourceObject.position.x, transform.position.y, sourceObject.position.z);
-                    transform.position = newPosition;
+                    Vector3 newPosition = new Vector3(sourceObject.position.x, sourceObject.position.y, sourceObject.position.z);
                     float distanceMoved = Vector3.Distance(initialPosition, newPosition);
-                    double roundedNumber = Math.Round(distanceMoved, 2);
-                    if(roundedNumber >= 0.01){
-                        //Debug.Log("Distance moved: " + roundedNumber);
+
+                    // Only perform actions if the distance moved is significant
+                    if (distanceMoved >= 0.01)
+                    {
                         float stepSoundInterval = 0.5f; // Adjust as needed
                         if (Time.time - lastStepTime > stepSoundInterval)
                         {
                             footstepAudioSource.pitch = 1.5f; 
                             footstepAudioSource.clip = footstepClip;
                             footstepAudioSource.Play();
-                            //audioManager.PlaySFX(randomIndex);
-                            //Debug.Log("I am walking!");
-                            //Debug.Log("Is playing: " + footstepAudioSource.isPlaying);
-                            //Debug.Log("Clip: " + footstepAudioSource.clip);
 
                             lastStepTime = Time.time; // Update the last step time
                         }
+
+                        //Debug.Log("Distance moved: " + distanceMoved);
                     }
-                    
+
                     initialPosition = newPosition;
-                    
                 }
                 else
                 {
                     Debug.LogError("Source object not assigned! Please assign a source object in the Unity Editor.");
                 }
             }
-
 
 
             return base.ComputeDesiredMove(input);
