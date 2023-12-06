@@ -3230,7 +3230,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
@@ -5449,7 +5449,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 389507101}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.486, y: 1.047, z: -9.121051}
+  m_LocalPosition: {x: 2.318, y: 1.047, z: -9.121051}
   m_LocalScale: {x: 0.05, y: 2.1, z: 0.8}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5754,8 +5754,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7915ecd1889d82543bd7a48181a31321, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 1110039003}
-  clip: {fileID: 8300000, guid: b286510a0293a9e49ba06ed56a3a5906, type: 3}
   volume: 0.15
 --- !u!54 &415400293
 Rigidbody:
@@ -10201,7 +10199,7 @@ MonoBehaviour:
   accessibleObjectSoundSource: []
   sfxClips:
   - {fileID: 8300000, guid: e85e8cddc3ae5ce49aaf3682a2cf2051, type: 3}
-  - {fileID: 8300000, guid: b286510a0293a9e49ba06ed56a3a5906, type: 3}
+  - {fileID: 8300000, guid: 9bf37e7e3ece5ca458ee9955e28b8578, type: 3}
   sfxSource: {fileID: 1110039003}
   descriptionClips:
   - {fileID: 8300000, guid: 355ba74b17ca6d54f9df15a17bb0b150, type: 3}

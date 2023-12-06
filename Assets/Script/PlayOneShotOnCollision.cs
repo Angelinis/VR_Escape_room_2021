@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class PlayOneShotOnCollision : MonoBehaviour
 {
-    public AudioSource audioSource;
-    public AudioClip clip;
+
     public float volume;
     private AudioManager audioManager;
     // Start is called before the first frame update

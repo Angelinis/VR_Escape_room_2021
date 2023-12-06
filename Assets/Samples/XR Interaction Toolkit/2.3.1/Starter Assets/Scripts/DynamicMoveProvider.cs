@@ -1,5 +1,6 @@
 using Unity.XR.CoreUtils;
 using UnityEngine.Assertions;
+using System;
 
 namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
 {
@@ -107,6 +108,11 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
         
         [SerializeField]
         private AudioClip footstepClip;
+
+        [SerializeField]
+        private Transform sourceObject; // Assign the source object in the Unity Editor
+        
+        private Vector3 initialPosition; 
 
         /// <inheritdoc />
         protected override void Awake()
@@ -220,20 +226,38 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
             //if (isWalking && audioManager != null )
             if (isWalking && footstepAudioSource != null)
             {
-                float stepSoundInterval = 0.5f; // Adjust as needed
-                if (Time.time - lastStepTime > stepSoundInterval)
+                if (sourceObject != null)
                 {
-                    footstepAudioSource.pitch = 1.5f; 
-                    footstepAudioSource.clip = footstepClip;
-                    footstepAudioSource.Play();
-                    //audioManager.PlaySFX(randomIndex);
-                    //Debug.Log("I am walking!");
-                    //Debug.Log("Is playing: " + footstepAudioSource.isPlaying);
-                    //Debug.Log("Clip: " + footstepAudioSource.clip);
+                    Vector3 newPosition = new Vector3(sourceObject.position.x, transform.position.y, sourceObject.position.z);
+                    transform.position = newPosition;
+                    float distanceMoved = Vector3.Distance(initialPosition, newPosition);
+                    double roundedNumber = Math.Round(distanceMoved, 2);
+                    if(roundedNumber >= 0.01){
+                        //Debug.Log("Distance moved: " + roundedNumber);
+                        float stepSoundInterval = 0.5f; // Adjust as needed
+                        if (Time.time - lastStepTime > stepSoundInterval)
+                        {
+                            footstepAudioSource.pitch = 1.5f; 
+                            footstepAudioSource.clip = footstepClip;
+                            footstepAudioSource.Play();
+                            //audioManager.PlaySFX(randomIndex);
+                            //Debug.Log("I am walking!");
+                            //Debug.Log("Is playing: " + footstepAudioSource.isPlaying);
+                            //Debug.Log("Clip: " + footstepAudioSource.clip);
 
-                    lastStepTime = Time.time; // Update the last step time
+                            lastStepTime = Time.time; // Update the last step time
+                        }
+                    }
+                    
+                    initialPosition = newPosition;
+                    
+                }
+                else
+                {
+                    Debug.LogError("Source object not assigned! Please assign a source object in the Unity Editor.");
                 }
             }
+
 
 
             return base.ComputeDesiredMove(input);
