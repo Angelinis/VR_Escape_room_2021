@@ -277,6 +277,42 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 509542971}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Stop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 509542971}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 0e75c3cae94bb28458937132371ecb38, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  m_HoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 509542971}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
@@ -287,7 +323,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_HoverExited:
+  m_SelectExited:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 509542971}
@@ -302,18 +338,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_FirstSelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_LastSelectExited:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectEntered:
-    m_PersistentCalls:
-      m_Calls: []
-  m_SelectExited:
-    m_PersistentCalls:
-      m_Calls: []
   m_Activated:
     m_PersistentCalls:
       m_Calls: []
@@ -3588,7 +3612,7 @@ MonoBehaviour:
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 3a19f44ce6962b54c94640f47aea8c3a, type: 3}
+          m_ObjectArgument: {fileID: 8300000, guid: 83f49029327423d4ab83558aba1d6745, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -4399,7 +4423,7 @@ MonoBehaviour:
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 3a19f44ce6962b54c94640f47aea8c3a, type: 3}
+          m_ObjectArgument: {fileID: 8300000, guid: d4aa503546b43aa4e99dd7f435d51c26, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -5082,7 +5106,7 @@ MonoBehaviour:
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 8a31256a2dc221f4ea6b69ccbe225e6f, type: 3}
+          m_ObjectArgument: {fileID: 8300000, guid: b2d1f5fb2790d504d8e31b32f4efc486, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -8358,6 +8382,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 876716042c195544e99cd6a55139f52e, type: 3}
     - target: {fileID: 3127728407712097238, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
+      propertyPath: sourceObject
+      value: 
+      objectReference: {fileID: 1910811935}
+    - target: {fileID: 3127728407712097238, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: footstepAudioSource
       value: 
       objectReference: {fileID: 686816242}
@@ -9426,7 +9454,7 @@ MonoBehaviour:
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 8a31256a2dc221f4ea6b69ccbe225e6f, type: 3}
+          m_ObjectArgument: {fileID: 8300000, guid: d031563cbf205954cafd5cae9ce0de2b, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -13918,7 +13946,7 @@ MonoBehaviour:
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 3a19f44ce6962b54c94640f47aea8c3a, type: 3}
+          m_ObjectArgument: {fileID: 8300000, guid: 2b50d291463476a499e261e3e8e6ffbb, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -19311,7 +19339,7 @@ MonoBehaviour:
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 3a19f44ce6962b54c94640f47aea8c3a, type: 3}
+          m_ObjectArgument: {fileID: 8300000, guid: d4aa503546b43aa4e99dd7f435d51c26, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -19826,7 +19854,7 @@ MonoBehaviour:
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: e339bd003a0565245acde992a5b126b3, type: 3}
+          m_ObjectArgument: {fileID: 8300000, guid: 689b76a11fe1e054095cf24a2c4b9c2a, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -20721,7 +20749,7 @@ MonoBehaviour:
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: e339bd003a0565245acde992a5b126b3, type: 3}
+          m_ObjectArgument: {fileID: 8300000, guid: 79921870ad2cac3498d1bce3706ecc2e, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -21407,7 +21435,7 @@ MonoBehaviour:
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 3a19f44ce6962b54c94640f47aea8c3a, type: 3}
+          m_ObjectArgument: {fileID: 8300000, guid: 11132e061718f564fa886a7a16a0f51f, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -23230,7 +23258,7 @@ MonoBehaviour:
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 3a19f44ce6962b54c94640f47aea8c3a, type: 3}
+          m_ObjectArgument: {fileID: 8300000, guid: d4aa503546b43aa4e99dd7f435d51c26, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -25436,7 +25464,7 @@ MonoBehaviour:
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: e339bd003a0565245acde992a5b126b3, type: 3}
+          m_ObjectArgument: {fileID: 8300000, guid: 7167a116335f52142b35d6fc84b214a9, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -26430,7 +26458,7 @@ MonoBehaviour:
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 3a19f44ce6962b54c94640f47aea8c3a, type: 3}
+          m_ObjectArgument: {fileID: 8300000, guid: 83f49029327423d4ab83558aba1d6745, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -27393,7 +27421,7 @@ MonoBehaviour:
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: e339bd003a0565245acde992a5b126b3, type: 3}
+          m_ObjectArgument: {fileID: 8300000, guid: b24e926b28ba3d644b77ac2d61b76013, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
@@ -28494,7 +28522,7 @@ MonoBehaviour:
         m_MethodName: PlayOneShot
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 8a31256a2dc221f4ea6b69ccbe225e6f, type: 3}
+          m_ObjectArgument: {fileID: 8300000, guid: 90197eb5f2ae5c6459b618355dfbef23, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0

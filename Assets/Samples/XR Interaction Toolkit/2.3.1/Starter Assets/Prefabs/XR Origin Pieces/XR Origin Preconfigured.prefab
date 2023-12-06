@@ -1017,6 +1017,7 @@ MonoBehaviour:
   m_RightHandMovementDirection: 0
   footstepAudioSource: {fileID: 0}
   footstepClip: {fileID: 0}
+  sourceObject: {fileID: 0}
 --- !u!114 &6966226065256375721
 MonoBehaviour:
   m_ObjectHideFlags: 0
