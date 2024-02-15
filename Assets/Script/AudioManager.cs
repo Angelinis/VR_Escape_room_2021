@@ -6,8 +6,9 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
 
-    public AudioSource[] accessibleSoundNameSource;
-    public AudioSource[] accessibleObjectSoundSource;
+    public AudioSource accessibleDescriptionSource;
+
+    public AudioSource uiAudioSource;
 
     // Add your sound effects clips here
     public AudioClip[] sfxClips;

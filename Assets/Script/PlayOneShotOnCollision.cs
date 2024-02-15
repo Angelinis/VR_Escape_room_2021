@@ -6,6 +6,7 @@ public class PlayOneShotOnCollision : MonoBehaviour
 {
 
     public float volume;
+    public int sfxIndex;
     private AudioManager audioManager;
     // Start is called before the first frame update
     void Start()
@@ -23,7 +24,7 @@ public class PlayOneShotOnCollision : MonoBehaviour
         if (collision.gameObject.tag == "SurfaceCollider")
         {
             
-            audioManager.PlaySFX(1);
+            audioManager.PlaySFX(sfxIndex);
             //audioSource.PlayOneShot(clip, volume);
             //Debug.Log("I am colliding!");
         }
