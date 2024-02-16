@@ -6,6 +6,8 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
 
+
+    public AudioSource[] gameSources;
     public AudioSource accessibleDescriptionSource;
 
     public AudioSource uiAudioSource;
@@ -16,6 +18,7 @@ public class AudioManager : MonoBehaviour
 
     public AudioClip[] descriptionClips;
     public AudioSource descriptionSource;
+
 
     private void Awake()
     {
@@ -61,6 +64,35 @@ public class AudioManager : MonoBehaviour
     public void StopDescription()
     {
         descriptionSource.Stop();
+    }
+
+    public void SFXVolume(float volume)
+    {
+        sfxSource.volume = volume;      
+    }
+
+    public void AccessibleDescriptionVolume(float volume)
+    {        
+        accessibleDescriptionSource.volume = volume;     
+    }
+
+    public void UIVolume(float volume)
+    {         
+        uiAudioSource.volume = volume;
+    }
+
+    public void DescriptionVolume(float volume)
+    {                   
+        descriptionSource.volume = volume;      
+    }
+
+    public void GameVolume(float volume)
+    {   
+        for(int i=0; i < gameSources.Length; i+=1)
+        {
+            gameSources[i].volume = volume; 
+        }                
+             
     }
 }
 
