@@ -14,3 +14,5 @@ It also has a script to Follow the Camera.
 The pause `Menu_Canvas` is inside the `Main Camera`, and it is activated through a Menu Button that was set in the `XRI Default Input Actions`. Also, the `Menu_Canvas` has a `Pause Menu Controller` that connects the sliders with the `Audio Manager` instances to reduce volume.
 
 The walking sounds come from the `Dynamic Move Provider (Script)` and the `Edited Action Based Snap Turn Provider (Script)` inside the `XR Origin`. Besides, the last script is based on an `Edited Snap Turn Provider Base (Script)` which was changed and adapted..
+
+Tip: The building plane has a proportion of 6 meters in Real, and 9 in the plane. Which provides a conversion rate of 0.67.
