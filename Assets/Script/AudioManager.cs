@@ -48,6 +48,20 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void PlayAccessibleDescription(AudioClip audioClip)
+    {
+        if (audioClip)
+        {
+            accessibleDescriptionSource.Stop();
+            accessibleDescriptionSource.clip = audioClip;
+            accessibleDescriptionSource.Play();
+        }
+        else
+        {
+            Debug.LogWarning("Clip not found");
+        }
+    }
+
     public void PlayDescription(int descriptionIndex)
     {
         if (descriptionIndex >= 0 && descriptionIndex < descriptionClips.Length)
@@ -68,31 +82,31 @@ public class AudioManager : MonoBehaviour
 
     public void SFXVolume(float volume)
     {
-        sfxSource.volume = volume;      
+        sfxSource.volume = volume;
     }
 
     public void AccessibleDescriptionVolume(float volume)
-    {        
-        accessibleDescriptionSource.volume = volume;     
+    {
+        accessibleDescriptionSource.volume = volume;
     }
 
     public void UIVolume(float volume)
-    {         
+    {
         uiAudioSource.volume = volume;
     }
 
     public void DescriptionVolume(float volume)
-    {                   
-        descriptionSource.volume = volume;      
+    {
+        descriptionSource.volume = volume;
     }
 
     public void GameVolume(float volume)
-    {   
-        for(int i=0; i < gameSources.Length; i+=1)
+    {
+        for (int i = 0; i < gameSources.Length; i += 1)
         {
-            gameSources[i].volume = volume; 
-        }                
-             
+            gameSources[i].volume = volume;
+        }
+
     }
 }
 
