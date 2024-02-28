@@ -9,6 +9,9 @@ public class PauseMenuManager : MonoBehaviour
     public GameObject menu;
     public InputActionProperty showButton;
 
+    // public InputActionProperty showButton;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,5 +25,23 @@ public class PauseMenuManager : MonoBehaviour
         {
             menu.SetActive(!menu.activeSelf);
         }
+
+        if(menu.activeSelf)
+        {
+            PauseGame();
+        } else {
+
+            ResumeGame();
+        }
+    }
+
+    void PauseGame()
+    {
+        Time.timeScale = 0;
+    }
+
+    void ResumeGame()
+    {
+        Time.timeScale = 1;
     }
 }

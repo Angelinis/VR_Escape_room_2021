@@ -15,7 +15,7 @@ C:/Users/Angelo/Projects Unity/VR_Escape_room_2021
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-58336
+57220
 Successfully changed project path to: C:/Users/Angelo/Projects Unity/VR_Escape_room_2021
 C:/Users/Angelo/Projects Unity/VR_Escape_room_2021
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,12 +47,12 @@ C:/Users/Angelo/Projects Unity/VR_Escape_room_2021
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [19476] Host "[IP] 192.168.96.1 [Port] 0 [Flags] 2 [Guid] 3027235954 [EditorId] 3027235954 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-R04OA4V) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [10988] Host "[IP] 192.168.96.1 [Port] 0 [Flags] 2 [Guid] 2224238236 [EditorId] 2224238236 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-R04OA4V) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [19476] Host "[IP] 192.168.96.1 [Port] 0 [Flags] 2 [Guid] 3027235954 [EditorId] 3027235954 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-R04OA4V) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [10988] Host "[IP] 192.168.96.1 [Port] 0 [Flags] 2 [Guid] 2224238236 [EditorId] 2224238236 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-R04OA4V) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
 [Physics::Module] Initialized MultithreadedJobDispatcher with {0} workers.
-Refreshing native plugins compatible for Editor in 79.89 ms, found 9 plugins.
+Refreshing native plugins compatible for Editor in 85.41 ms, found 9 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.31f1 (3409e2af086f)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.31f1/Editor/Data/Resources/UnitySubsystems
@@ -68,55 +68,55 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.31f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.31f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.31f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56948
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56096
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.31f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.31f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.31f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.007712 seconds.
+Registered in 0.010019 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Android Extension - Scanning For ADB Devices 234 ms
+Android Extension - Scanning For ADB Devices 278 ms
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 92.41 ms, found 9 plugins.
+Refreshing native plugins compatible for Editor in 75.81 ms, found 9 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.831 seconds
+- Completed reload, in  0.890 seconds
 Domain Reload Profiling:
-	ReloadAssembly (832ms)
-		BeginReloadAssembly (83ms)
+	ReloadAssembly (891ms)
+		BeginReloadAssembly (94ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (665ms)
-			LoadAssemblies (82ms)
+		EndReloadAssembly (705ms)
+			LoadAssemblies (91ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (86ms)
+			SetupTypeCache (99ms)
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (23ms)
-			SetupLoadedEditorAssemblies (519ms)
+			SetupLoadedEditorAssemblies (544ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (313ms)
+				InitializePlatformSupportModulesInManaged (358ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (92ms)
+				RefreshPlugins (76ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (72ms)
-				ProcessInitializeOnLoadMethodAttributes (41ms)
+				ProcessInitializeOnLoadAttributes (74ms)
+				ProcessInitializeOnLoadMethodAttributes (35ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.009696 seconds.
+Registered in 0.010387 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 74.59 ms, found 9 plugins.
+Refreshing native plugins compatible for Editor in 75.89 ms, found 9 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Package Manager log level set to [2]
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
@@ -124,30 +124,30 @@ Package Manager log level set to [2]
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Completed reload, in  1.604 seconds
+- Completed reload, in  1.690 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1605ms)
-		BeginReloadAssembly (133ms)
+	ReloadAssembly (1691ms)
+		BeginReloadAssembly (134ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (6ms)
+			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (21ms)
-		EndReloadAssembly (1352ms)
-			LoadAssemblies (125ms)
+			CreateAndSetChildDomain (20ms)
+		EndReloadAssembly (1462ms)
+			LoadAssemblies (162ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (261ms)
+			SetupTypeCache (332ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (57ms)
-			SetupLoadedEditorAssemblies (888ms)
+			RebuildScriptCaches (74ms)
+			SetupLoadedEditorAssemblies (866ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (19ms)
-				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (75ms)
-				BeforeProcessingInitializeOnLoad (95ms)
-				ProcessInitializeOnLoadAttributes (644ms)
-				ProcessInitializeOnLoadMethodAttributes (47ms)
-				AfterProcessingInitializeOnLoad (8ms)
+				InitializePlatformSupportModulesInManaged (20ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (76ms)
+				BeforeProcessingInitializeOnLoad (102ms)
+				ProcessInitializeOnLoadAttributes (613ms)
+				ProcessInitializeOnLoadMethodAttributes (46ms)
+				AfterProcessingInitializeOnLoad (7ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (5ms)
@@ -155,12 +155,12 @@ Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
-Refreshing native plugins compatible for Editor in 0.98 ms, found 9 plugins.
+Refreshing native plugins compatible for Editor in 0.96 ms, found 9 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 4591 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 60 unused Assets / (47.5 KB). Loaded Objects now: 5062.
 Memory consumption went from 178.7 MB to 178.7 MB.
-Total: 3.268200 ms (FindLiveObjects: 0.433100 ms CreateObjectMapping: 0.194900 ms MarkObjects: 2.530700 ms  DeleteObjects: 0.108100 ms)
+Total: 3.840100 ms (FindLiveObjects: 0.428800 ms CreateObjectMapping: 0.155100 ms MarkObjects: 3.136100 ms  DeleteObjects: 0.118500 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -176,25 +176,113 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 434238.837498 seconds.
-  path: Assets/Materials/Dirt_Material.mat
-  artifactKey: Guid(a36dedb955eab4d4eaca9cfad1e69e1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+  Time since last request: 937102.379857 seconds.
+  path: Assets/Materials/Materials/257_Door_Texture_Lab.mat
+  artifactKey: Guid(6858f21f8d38c3e419f10c3060360840) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Number of updated assets reloaded before import = 0
-Start importing Assets/Materials/Dirt_Material.mat using Guid(a36dedb955eab4d4eaca9cfad1e69e1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '17a51457a27695b087b86ef569800936') in 0.100005 seconds 
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 91.296286 seconds.
-  path: Assets/Materials/Textures/DirtTexture.jpg
-  artifactKey: Guid(80d2e516ed672d749a1d2bbde6abc4cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/Materials/Textures/DirtTexture.jpg using Guid(80d2e516ed672d749a1d2bbde6abc4cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '96fea4c6ec5b4adec9f19d3b14311205') in 0.108867 seconds 
+Start importing Assets/Materials/Materials/257_Door_Texture_Lab.mat using Guid(6858f21f8d38c3e419f10c3060360840) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '044801a89bee9dd34230be06c495cde0') in 0.114647 seconds 
 Number of asset objects unloaded after import = 2
 ========================================================================
 Received Import Request.
-  Time since last request: 1578.077798 seconds.
-  path: Assets/Materials/Dirt_Material.mat
-  artifactKey: Guid(a36dedb955eab4d4eaca9cfad1e69e1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+  Time since last request: 340.808586 seconds.
+  path: Packages/com.unity.xr.interaction.toolkit/Tests/Runtime/LocomotionInputTests.cs
+  artifactKey: Guid(fd996c5c0b60d5148a82f1a1eab3b5c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Number of updated assets reloaded before import = 0
-Start importing Assets/Materials/Dirt_Material.mat using Guid(a36dedb955eab4d4eaca9cfad1e69e1e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e99560624e9a3eab7f947a3e4f7bd63') in 0.037901 seconds 
-Number of asset objects unloaded after import = 2
+Start importing Packages/com.unity.xr.interaction.toolkit/Tests/Runtime/LocomotionInputTests.cs using Guid(fd996c5c0b60d5148a82f1a1eab3b5c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60847e1af362d061f59495dc1e7f1b17') in 0.010376 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 2.113839 seconds.
+  path: Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/LocomotionProvider.cs
+  artifactKey: Guid(dc2115b5275bb4d428061e74078afdfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/LocomotionProvider.cs using Guid(dc2115b5275bb4d428061e74078afdfb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '03582d5a781b01b453d0d9c797564a32') in 0.007611 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1.774323 seconds.
+  path: Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/LocomotionProvider.deprecated.cs
+  artifactKey: Guid(9a07c3d528173704da444930cdc28415) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/LocomotionProvider.deprecated.cs using Guid(9a07c3d528173704da444930cdc28415) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f208fd1068e57501259c09e21f05f999') in 0.008836 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1.028423 seconds.
+  path: Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/LocomotionSystem.cs
+  artifactKey: Guid(03a5df2202a8b96488c744be3bd0c33e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/LocomotionSystem.cs using Guid(03a5df2202a8b96488c744be3bd0c33e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '06688c080be4e4fd3e7bb095e462703b') in 0.008228 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.725656 seconds.
+  path: Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/LocomotionSystem.deprecated.cs
+  artifactKey: Guid(1d70e6ff7d7a9be488ed46fa56841a46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion/LocomotionSystem.deprecated.cs using Guid(1d70e6ff7d7a9be488ed46fa56841a46) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'de2ac765a90dd78029c285af43f7de5d') in 0.008949 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 16.658968 seconds.
+  path: Packages/com.unity.xr.interaction.toolkit/Tests/Runtime/LocomotionTests.cs
+  artifactKey: Guid(e8d13c5e667933044b0dea62ebe0d4c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Packages/com.unity.xr.interaction.toolkit/Tests/Runtime/LocomotionTests.cs using Guid(e8d13c5e667933044b0dea62ebe0d4c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a541250b87957d1dc5b02329d99ce119') in 0.009912 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 3.006170 seconds.
+  path: Packages/com.unity.xr.interaction.toolkit/Editor/Locomotion
+  artifactKey: Guid(55642ecf16f73d44799fe48c5bc330af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Packages/com.unity.xr.interaction.toolkit/Editor/Locomotion using Guid(55642ecf16f73d44799fe48c5bc330af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69443f618fc54b84491bfd0a87f84f32') in 0.009030 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.610916 seconds.
+  path: Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion
+  artifactKey: Guid(cabfffbb7cdd5e94186b56918d82e240) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Packages/com.unity.xr.interaction.toolkit/Runtime/Locomotion using Guid(cabfffbb7cdd5e94186b56918d82e240) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '377e33538531ae21f01cc6bce30648d3') in 0.002711 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 2.195682 seconds.
+  path: Packages/com.unity.xr.interaction.toolkit/Runtime/Unity.XR.Interaction.Toolkit.asmdef
+  artifactKey: Guid(fe685ec1767f73d42b749ea8045bfe43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Packages/com.unity.xr.interaction.toolkit/Runtime/Unity.XR.Interaction.Toolkit.asmdef using Guid(fe685ec1767f73d42b749ea8045bfe43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b8dafddea3ffc2d3c73dfb6c6fdb0e0b') in 0.008889 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 8.860307 seconds.
+  path: Assets/Script/AudioManager.cs
+  artifactKey: Guid(e020da4f711294346967ea59d8d0fd15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Script/AudioManager.cs using Guid(e020da4f711294346967ea59d8d0fd15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e75c6579452681aba1d38632cda78097') in 0.007976 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 11.095798 seconds.
+  path: Assets/Script/PauseMenuController.cs
+  artifactKey: Guid(80135b5a32ba8b043af42c6eb4ada5cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Script/PauseMenuController.cs using Guid(80135b5a32ba8b043af42c6eb4ada5cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3e73356fa86fd9da3b604e2f37bb7591') in 0.008057 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 1.359732 seconds.
+  path: Assets/Script/PauseMenuManager.cs
+  artifactKey: Guid(8e9c996b35e4f91409358244eafe78c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Script/PauseMenuManager.cs using Guid(8e9c996b35e4f91409358244eafe78c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd45e5abd3a3c5ac95635fd50f97f2de2') in 0.008150 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 2.843056 seconds.
+  path: Assets/Script/PlayOneShotOnCollision.cs
+  artifactKey: Guid(7915ecd1889d82543bd7a48181a31321) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Script/PlayOneShotOnCollision.cs using Guid(7915ecd1889d82543bd7a48181a31321) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e182d29c834d36baec5963dc80d5daa4') in 0.008466 seconds 
+Number of asset objects unloaded after import = 0
