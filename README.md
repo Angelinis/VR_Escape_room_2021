@@ -15,4 +15,4 @@ The pause `Menu_Canvas` is inside the `Main Camera`, and it is activated through
 
 The walking sounds come from the `Dynamic Move Provider (Script)` and the `Edited Action Based Snap Turn Provider (Script)` inside the `XR Origin`. Besides, the last script is based on an `Edited Snap Turn Provider Base (Script)` which was changed and adapted..
 
-Tip: The building plane has a proportion of 6 meters in Real, and 9 in the plane. Which provides a conversion rate of 0.67.
+Tip: The building plane has a proportion of 6 meters in Real, and 10 in the plane 100%. Which provides a conversion rate of 0.60.
