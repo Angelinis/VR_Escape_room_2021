@@ -21,7 +21,8 @@ public class MainMenu : MonoBehaviour
 
         if (aButtonPressed)
         {
-        SceneManager.LoadScene("MainScene");
+         Destroy(audioManager.gameObject);
+        SceneManager.LoadScene("TrainingScene");
         }
     }
 }
