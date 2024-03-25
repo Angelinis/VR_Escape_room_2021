@@ -9,7 +9,7 @@ The `Ray Interactor` object in the right controller has been changed to have a `
 The `Game_Manager` object possess a script that inspects if all elements were picked up. Also, it has a `Play On Spawn (Script)` that checks for button presses to play some tutorial or Description Clips. Finally, it has a `Pause Menu Manager` that is in charge to setactive the `Menu_Canvas` and pause the game.
 
 There is a `Collider_Object_VR_Body` that plays a collision sound when it collides with any other object.
-It also has a script to Follow the Camera.
+It also has a script to Follow the Camera. It has been changed, so it can follow the camera in all three axis.
 
 The pause `Menu_Canvas` is inside the `Main Camera`, and it is activated through a Menu Button that was set in the `XRI Default Input Actions`. Also, the `Menu_Canvas` has a `Pause Menu Controller` that connects the sliders with the `Audio Manager` instances to reduce volume.
 
