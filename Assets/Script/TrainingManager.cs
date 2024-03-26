@@ -13,10 +13,16 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class TrainingManager : MonoBehaviour
 {
     private AudioManager audioManager;
+    public XROrigin xrOriginScene1;
     // public ActionBasedController xrController;
+    public GameObject xrOriginScene2;
     public GameObject trainingScene1;
     public GameObject trainingScene2;
     public GameObject trainingScene3;
+
+    private bool congratulationsPlayed = false;
+    private bool descriptionPlayed = false;
+
 
     void Start()
     {
@@ -29,21 +35,56 @@ public class TrainingManager : MonoBehaviour
 
     void Update()
     {
-        // bool aButtonPressed = xrController.activateAction.action.triggered;
+        if (trainingScene1.activeSelf)
+        {
+            if (RequireRotationXROrigin() == 0 && !congratulationsPlayed)
+            {
+                StartCoroutine(DelayedAction(trainingScene2, trainingScene1));
 
-        // if (aButtonPressed)
-        // {
-        //  Destroy(audioManager.gameObject);
-        // SceneManager.LoadScene("MainScene");
-        // }
+                congratulationsPlayed = true;
+            }
+        }
+
+        if (trainingScene2.activeSelf)
+        {
+            if (!descriptionPlayed)
+            {
+                audioManager.PlayDescription(1);
+                bool gameOver = xrOriginScene2.GetComponent<GameOverCollision>().gameOverCollision;
+                descriptionPlayed = true;
+            }
+
+        }
+
     }
 
-     public void ChangeTrainingScene(int audioClip)
+    public void ChangeTrainingScene(int audioClip)
     {
- 
+
         audioManager.PlayDescription(audioClip);
     }
 
+    public int RequireRotationXROrigin()
+    {
+        var xrOriginRotationY = xrOriginScene1.transform.rotation.eulerAngles.y;
+        int finalTurnValue = Mathf.RoundToInt(xrOriginRotationY);
+        return finalTurnValue;
+    }
+
+    IEnumerator DelayedAction(GameObject sceneToActivate, GameObject sceneToDeactivate)
+    {
+
+        yield return new WaitForSeconds(2);
+
+        audioManager.PlayDescription(3);
+
+        yield return new WaitForSeconds(1);
+
+        sceneToDeactivate.SetActive(false);
+        congratulationsPlayed = false;
+
+        sceneToActivate.SetActive(true);
+    }
 
 
 }

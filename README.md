@@ -16,3 +16,5 @@ The pause `Menu_Canvas` is inside the `Main Camera`, and it is activated through
 The walking sounds come from the `Dynamic Move Provider (Script)` and the `Edited Action Based Snap Turn Provider (Script)` inside the `XR Origin`. Besides, the last script is based on an `Edited Snap Turn Provider Base (Script)` which was changed and adapted..
 
 Tip: The building plane has a proportion of 6 meters in Real, and 10 in the plane 100%. Which provides a conversion rate of 0.60.
+
+The `Training Manager` script has been created to manage the training scene. It takes as inputs three empties: Scene1, Scene2, and Scene3. Besides that, it takes as input the `XR Origin` of the Scenes, because there are three different `XR Origin`.
