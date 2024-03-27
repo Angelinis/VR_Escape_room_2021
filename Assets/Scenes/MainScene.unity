@@ -11111,6 +11111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 783356b3f4a74ea488212335d42e51bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverCollision: 0
 --- !u!1 &418150274
 GameObject:
   m_ObjectHideFlags: 0
@@ -16477,7 +16478,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1832554661}
-  m_RootOrder: 8
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &591953942
 MonoBehaviour:
@@ -17814,7 +17815,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4134505312059479865, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.34
+      value: -1.85
       objectReference: {fileID: 0}
     - target: {fileID: 4134505312059479865, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_LocalPosition.y
@@ -17822,7 +17823,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4134505312059479865, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -10.44
+      value: -1.31
       objectReference: {fileID: 0}
     - target: {fileID: 4134505312059479865, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
       propertyPath: m_LocalRotation.w
@@ -21008,7 +21009,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9bf37e7e3ece5ca458ee9955e28b8578, type: 3}
   sfxSource: {fileID: 2143622614}
   descriptionClips:
-  - {fileID: 8300000, guid: 355ba74b17ca6d54f9df15a17bb0b150, type: 3}
+  - {fileID: 8300000, guid: ceaff73f52cb21f438df27966d1698b7, type: 3}
   - {fileID: 8300000, guid: 3079d5d120d2ebf49b18a9a9a7b6e48f, type: 3}
   - {fileID: 8300000, guid: 267cf7894da2d544eb77c179c42f73d2, type: 3}
   - {fileID: 8300000, guid: 7ec3fe2aea1c6df4383bc147b2b1cf03, type: 3}
@@ -25739,7 +25740,7 @@ Transform:
   - {fileID: 464948196}
   - {fileID: 1202490544}
   m_Father: {fileID: 1832554661}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &865612743
 MonoBehaviour:
@@ -26362,7 +26363,7 @@ Transform:
   - {fileID: 1284846407}
   - {fileID: 76020646}
   m_Father: {fileID: 1832554661}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: 107.442, z: 0}
 --- !u!4 &875408157 stripped
 Transform:
@@ -37800,7 +37801,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ede02d3bd5f7ee44eb51db5ee23890d9, type: 3}
       propertyPath: m_Name
-      value: Conditioner
+      value: Air_Conditioner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ede02d3bd5f7ee44eb51db5ee23890d9, type: 3}
@@ -53466,17 +53467,17 @@ Transform:
   m_Children:
   - {fileID: 1475799835}
   - {fileID: 816385698}
+  - {fileID: 874985073}
   - {fileID: 113765249}
   - {fileID: 700197194}
-  - {fileID: 874985073}
+  - {fileID: 591953941}
   - {fileID: 915229041}
   - {fileID: 309926693}
   - {fileID: 2145773146}
-  - {fileID: 591953941}
-  - {fileID: 1497652331}
   - {fileID: 865612742}
-  - {fileID: 1259986584}
+  - {fileID: 1497652331}
   - {fileID: 2001160129}
+  - {fileID: 1259986584}
   - {fileID: 1227985469}
   - {fileID: 245513148}
   - {fileID: 848679967}
@@ -58009,7 +58010,7 @@ Transform:
   - {fileID: 841126859}
   - {fileID: 1812467218}
   m_Father: {fileID: 1832554661}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
 --- !u!114 &2001160130
 MonoBehaviour:
@@ -60394,7 +60395,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: cbbc3d7caf596764da6562fd961d34fa, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.48
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -60403,9 +60404,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 0.3
-  MaxDistance: 1
+  MaxDistance: 2.5
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0

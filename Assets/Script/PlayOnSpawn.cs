@@ -19,34 +19,35 @@ public class PlayOnSpawn : MonoBehaviour
 
     void Update()
     {
-        bool aButtonPressed = xrController.activateAction.action.triggered;
+        // bool aButtonPressed = xrController.activateAction.action.triggered;
 
-        if (aButtonPressed)
-        {
-            if (pressedTimes == 0)
-            {
-                // If it's the first press, stop the audio and then stop the coroutine
-                StopCoroutine(currentCoroutine);
-                pressedTimes = 1;
-                RepeatIntroductionClips();
-            }
-            else
-            {
-                // If it's the second press, stop all audio
-                audioManager.StopDescription();
-                StopAllCoroutines();
-                pressedTimes = 0;
-            }
-        }
+        // if (aButtonPressed)
+        // {
+        //     if (pressedTimes == 0)
+        //     {
+        //         // If it's the first press, stop the audio and then stop the coroutine
+        //         StopCoroutine(currentCoroutine);
+        //         pressedTimes = 1;
+        //         RepeatIntroductionClips();
+        //     }
+        //     else
+        //     {
+        //         // If it's the second press, stop all audio
+        //         audioManager.StopDescription();
+        //         StopAllCoroutines();
+        //         pressedTimes = 0;
+        //     }
+        // }
     }
 
     void PlayIntro()
     {
-        clipQueue.Clear();
-        EnqueueClip(0);
-        EnqueueClip(1);
-        EnqueueClip(2);
-        PlayNextClip();
+        // clipQueue.Clear();
+        // EnqueueClip(0);
+        // EnqueueClip(1);
+        // EnqueueClip(2);
+        // PlayNextClip();
+        audioManager.PlayDescription(0);
     }
 
     void RepeatIntroductionClips()
