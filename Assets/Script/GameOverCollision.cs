@@ -14,8 +14,9 @@ public class GameOverCollision : MonoBehaviour
         if (collision.gameObject.tag == "GameOverCollider")
         {
             gameOverCollision = true;
-            Debug.Log("Training Over");
         }
+    
+
     }
 
 }

@@ -15,14 +15,17 @@ public class TrainingManager : MonoBehaviour
     private AudioManager audioManager;
     public XROrigin xrOriginScene1;
     // public ActionBasedController xrController;
-    public GameObject xrOriginScene2;
+    public GameObject colliderVRScene2;
+    public GameObject objectVRScene3;
     public GameObject trainingScene1;
     public GameObject trainingScene2;
+    public GameObject trainingScene2Environment;
     public GameObject trainingScene3;
+
 
     private bool congratulationsPlayed = false;
     private bool descriptionPlayed = false;
-
+    private bool justOnce = true;
 
     void Start()
     {
@@ -41,27 +44,48 @@ public class TrainingManager : MonoBehaviour
             {
                 StartCoroutine(DelayedAction(trainingScene2, trainingScene1));
 
+                trainingScene2Environment.SetActive(true);
+
                 congratulationsPlayed = true;
             }
         }
 
-        if (trainingScene2.activeSelf)
+        if (trainingScene2.activeSelf && trainingScene2Environment.activeSelf)
         {
             if (!descriptionPlayed)
             {
                 audioManager.PlayDescription(1);
-                bool gameOver = xrOriginScene2.GetComponent<GameOverCollision>().gameOverCollision;
                 descriptionPlayed = true;
+                congratulationsPlayed = false;
+
+            }
+
+            if (colliderVRScene2.GetComponent<GameOverCollision>().gameOverCollision && !congratulationsPlayed && justOnce)
+            {
+                justOnce = false;
+                StartCoroutine(DelayedAction(trainingScene3, trainingScene2Environment));
             }
 
         }
 
-    }
+        if (trainingScene3.activeSelf)
+        {
+            if (!descriptionPlayed)
+            {
+                audioManager.PlayDescription(2);
+                descriptionPlayed = true;
+                congratulationsPlayed = false;
+                justOnce = true;
+            }
 
-    public void ChangeTrainingScene(int audioClip)
-    {
+            if (!objectVRScene3.activeSelf && !congratulationsPlayed && justOnce)
+            {
+                StartCoroutine(DelayedFinalAction());
+                justOnce = false;
+            }
 
-        audioManager.PlayDescription(audioClip);
+        }
+
     }
 
     public int RequireRotationXROrigin()
@@ -81,10 +105,26 @@ public class TrainingManager : MonoBehaviour
         yield return new WaitForSeconds(1);
 
         sceneToDeactivate.SetActive(false);
-        congratulationsPlayed = false;
+        
+        descriptionPlayed = false;
 
         sceneToActivate.SetActive(true);
     }
+
+    IEnumerator DelayedFinalAction()
+    {
+
+        yield return new WaitForSeconds(2);
+
+        audioManager.PlayDescription(4);
+
+        yield return new WaitForSeconds(8);
+        
+        Destroy(audioManager.gameObject);
+
+        SceneManager.LoadScene("MainScene");
+    }
+
 
 
 }
