@@ -7,11 +7,14 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     public GameObject[] inspectedGameObjects;
-
-
+    
     public GameObject completedActionObject;
+    public GameObject completedActionLight;
     public AudioClip completedActionClip;
     public AudioSource completedActionAudioSource;
+
+
+    private string[] collectedGameObjects;
 
     private bool hasCompletedAction = false;
 
@@ -29,18 +32,28 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // Call this method to check if all inspectedGameObjects are inactive
     public bool AreAllObjectsInactive()
     {
         foreach (GameObject obj in inspectedGameObjects)
         {
-            if (obj.activeSelf)
+            if(!obj.activeSelf)
+            {
+                int targetIndex = System.Array.IndexOf(collectedGameObjects, obj.name);
+              if (targetIndex == -1)
+                {
+                    System.Array.Resize(ref collectedGameObjects, collectedGameObjects.Length + 1);
+                    collectedGameObjects[collectedGameObjects.Length - 1] = obj.name;
+                }
+            }
+
+            else
             {
                 return false;
             }
         }
         return true;
     }
+
 
 
     IEnumerator playSoundAfterSomeSeconds()
@@ -55,12 +68,13 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
-        if (AreAllObjectsInactive() && !hasCompletedAction)
-        {
-            completedActionAudioSource.clip = completedActionClip;
-            completedActionAudioSource.volume = 1;
-            StartCoroutine(playSoundAfterSomeSeconds());
-            hasCompletedAction = true; 
-        }
+        // if (IsEnergySolutionActive() && !hasCompletedAction)
+        // {
+        //     completedActionLight.SetActive(true);
+        //     completedActionAudioSource.clip = completedActionClip;
+        //     completedActionAudioSource.volume = 1;
+        //     StartCoroutine(playSoundAfterSomeSeconds());
+        //     hasCompletedAction = true; 
+        // }
     }
 }
