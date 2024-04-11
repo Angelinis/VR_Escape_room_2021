@@ -1,6 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
+
+using UnityEngine.EventSystems;
+
+using UnityEngine.XR;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,8 +19,15 @@ public class GameManager : MonoBehaviour
     public AudioClip completedActionClip;
     public AudioSource completedActionAudioSource;
 
+    public InputActionProperty changeSelectedObjectButton;
 
-    private string[] collectedGameObjects;
+    public GameObject selectedEmpty;
+
+    private GameObject selectedGameObjectView;
+
+    private string[] collectedGameObjects = new string[1];
+
+    private int selectedGameObjectIndex = 0;
 
     private bool hasCompletedAction = false;
 
@@ -30,9 +43,18 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        
+
     }
 
-    public bool AreAllObjectsInactive()
+    void Start()
+    {
+
+        collectedGameObjects[0] = "Empty_Collectable";
+        selectedGameObjectView = selectedEmpty.transform.Find("Empty_Collectable").gameObject;
+    }
+
+    public void CheckObjects()
     {
         foreach (GameObject obj in inspectedGameObjects)
         {
@@ -45,13 +67,7 @@ public class GameManager : MonoBehaviour
                     collectedGameObjects[collectedGameObjects.Length - 1] = obj.name;
                 }
             }
-
-            else
-            {
-                return false;
-            }
         }
-        return true;
     }
 
 
@@ -67,14 +83,27 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        
-        // if (IsEnergySolutionActive() && !hasCompletedAction)
-        // {
-        //     completedActionLight.SetActive(true);
-        //     completedActionAudioSource.clip = completedActionClip;
-        //     completedActionAudioSource.volume = 1;
-        //     StartCoroutine(playSoundAfterSomeSeconds());
-        //     hasCompletedAction = true; 
-        // }
+        CheckObjects();
+
+        if (changeSelectedObjectButton.action.WasPressedThisFrame())
+        {
+            selectedGameObjectIndex += 1;
+
+            if((selectedGameObjectIndex) > (collectedGameObjects.Length - 1))
+            {
+                selectedGameObjectView.SetActive(false);
+                selectedGameObjectView = selectedEmpty.transform.Find("Empty_Collectable").gameObject;
+                selectedGameObjectView.SetActive(true);
+                selectedGameObjectIndex = 0;
+            } 
+
+            if(selectedGameObjectIndex != 0) {
+                selectedGameObjectView.SetActive(false);
+                selectedGameObjectView = selectedEmpty.transform.Find(collectedGameObjects[selectedGameObjectIndex]).gameObject;
+                selectedGameObjectView.SetActive(true);
+            }
+            
+        }
+
     }
 }
