@@ -50,36 +50,36 @@ public class PlayOnSpawn : MonoBehaviour
         audioManager.PlayDescription(0);
     }
 
-    void RepeatIntroductionClips()
-    {
-        clipQueue.Clear();
-        EnqueueClip(1);
-        EnqueueClip(2);
-        PlayNextClip();
-    }
+    // void RepeatIntroductionClips()
+    // {
+    //     clipQueue.Clear();
+    //     EnqueueClip(1);
+    //     EnqueueClip(2);
+    //     PlayNextClip();
+    // }
 
-    void EnqueueClip(int clipIndex)
-    {
-        clipQueue.Enqueue(clipIndex);
-    }
+    // void EnqueueClip(int clipIndex)
+    // {
+    //     clipQueue.Enqueue(clipIndex);
+    // }
 
-    void PlayNextClip()
-    {
-        if (clipQueue.Count > 0)
-        {
-            int clipIndex = clipQueue.Dequeue();
-            currentCoroutine = StartCoroutine(PlayClip(clipIndex, PlayNextClip));
-        }
-    }
+    // void PlayNextClip()
+    // {
+    //     if (clipQueue.Count > 0)
+    //     {
+    //         int clipIndex = clipQueue.Dequeue();
+    //         currentCoroutine = StartCoroutine(PlayClip(clipIndex, PlayNextClip));
+    //     }
+    // }
 
-    IEnumerator PlayClip(int clipIndex, System.Action callback)
-    {
-        if (audioManager != null)
-        {
-            audioManager.PlayDescription(clipIndex);
-            yield return new WaitForSeconds(audioManager.descriptionSource.clip.length);
+    // IEnumerator PlayClip(int clipIndex, System.Action callback)
+    // {
+    //     if (audioManager != null)
+    //     {
+    //         audioManager.PlayDescription(clipIndex);
+    //         yield return new WaitForSeconds(audioManager.descriptionSource.clip.length);
 
-            callback?.Invoke(); // Invoke the callback to play the next clip
-        }
-    }
+    //         callback?.Invoke(); // Invoke the callback to play the next clip
+    //     }
+    // }
 }

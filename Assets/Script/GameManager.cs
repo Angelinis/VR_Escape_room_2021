@@ -10,6 +10,8 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class GameManager : MonoBehaviour
 {
+    private AudioManager audioManager;
+
     public static GameManager instance;
 
     public GameObject[] inspectedGameObjects;
@@ -49,7 +51,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-
+        audioManager = AudioManager.instance;
+        
         collectedGameObjects[0] = "Empty_Collectable";
         selectedGameObjectView = selectedEmpty.transform.Find("Empty_Collectable").gameObject;
     }
@@ -102,6 +105,8 @@ public class GameManager : MonoBehaviour
                 selectedGameObjectView = selectedEmpty.transform.Find(collectedGameObjects[selectedGameObjectIndex]).gameObject;
                 selectedGameObjectView.SetActive(true);
             }
+            audioManager.PlaySFX(1);
+            audioManager.PlayAccessibleDescription(selectedGameObjectView.GetComponent<AudioInformation>().accessibleDescription[0]);
             
         }
 
