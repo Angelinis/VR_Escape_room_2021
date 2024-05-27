@@ -16,22 +16,22 @@ public class GameManager : MonoBehaviour
 
     public GameObject[] inspectedGameObjects;
     
-    public GameObject completedActionObject;
-    public GameObject completedActionLight;
-    public AudioClip completedActionClip;
-    public AudioSource completedActionAudioSource;
+    // public GameObject completedActionObject;
+    // public GameObject completedActionLight;
+    // public AudioClip completedActionClip;
+    // public AudioSource completedActionAudioSource;
 
     public InputActionProperty changeSelectedObjectButton;
 
     public GameObject selectedEmpty;
 
-    private GameObject selectedGameObjectView;
+    public GameObject selectedGameObjectView;
 
     private string[] collectedGameObjects = new string[1];
 
     private int selectedGameObjectIndex = 0;
 
-    private bool hasCompletedAction = false;
+    // private bool hasCompletedAction = false;
 
     private void Awake()
     {
@@ -75,14 +75,14 @@ public class GameManager : MonoBehaviour
 
 
 
-    IEnumerator playSoundAfterSomeSeconds()
-    {
-        yield return new WaitForSeconds(3);
-        completedActionAudioSource.Play();
+    // IEnumerator playSoundAfterSomeSeconds()
+    // {
+    //     yield return new WaitForSeconds(3);
+    //     completedActionAudioSource.Play();
 
-        yield return new WaitForSeconds(completedActionAudioSource.clip.length);
-        completedActionObject.SetActive(false);
-    }
+    //     yield return new WaitForSeconds(completedActionAudioSource.clip.length);
+    //     completedActionObject.SetActive(false);
+    // }
 
     void Update()
     {
