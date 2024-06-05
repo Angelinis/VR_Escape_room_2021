@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
 
     public GameObject selectedGameObjectView;
 
-    private string[] collectedGameObjects = new string[1];
+    public string[] collectedGameObjects = new string[1];
 
     private int selectedGameObjectIndex = 0;
 
@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour
     {
         foreach (GameObject obj in inspectedGameObjects)
         {
-            if(!obj.activeSelf)
+            if(!obj.activeSelf && !obj.GetComponent<WasUsed>().wasItUsed && !obj.GetComponent<WasUsed>().wasItHidden)
             {
                 int targetIndex = System.Array.IndexOf(collectedGameObjects, obj.name);
               if (targetIndex == -1)
@@ -71,6 +71,23 @@ public class GameManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void RemoveObjectByName(string nameToRemove)
+    {
+        int indexToRemove = System.Array.IndexOf(collectedGameObjects, nameToRemove);
+        if (indexToRemove != -1)
+        {
+            string[] newArray = new string[collectedGameObjects.Length - 1];
+            System.Array.Copy(collectedGameObjects, 0, newArray, 0, indexToRemove);
+            System.Array.Copy(collectedGameObjects, indexToRemove + 1, newArray, indexToRemove, collectedGameObjects.Length - indexToRemove - 1);
+            collectedGameObjects = newArray;
+        }
+
+        selectedGameObjectView.SetActive(false);
+        selectedGameObjectView = selectedEmpty.transform.Find("Empty_Collectable").gameObject;
+        selectedGameObjectView.SetActive(true);
+        selectedGameObjectIndex = 0;
     }
 
 

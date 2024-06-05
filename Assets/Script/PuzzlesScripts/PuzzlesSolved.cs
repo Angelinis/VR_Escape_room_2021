@@ -7,6 +7,8 @@ public class PuzzlesSolved : MonoBehaviour
     // Start is called before the first frame update
     // Electricity Puzzle
     private AudioManager audioManager;
+    private GameManager gameManager;
+    private PuzzleInformation puzzleInformation;
 
     public int puzzleNumber = 0;
 
@@ -21,6 +23,9 @@ public class PuzzlesSolved : MonoBehaviour
     void Start()
     {
         audioManager = AudioManager.instance;
+        gameManager = GameManager.instance;
+        puzzleInformation = GetComponent<PuzzleInformation>();
+
     }
 
     // Update is called once per frame
@@ -30,6 +35,11 @@ public class PuzzlesSolved : MonoBehaviour
     }
 
     public void SolvedPuzzleAction(){
+
+        puzzleInformation.collectedObjectInScene.GetComponent<WasUsed>().wasItUsed = true;
+
+        gameManager.RemoveObjectByName(puzzleInformation.collectedObjectInScene.name);
+
         if(objectToActive1){
             objectToActive1.SetActive(true);
         } 
@@ -46,6 +56,11 @@ public class PuzzlesSolved : MonoBehaviour
         if((puzzleNumber == 1))
         {
             audioManager.PlaySFX(2);
+        }
+
+        if((puzzleNumber == 2))
+        {
+            audioManager.PlaySFX(3);
         }
     }
 

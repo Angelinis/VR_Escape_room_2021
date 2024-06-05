@@ -11,6 +11,8 @@ public class PuzzleInformation : MonoBehaviour
 
     public GameObject necessaryObject;
 
+    public GameObject collectedObjectInScene;
+
     private AudioManager audioManager;
 
     private PuzzlesSolved puzzlesSolved;
