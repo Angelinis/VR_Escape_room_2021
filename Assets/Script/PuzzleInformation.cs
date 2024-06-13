@@ -38,8 +38,8 @@ public class PuzzleInformation : MonoBehaviour
     public void CheckObject()
     {
         if (necessaryObject == gameManager.selectedGameObjectView){
-            audioManager.PlayAccessibleDescription(audioInformationPuzzleObject.accessibleDescription[1]);
             puzzlesSolved.SolvedPuzzleAction();
+            audioManager.PlayAccessibleDescription(audioInformationPuzzleObject.accessibleDescription[1]);
             
         } else {
             audioManager.PlayAccessibleDescription(audioInformationPuzzleObject.accessibleDescription[0]);

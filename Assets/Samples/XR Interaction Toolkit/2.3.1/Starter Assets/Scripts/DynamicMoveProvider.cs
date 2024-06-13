@@ -103,6 +103,10 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
 
         private float lastUpDownTime;
 
+        //To solve bug that happens once
+        private bool isFirstTime;
+
+
         // Access the AudioManager through its instance
         //private AudioManager audioManager;
 
@@ -134,6 +138,8 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
             //Initializing variables for footsteps
             lastStepTime = Time.time;
 
+            isFirstTime = true;
+            
             footstepAudioSource = gameObject.AddComponent<AudioSource>();
             // audioManager = AudioManager.instance;
             // if (audioManager == null)
@@ -234,6 +240,7 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
             // //Adding Footsteps sounds
             bool isWalking = totalSqrMagnitude > Mathf.Epsilon;
 
+            
             // Play step sounds when walking
             //if (isWalking && audioManager != null )
             if (isWalking && footstepAudioSource != null)
@@ -251,7 +258,10 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
                         { 
                             if (Time.time - lastUpDownTime > upDownInterval){
                                 upDownAudioSource.clip = downClip;
-                                upDownAudioSource.Play();
+                                if(!isFirstTime){
+                                    upDownAudioSource.Play();
+                                }
+                                isFirstTime = false;
                                 lastUpDownTime = Time.time; // Update the last step time
                             }
                             
@@ -260,11 +270,12 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
                             
                             if (Time.time - lastUpDownTime > upDownInterval){
                                 upDownAudioSource.clip = upClip;
-                                upDownAudioSource.Play();
+                                if(!isFirstTime){
+                                    upDownAudioSource.Play();
+                                }
+                                isFirstTime = false;
                                 lastUpDownTime = Time.time; // Update the last step time
-                            }
-                            
-                            
+                            }        
                            
                         }
 

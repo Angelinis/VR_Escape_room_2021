@@ -10,6 +10,8 @@ public class PuzzlesSolved : MonoBehaviour
     private GameManager gameManager;
     private PuzzleInformation puzzleInformation;
 
+    private Animator animator;
+
     public int puzzleNumber = 0;
 
     public GameObject objectToInactive1;
@@ -61,6 +63,18 @@ public class PuzzlesSolved : MonoBehaviour
         if((puzzleNumber == 2))
         {
             audioManager.PlaySFX(3);
+        }
+
+        if((puzzleNumber == 3))
+        {
+            GameObject originalGameObject = GameObject.Find("Dog_Puzzle");
+            GameObject child = originalGameObject.transform.Find("Dog").gameObject;
+
+            animator = child.GetComponent<Animator>();
+
+            animator.SetBool("PuzzleBlocked", false);
+            animator.SetBool("PuzzleSolved",true);
+            audioManager.PlaySFX(4);
         }
     }
 
