@@ -556,3 +556,179 @@ AssetImportParameters requested are different than current active one (requested
   custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 1341.334703 seconds.
+  path: Assets/Objects FBX/SacoRacao.fbx
+  artifactKey: Guid(1614cb5d53be1024dadb9d39a15c292e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Objects FBX/SacoRacao.fbx using Guid(1614cb5d53be1024dadb9d39a15c292e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5e05e682348a5823b9c7cf73350b6f4d') in 0.154524 seconds 
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 10.210201 seconds.
+  path: Assets/Objects FBX/Random Materials/Sacoderação.png
+  artifactKey: Guid(9976c4f724defbc4dad046e96829af1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Objects FBX/Random Materials/Sacoderação.png using Guid(9976c4f724defbc4dad046e96829af1a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6dbe5230b1c68caed73a08cbd3ba731b') in 0.167581 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 14.071791 seconds.
+  path: Assets/Objects FBX/SacoRacao.fbx
+  artifactKey: Guid(1614cb5d53be1024dadb9d39a15c292e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Objects FBX/SacoRacao.fbx using Guid(1614cb5d53be1024dadb9d39a15c292e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f3229786e1d3ff38e93144692ef51a13') in 0.032253 seconds 
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 50.391455 seconds.
+  path: Assets/Objects FBX/Random Materials/Material.mat
+  artifactKey: Guid(f9d9d5e630087f647aaa3f1c70bb9f36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Objects FBX/Random Materials/Material.mat using Guid(f9d9d5e630087f647aaa3f1c70bb9f36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1d3b7bdd01adc99dc8d1d3691688927') in 0.017305 seconds 
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 247.189288 seconds.
+  path: Assets/Objects FBX/Armário.fbx
+  artifactKey: Guid(d098b810f84c382448ac2770f05fa4ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Objects FBX/Armário.fbx using Guid(d098b810f84c382448ac2770f05fa4ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22019cc1ed79f8bae65913828efac67c') in 0.197871 seconds 
+Number of asset objects unloaded after import = 153
+========================================================================
+Received Import Request.
+  Time since last request: 14.677483 seconds.
+  path: Assets/Objects FBX/Random Materials/lambert1.mat
+  artifactKey: Guid(e3de83f6223a15444abbfcdfe001bee5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Objects FBX/Random Materials/lambert1.mat using Guid(e3de83f6223a15444abbfcdfe001bee5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2d874343bd1bb6cc3926113a3cb9d738') in 0.073275 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 7.931323 seconds.
+  path: Assets/Objects FBX/Random Materials/DogFood.mat
+  artifactKey: Guid(f9d9d5e630087f647aaa3f1c70bb9f36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Objects FBX/Random Materials/DogFood.mat using Guid(f9d9d5e630087f647aaa3f1c70bb9f36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ae74e191dea2f59776eb536e8668d0a2') in 0.027231 seconds 
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 118.943366 seconds.
+  path: Assets/Objects FBX/Random Materials/DogFood.mat
+  artifactKey: Guid(f9d9d5e630087f647aaa3f1c70bb9f36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Objects FBX/Random Materials/DogFood.mat using Guid(f9d9d5e630087f647aaa3f1c70bb9f36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c6ad39f660699c62915f03406249193') in 0.058772 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 132.373127 seconds.
+  path: Assets/Objects FBX/Random Materials/DogFood.mat
+  artifactKey: Guid(f9d9d5e630087f647aaa3f1c70bb9f36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Objects FBX/Random Materials/DogFood.mat using Guid(f9d9d5e630087f647aaa3f1c70bb9f36) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e82a55a36b087dab367794d8531c327c') in 0.031305 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 249.922223 seconds.
+  path: Assets/Sounds/Object Sounds/DogFood_SFX.wav
+  artifactKey: Guid(b836710c8e50259488f6e1edc164a58f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Sounds/Object Sounds/DogFood_SFX.wav using Guid(b836710c8e50259488f6e1edc164a58f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c234b730c5b171ee9e6ab95519d6b25') in 0.029743 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 198.360451 seconds.
+  path: Assets/Sounds/Object Names/Key_To_Lab_151.mp3
+  artifactKey: Guid(89b34c9155c5ad446915a3dd1f8d1b3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Sounds/Object Names/Key_To_Lab_151.mp3 using Guid(89b34c9155c5ad446915a3dd1f8d1b3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1785b0fe5391cbdc5799174d92a61347') in 0.016377 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 2974.382954 seconds.
+  path: Assets/Sounds/Object Names/DogFood_Object.mp3
+  artifactKey: Guid(043a23707b417f84eb686a8027f5c580) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Sounds/Object Names/DogFood_Object.mp3 using Guid(043a23707b417f84eb686a8027f5c580) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1fc9ca7145fbe4f4952b10a8ed78359c') in 0.019658 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 124.403673 seconds.
+  path: Assets/Sounds/Object Grabbed/DogFood_Grabbed.mp3
+  artifactKey: Guid(ec2870f9cc816e6459f5bb4190895597) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Sounds/Object Grabbed/DogFood_Grabbed.mp3 using Guid(ec2870f9cc816e6459f5bb4190895597) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4316c13a03f66857aa5df3e68c1a62aa') in 0.015309 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 273.095659 seconds.
+  path: Assets/Sounds/Object Grabbed/DogFood_Object_Selected.mp3
+  artifactKey: Guid(8060d531423b08f41ad85730fa497d96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Sounds/Object Grabbed/DogFood_Object_Selected.mp3 using Guid(8060d531423b08f41ad85730fa497d96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5754b44c158013248bc5950ab2c9b54a') in 0.015073 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.009985 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 1.43 ms, found 14 plugins.
+Preloading 1 native plugins for Editor in 0.16 ms.
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Completed reload, in  1.785 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1786ms)
+		BeginReloadAssembly (272ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (10ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (102ms)
+		EndReloadAssembly (1410ms)
+			LoadAssemblies (134ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (322ms)
+			ReleaseScriptCaches (3ms)
+			RebuildScriptCaches (48ms)
+			SetupLoadedEditorAssemblies (855ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (25ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (87ms)
+				ProcessInitializeOnLoadAttributes (677ms)
+				ProcessInitializeOnLoadMethodAttributes (54ms)
+				AfterProcessingInitializeOnLoad (10ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (13ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 1.23 ms, found 14 plugins.
+Preloading 1 native plugins for Editor in 0.10 ms.
+Unloading 4658 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 86 unused Assets / (25.0 KB). Loaded Objects now: 5204.
+Memory consumption went from 180.0 MB to 180.0 MB.
+Total: 5.018000 ms (FindLiveObjects: 0.456000 ms CreateObjectMapping: 0.260700 ms MarkObjects: 4.130100 ms  DeleteObjects: 0.169900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:CustomObjectIndexerAttribute: bc11b3a6c3213fcdd17b65e7da85e133 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
