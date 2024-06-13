@@ -100,6 +100,9 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
 
         //Creating the LastStepVariable for footsteps
         private float lastStepTime;
+
+        private float lastUpDownTime;
+
         // Access the AudioManager through its instance
         //private AudioManager audioManager;
 
@@ -108,6 +111,15 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
         
         [SerializeField]
         private AudioClip footstepClip;
+
+        [SerializeField]
+        private AudioSource upDownAudioSource;
+
+        [SerializeField]
+        private AudioClip upClip;
+
+        [SerializeField]
+        private AudioClip downClip;
 
         [SerializeField]
         private Transform sourceObject; // Assign the source object in the Unity Editor
@@ -234,6 +246,28 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
                     // Only perform actions if the distance moved is significant
                     if (distanceMoved >= 0.01)
                     {
+                        float upDownInterval = 2f; //Adjust as needed
+                        if( (-newPosition.y + initialPosition.y) >= 0.01 )
+                        { 
+                            if (Time.time - lastUpDownTime > upDownInterval){
+                                upDownAudioSource.clip = downClip;
+                                upDownAudioSource.Play();
+                                lastUpDownTime = Time.time; // Update the last step time
+                            }
+                            
+                            
+                        } else if ((newPosition.y - initialPosition.y) >= 0.01) {
+                            
+                            if (Time.time - lastUpDownTime > upDownInterval){
+                                upDownAudioSource.clip = upClip;
+                                upDownAudioSource.Play();
+                                lastUpDownTime = Time.time; // Update the last step time
+                            }
+                            
+                            
+                           
+                        }
+
                         float stepSoundInterval = 0.5f; // Adjust as needed
                         if (Time.time - lastStepTime > stepSoundInterval)
                         {
