@@ -9,11 +9,11 @@ C:\Program Files\Unity\Hub\Editor\2021.3.31f1\Editor\Unity.exe
 -batchMode
 -noUpm
 -name
-AssetImportWorker0
+AssetImportWorker2
 -projectPath
 C:/Users/Angelo/Projects Unity/VR_Escape_room_2021
 -logFile
-Logs/AssetImportWorker0.log
+Logs/AssetImportWorker2.log
 -srvPort
 51353
 Successfully changed project path to: C:/Users/Angelo/Projects Unity/VR_Escape_room_2021
@@ -47,13 +47,13 @@ C:/Users/Angelo/Projects Unity/VR_Escape_room_2021
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [43200] Host "[IP] 192.168.96.1 [Port] 0 [Flags] 2 [Guid] 943972219 [EditorId] 943972219 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-R04OA4V) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [16956] Host "[IP] 192.168.96.1 [Port] 0 [Flags] 2 [Guid] 1280124655 [EditorId] 1280124655 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-R04OA4V) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [43200] Host "[IP] 192.168.96.1 [Port] 0 [Flags] 2 [Guid] 943972219 [EditorId] 943972219 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-R04OA4V) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [16956] Host "[IP] 192.168.96.1 [Port] 0 [Flags] 2 [Guid] 1280124655 [EditorId] 1280124655 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-R04OA4V) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
 [Physics::Module] Initialized MultithreadedJobDispatcher with {0} workers.
-Refreshing native plugins compatible for Editor in 108.96 ms, found 14 plugins.
-Preloading 1 native plugins for Editor in 1.06 ms.
+Refreshing native plugins compatible for Editor in 94.29 ms, found 14 plugins.
+Preloading 1 native plugins for Editor in 0.56 ms.
 Initialize engine version: 2021.3.31f1 (3409e2af086f)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.31f1/Editor/Data/Resources/UnitySubsystems
 [Subsystems] Discovering subsystems at path C:/Users/Angelo/Projects Unity/VR_Escape_room_2021/Assets
@@ -68,99 +68,99 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.31f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.31f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.31f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56168
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56436
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.31f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.31f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.31f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.011674 seconds.
+Registered in 0.007830 seconds.
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Android Extension - Scanning For ADB Devices 2298 ms
+Android Extension - Scanning For ADB Devices 234 ms
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 79.59 ms, found 14 plugins.
-Preloading 1 native plugins for Editor in 0.15 ms.
+Refreshing native plugins compatible for Editor in 80.11 ms, found 14 plugins.
+Preloading 1 native plugins for Editor in 0.16 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  2.991 seconds
+- Completed reload, in  0.845 seconds
 Domain Reload Profiling:
-	ReloadAssembly (2992ms)
-		BeginReloadAssembly (109ms)
+	ReloadAssembly (845ms)
+		BeginReloadAssembly (86ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (2767ms)
-			LoadAssemblies (107ms)
+		EndReloadAssembly (672ms)
+			LoadAssemblies (84ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (105ms)
+			SetupTypeCache (96ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (34ms)
-			SetupLoadedEditorAssemblies (2584ms)
+			RebuildScriptCaches (27ms)
+			SetupLoadedEditorAssemblies (509ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (2390ms)
+				InitializePlatformSupportModulesInManaged (319ms)
 				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (80ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (73ms)
-				ProcessInitializeOnLoadMethodAttributes (39ms)
+				ProcessInitializeOnLoadAttributes (71ms)
+				ProcessInitializeOnLoadMethodAttributes (37ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.010390 seconds.
+Registered in 0.010426 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
 Native extension for WebGL target not found
-Refreshing native plugins compatible for Editor in 84.60 ms, found 14 plugins.
-Preloading 1 native plugins for Editor in 0.14 ms.
+Refreshing native plugins compatible for Editor in 76.83 ms, found 14 plugins.
+Preloading 1 native plugins for Editor in 0.19 ms.
 Package Manager log level set to [2]
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] Cannot connect to Unity Package Manager local server
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Completed reload, in  1.624 seconds
+- Completed reload, in  1.526 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1625ms)
-		BeginReloadAssembly (139ms)
+	ReloadAssembly (1527ms)
+		BeginReloadAssembly (116ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
+			DisableScriptedObjects (6ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (20ms)
-		EndReloadAssembly (1386ms)
-			LoadAssemblies (109ms)
+		EndReloadAssembly (1317ms)
+			LoadAssemblies (97ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (289ms)
+			SetupTypeCache (267ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (60ms)
-			SetupLoadedEditorAssemblies (893ms)
+			RebuildScriptCaches (59ms)
+			SetupLoadedEditorAssemblies (864ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (20ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (85ms)
-				BeforeProcessingInitializeOnLoad (104ms)
-				ProcessInitializeOnLoadAttributes (631ms)
-				ProcessInitializeOnLoadMethodAttributes (46ms)
+				RefreshPlugins (77ms)
+				BeforeProcessingInitializeOnLoad (98ms)
+				ProcessInitializeOnLoadAttributes (613ms)
+				ProcessInitializeOnLoadMethodAttributes (48ms)
 				AfterProcessingInitializeOnLoad (8ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (5ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
-Refreshing native plugins compatible for Editor in 1.15 ms, found 14 plugins.
+Refreshing native plugins compatible for Editor in 1.16 ms, found 14 plugins.
 Preloading 1 native plugins for Editor in 0.09 ms.
 Unloading 4688 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 93 unused Assets / (49.5 KB). Loaded Objects now: 5127.
 Memory consumption went from 181.6 MB to 181.6 MB.
-Total: 3.422500 ms (FindLiveObjects: 0.353100 ms CreateObjectMapping: 0.144900 ms MarkObjects: 2.800700 ms  DeleteObjects: 0.122100 ms)
+Total: 3.777100 ms (FindLiveObjects: 0.409900 ms CreateObjectMapping: 0.178000 ms MarkObjects: 3.069500 ms  DeleteObjects: 0.118300 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -176,73 +176,49 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 892439.543011 seconds.
-  path: Assets/Objects FBX/Samsung_QLED_55__Studio_Stand_mat(1).fbx
-  artifactKey: Guid(7349e91c8f15ac24292e16dbd9b9689b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+  Time since last request: 892751.441238 seconds.
+  path: Assets/Objects FBX/Random Materials/Version 2.0.png
+  artifactKey: Guid(7fcf81192d6930248a7726d98a54fca7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Number of updated assets reloaded before import = 0
-Start importing Assets/Objects FBX/Samsung_QLED_55__Studio_Stand_mat(1).fbx using Guid(7349e91c8f15ac24292e16dbd9b9689b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd4ca5cc51bd6810c752179d17aa5c3d5') in 0.188895 seconds 
-Number of asset objects unloaded after import = 14
+Start importing Assets/Objects FBX/Random Materials/Version 2.0.png using Guid(7fcf81192d6930248a7726d98a54fca7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5dce95a76328ef00c4fe23c8c79c0d67') in 0.150729 seconds 
+Number of asset objects unloaded after import = 2
 ========================================================================
 Received Import Request.
-  Time since last request: 4.819126 seconds.
-  path: Assets/Objects FBX/Samsung_QLED_55__Studio_Stand_mat(1).fbx
-  artifactKey: Guid(7349e91c8f15ac24292e16dbd9b9689b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+  Time since last request: 621.553166 seconds.
+  path: Assets/Sounds/Object Names/TV_Object.mp3
+  artifactKey: Guid(64f10ef37485ebe45ab59c9193b93391) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Number of updated assets reloaded before import = 0
-Start importing Assets/Objects FBX/Samsung_QLED_55__Studio_Stand_mat(1).fbx using Guid(7349e91c8f15ac24292e16dbd9b9689b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '995b6420355b9d333d9b495b6087b046') in 0.026364 seconds 
-Number of asset objects unloaded after import = 14
+Start importing Assets/Sounds/Object Names/TV_Object.mp3 using Guid(64f10ef37485ebe45ab59c9193b93391) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2890a10ac1135423792968c9fb6b7f90') in 0.049903 seconds 
+Number of asset objects unloaded after import = 2
 ========================================================================
 Received Import Request.
-  Time since last request: 51.192944 seconds.
-  path: Assets/Objects FBX/Samsung_QLED_55__Studio_Stand_mat(2).fbx
-  artifactKey: Guid(ce75fb01315aa72468376ad12ee1ce9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+  Time since last request: 263.903439 seconds.
+  path: Assets/Objects FBX/Little old car.fbx
+  artifactKey: Guid(0dcb549b109f7104ab10af43ada11a26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Number of updated assets reloaded before import = 0
-Start importing Assets/Objects FBX/Samsung_QLED_55__Studio_Stand_mat(2).fbx using Guid(ce75fb01315aa72468376ad12ee1ce9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '873be38399b9e19d236fb9a0a7ba7bf3') in 0.060434 seconds 
-Number of asset objects unloaded after import = 13
+Start importing Assets/Objects FBX/Little old car.fbx using Guid(0dcb549b109f7104ab10af43ada11a26) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73806bd1e9ed9892969dabcbe38222bf') in 0.209975 seconds 
+Number of asset objects unloaded after import = 80
 ========================================================================
 Received Import Request.
-  Time since last request: 23.213614 seconds.
-  path: Assets/Objects FBX/Random Materials/Samsung_QLED_55__Studio_Stand_mat1_mtl_1.mat
-  artifactKey: Guid(15616617e3c0bd14c8e4420166bd46a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+  Time since last request: 17.185139 seconds.
+  path: Assets/Objects FBX/table_v1.fbx
+  artifactKey: Guid(d015794385076ba49be72618d89b2fba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Number of updated assets reloaded before import = 0
-Start importing Assets/Objects FBX/Random Materials/Samsung_QLED_55__Studio_Stand_mat1_mtl_1.mat using Guid(15616617e3c0bd14c8e4420166bd46a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '706ee93e9b750b0f67ccf1ec28974b3f') in 0.028080 seconds 
-Number of asset objects unloaded after import = 1
+Start importing Assets/Objects FBX/table_v1.fbx using Guid(d015794385076ba49be72618d89b2fba) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7cbdc71021e2b08da901b82bb4d5f907') in 0.220185 seconds 
+Number of asset objects unloaded after import = 146
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000033 seconds.
-  path: Assets/Objects FBX/Random Materials/Samsung_QLED_55__Studio_Stand_mat1_mtl_7.mat
-  artifactKey: Guid(820a771bc9601e04c92327bed1f32efe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+  Time since last request: 903.324854 seconds.
+  path: Assets/Objects FBX/microphone.obj
+  artifactKey: Guid(38762ded777d6f245bcc7662076204a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Number of updated assets reloaded before import = 0
-Start importing Assets/Objects FBX/Random Materials/Samsung_QLED_55__Studio_Stand_mat1_mtl_7.mat using Guid(820a771bc9601e04c92327bed1f32efe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27586922af991da5d29adca517644c60') in 0.029566 seconds 
-Number of asset objects unloaded after import = 1
+Start importing Assets/Objects FBX/microphone.obj using Guid(38762ded777d6f245bcc7662076204a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af569d2bc4d415fb1c692d8b3798ecce') in 0.028997 seconds 
+Number of asset objects unloaded after import = 10
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/Objects FBX/Random Materials/Samsung_QLED_55__Studio_Stand_mat1_mtl_3.mat
-  artifactKey: Guid(ffbb0b6776857c34ca44499d88cc6369) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+  Time since last request: 164.310776 seconds.
+  path: Assets/Sounds/Object Names/Microphone_Object.mp3
+  artifactKey: Guid(2a5665672e2bc9d44ba8dea7f1a9e364) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Number of updated assets reloaded before import = 0
-Start importing Assets/Objects FBX/Random Materials/Samsung_QLED_55__Studio_Stand_mat1_mtl_3.mat using Guid(ffbb0b6776857c34ca44499d88cc6369) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '268c4969a34d8115ad9efc255513f9ef') in 0.019409 seconds 
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000030 seconds.
-  path: Assets/Objects FBX/Random Materials/Samsung_QLED_55__Studio_Stand_mat1_mtl_6.mat
-  artifactKey: Guid(d855040d3c1d89042b2e89b86384f42c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/Objects FBX/Random Materials/Samsung_QLED_55__Studio_Stand_mat1_mtl_6.mat using Guid(d855040d3c1d89042b2e89b86384f42c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e6fee9e03367d874f74a7cd23d81147') in 0.017754 seconds 
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000046 seconds.
-  path: Assets/Objects FBX/Random Materials/Samsung_QLED_55__Studio_Stand_mat1_mtl_4.mat
-  artifactKey: Guid(96c1d0277f82c9e4b9c6e37bd6193932) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/Objects FBX/Random Materials/Samsung_QLED_55__Studio_Stand_mat1_mtl_4.mat using Guid(96c1d0277f82c9e4b9c6e37bd6193932) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '63d6af716e88d9a7199f75b7f7787bde') in 0.020989 seconds 
-Number of asset objects unloaded after import = 1
-========================================================================
-Received Import Request.
-  Time since last request: 0.000037 seconds.
-  path: Assets/Objects FBX/Random Materials/Samsung_QLED_55__Studio_Stand_mat1_mtl_5.mat
-  artifactKey: Guid(d2a07b5e34416524799066b168db8400) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Number of updated assets reloaded before import = 0
-Start importing Assets/Objects FBX/Random Materials/Samsung_QLED_55__Studio_Stand_mat1_mtl_5.mat using Guid(d2a07b5e34416524799066b168db8400) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '63e42563229bccf7c0609a4a4196e133') in 0.017452 seconds 
-Number of asset objects unloaded after import = 1
+Start importing Assets/Sounds/Object Names/Microphone_Object.mp3 using Guid(2a5665672e2bc9d44ba8dea7f1a9e364) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d80ec4d1652c137143369671d101305') in 0.014982 seconds 
+Number of asset objects unloaded after import = 2
