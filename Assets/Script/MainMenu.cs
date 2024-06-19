@@ -24,5 +24,8 @@ public class MainMenu : MonoBehaviour
          Destroy(audioManager.gameObject);
         SceneManager.LoadScene("TrainingScene");
         }
+
+
     }
+
 }

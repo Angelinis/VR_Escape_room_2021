@@ -55,7 +55,7 @@ public class PuzzlesSolved : MonoBehaviour
             objectToInactive2.SetActive(false);
         }     
 
-        if((puzzleNumber == 1))
+        if((puzzleNumber == 1 || puzzleNumber ==4))
         {
             audioManager.PlaySFX(2);
         }
@@ -75,6 +75,11 @@ public class PuzzlesSolved : MonoBehaviour
             animator.SetBool("PuzzleBlocked", false);
             animator.SetBool("PuzzleSolved",true);
             audioManager.PlaySFX(4);
+        }
+
+        if((puzzleNumber == 5))
+        {
+            audioManager.PlaySFX(5);
         }
     }
 

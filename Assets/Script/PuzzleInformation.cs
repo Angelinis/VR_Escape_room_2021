@@ -39,10 +39,14 @@ public class PuzzleInformation : MonoBehaviour
     {
         if (necessaryObject == gameManager.selectedGameObjectView){
             puzzlesSolved.SolvedPuzzleAction();
-            audioManager.PlayAccessibleDescription(audioInformationPuzzleObject.accessibleDescription[1]);
+            // audioManager.PlayAccessibleDescription(audioInformationPuzzleObject.accessibleDescription[1]);
+            audioManager.PlayPuzzleDescription(audioInformationPuzzleObject.accessibleDescription[1]);
+            
             
         } else {
-            audioManager.PlayAccessibleDescription(audioInformationPuzzleObject.accessibleDescription[0]);
+            // audioManager.PlayAccessibleDescription(audioInformationPuzzleObject.accessibleDescription[0]);
+            audioManager.PlayPuzzleDescription(audioInformationPuzzleObject.accessibleDescription[0]);
+
         }
 
     }

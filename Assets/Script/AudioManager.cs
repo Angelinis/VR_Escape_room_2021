@@ -4,10 +4,21 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    public bool sightedPerson;
+
     public static AudioManager instance;
 
 
     public AudioSource[] gameSources;
+
+    public AudioSource[] gameSFXSources;
+
+    public AudioSource musicSource;
+
+
+    public AudioSource puzzleDescriptionSource;
+
+
     public AudioSource accessibleDescriptionSource;
 
     public AudioSource uiAudioSource;
@@ -35,6 +46,17 @@ public class AudioManager : MonoBehaviour
 
     }
 
+    
+    void Start()
+    {
+        if(sightedPerson){
+            AccessibleDescriptionVolume(0);
+            GameVolume(0);
+        } else {
+            MusicVolume(0);
+        }
+    }
+
     public void PlaySFX(int sfxIndex)
     {
         if (sfxIndex >= 0 && sfxIndex < sfxClips.Length)
@@ -45,6 +67,20 @@ public class AudioManager : MonoBehaviour
         else
         {
             Debug.LogWarning("SFX index out of range");
+        }
+    }
+
+    public void PlayPuzzleDescription(AudioClip audioClip)
+    {
+        if (audioClip)
+        {
+            puzzleDescriptionSource.Stop();
+            puzzleDescriptionSource.clip = audioClip;
+            puzzleDescriptionSource.Play();
+        }
+        else
+        {
+            Debug.LogWarning("Clip not found");
         }
     }
 
@@ -100,11 +136,25 @@ public class AudioManager : MonoBehaviour
         descriptionSource.volume = volume;
     }
 
+    public void MusicVolume(float volume)
+    {
+        musicSource.volume = volume;
+    }
+
     public void GameVolume(float volume)
     {
         for (int i = 0; i < gameSources.Length; i += 1)
         {
             gameSources[i].volume = volume;
+        }
+
+    }
+
+    public void GameSFXVolume(float volume)
+    {
+        for (int i = 0; i < gameSFXSources.Length; i += 1)
+        {
+            gameSFXSources[i].volume = volume;
         }
 
     }
