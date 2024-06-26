@@ -1364,6 +1364,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Activate Help",
+                    "type": "Button",
+                    "id": "6138baa1-d315-40c2-9255-ca6df51128cb",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1507,6 +1516,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Change Object Selected",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "64f80762-6e0a-435c-b32c-28db92cf8e42",
+                    "path": "<XRController>{RightHand}/primaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Activate Help",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
