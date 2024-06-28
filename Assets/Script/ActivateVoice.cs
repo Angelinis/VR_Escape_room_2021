@@ -26,8 +26,13 @@ public class ActivateVoice : MonoBehaviour
     private VoiceServiceRequest _request;
     private bool _isActive = false;    
 
+    private AudioManager audioManager;
+
+    public AudioClip loadingAudio;
+
     void Start()
     {
+        audioManager = AudioManager.instance;
     }
 
     // Update is called once per frame
@@ -77,6 +82,7 @@ public class ActivateVoice : MonoBehaviour
     {
         VoiceServiceRequestEvents events = new VoiceServiceRequestEvents();
         events.OnInit.AddListener(OnInit);
+        audioManager.PlayAccessibleDescription(loadingAudio);
         events.OnComplete.AddListener(OnComplete);
         return events;
     }
@@ -84,11 +90,13 @@ public class ActivateVoice : MonoBehaviour
     private void OnInit(VoiceServiceRequest request)
     {
         _isActive = true;
+        
         // RefreshActive();
     }
     // Request completed
     private void OnComplete(VoiceServiceRequest request)
     {
+        
         _isActive = false;
         // RefreshActive();
     }

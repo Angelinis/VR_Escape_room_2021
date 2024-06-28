@@ -54,6 +54,7 @@ public class AudioManager : MonoBehaviour
             GameVolume(0);
         } else {
             MusicVolume(0);
+            StopMusic();
         }
     }
 
@@ -139,6 +140,11 @@ public class AudioManager : MonoBehaviour
     public void MusicVolume(float volume)
     {
         musicSource.volume = volume;
+    }
+
+    public void StopMusic()
+    {
+        musicSource.Stop();
     }
 
     public void GameVolume(float volume)

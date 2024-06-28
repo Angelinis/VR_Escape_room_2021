@@ -2010,6 +2010,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chair_4
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 369e0167ebcf2f249932484ed1db4bbf, type: 3}
+      propertyPath: m_TagString
+      value: SurfaceCollider
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 369e0167ebcf2f249932484ed1db4bbf, type: 3}
 --- !u!4 &48747568 stripped
@@ -28619,7 +28623,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e020da4f711294346967ea59d8d0fd15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sightedPerson: 1
+  sightedPerson: 0
   gameSources:
   - {fileID: 713607282}
   - {fileID: 559850210}
@@ -28645,7 +28649,7 @@ MonoBehaviour:
   - {fileID: 1363964753}
   - {fileID: 1553321992}
   - {fileID: 193516648}
-  musicSource: {fileID: 0}
+  musicSource: {fileID: 679465133}
   puzzleDescriptionSource: {fileID: 1747815571}
   accessibleDescriptionSource: {fileID: 149088861}
   uiAudioSource: {fileID: 1110039003}
@@ -42508,6 +42512,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LongTable_1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bcecf18715b40b240b27d5f34ee27e2e, type: 3}
+      propertyPath: m_TagString
+      value: SurfaceCollider
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcecf18715b40b240b27d5f34ee27e2e, type: 3}
 --- !u!4 &1065592670 stripped
@@ -42644,8 +42652,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.009999999, z: 0.010499998}
-  m_Center: {x: -0.0000000037252903, y: 0.00000000476079, z: 0.0052500013}
+  m_Size: {x: 0.02, y: 0.009999999, z: 0.01196863}
+  m_Center: {x: -0.0000000034813106, y: 0.0000000047684416, z: 0.005984325}
 --- !u!1 &1065997880
 GameObject:
   m_ObjectHideFlags: 0
@@ -52129,6 +52137,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LongTable_3
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bcecf18715b40b240b27d5f34ee27e2e, type: 3}
+      propertyPath: m_TagString
+      value: SurfaceCollider
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcecf18715b40b240b27d5f34ee27e2e, type: 3}
 --- !u!4 &1289433745 stripped
@@ -52265,8 +52277,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.009999999, z: 0.010499998}
-  m_Center: {x: -0.0000000037252903, y: 0.00000000476079, z: 0.0052500013}
+  m_Size: {x: 0.02, y: 0.009999999, z: 0.01196863}
+  m_Center: {x: -0.0000000034813106, y: 0.0000000047684416, z: 0.005984325}
 --- !u!1 &1289596437
 GameObject:
   m_ObjectHideFlags: 0
@@ -52719,11 +52731,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97e3c15ba79c1f1449b3e73f3d81f680, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lab_256: {fileID: 0}
-  hallway_1: {fileID: 0}
-  hallway_2: {fileID: 0}
-  stairs: {fileID: 0}
-  lab_151: {fileID: 0}
+  lab_256: {fileID: 8300000, guid: 0e07407c98436994bb4cb3c7bd5d10b1, type: 3}
+  hallway_1: {fileID: 8300000, guid: 2bbc1cd3e6330f74c8cc8815a35612f2, type: 3}
+  hallway_2: {fileID: 8300000, guid: 39b2f4fab0fe01942853600e3e464183, type: 3}
+  stairs: {fileID: 8300000, guid: b6b973c120832104c92f69cfef29c88a, type: 3}
+  lab_151: {fileID: 8300000, guid: 00f94bc7068fd0d41860e2fc1c1dd2ba, type: 3}
+  secretary: {fileID: 8300000, guid: eaa481d7df0c89548b40214ffdf9ac0f, type: 3}
+  sourceObject: {fileID: 1910811935}
 --- !u!1001 &1305605319
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54475,8 +54489,16 @@ PrefabInstance:
       value: 168.96434
       objectReference: {fileID: 0}
     - target: {fileID: -6356273239561213819, guid: 32a39a6c1cb745c43a009fe45daa0b15, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 124.77
+      objectReference: {fileID: 0}
+    - target: {fileID: -6356273239561213819, guid: 32a39a6c1cb745c43a009fe45daa0b15, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.167
+      objectReference: {fileID: 0}
+    - target: {fileID: -6356273239561213819, guid: 32a39a6c1cb745c43a009fe45daa0b15, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0003
       objectReference: {fileID: 0}
     - target: {fileID: -6356273239561213819, guid: 32a39a6c1cb745c43a009fe45daa0b15, type: 3}
       propertyPath: m_LocalPosition.z
@@ -55585,6 +55607,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 369e0167ebcf2f249932484ed1db4bbf, type: 3}
       propertyPath: m_Name
       value: Chair_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 369e0167ebcf2f249932484ed1db4bbf, type: 3}
+      propertyPath: m_TagString
+      value: SurfaceCollider
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 369e0167ebcf2f249932484ed1db4bbf, type: 3}
@@ -60393,6 +60419,7 @@ MonoBehaviour:
   _voiceService: {fileID: 1508585311}
   _activateImmediately: 0
   _deactivateAndAbort: 0
+  loadingAudio: {fileID: 8300000, guid: 0f07bd46806d32645b380aaaa7d31d0d, type: 3}
 --- !u!1 &1510000667 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0b54eb4c84a52a94f809af7085c43c59, type: 3}
@@ -60415,7 +60442,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1511197994
 Transform:
   m_ObjectHideFlags: 0
@@ -60424,8 +60451,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1511197993}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0.167, y: 2.015, z: -0.65}
-  m_LocalScale: {x: 168.96434, y: 100, z: 100}
+  m_LocalPosition: {x: 0.167, y: 2.0157, z: -0.65}
+  m_LocalScale: {x: 168.96434, y: 100, z: 43.76}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1355351512}
@@ -69203,6 +69230,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chair_2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 369e0167ebcf2f249932484ed1db4bbf, type: 3}
+      propertyPath: m_TagString
+      value: SurfaceCollider
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 369e0167ebcf2f249932484ed1db4bbf, type: 3}
 --- !u!4 &1763412004 stripped
@@ -70681,11 +70712,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a575280b3930c73469d6fce17b60813f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puzzle_1: {fileID: 0}
-  puzzle_2: {fileID: 0}
-  puzzle_3: {fileID: 0}
-  puzzle_4: {fileID: 0}
-  puzzle_5: {fileID: 0}
+  puzzle_1: {fileID: 8300000, guid: 632b614a2dba0834eb6f84be3d2c46b9, type: 3}
+  puzzle_2: {fileID: 8300000, guid: 86078c3b570d5d347987c9fe5b1b0787, type: 3}
+  puzzle_3: {fileID: 8300000, guid: 9e7dcb2a0ab0d4844badc3fad7daff8a, type: 3}
+  puzzle_4: {fileID: 8300000, guid: a10dd2de23d18a94f9b7098350efa6c4, type: 3}
+  puzzle_5: {fileID: 8300000, guid: 2b9aebdc4550b0241b080c8da0ebca2a, type: 3}
+  object_1: {fileID: 179933482}
+  object_2: {fileID: 467280034}
+  object_3: {fileID: 547415012}
+  object_4: {fileID: 1257912993}
+  object_5: {fileID: 22749250}
 --- !u!1 &1818986179
 GameObject:
   m_ObjectHideFlags: 0
@@ -75554,6 +75590,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LongTable_2
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: bcecf18715b40b240b27d5f34ee27e2e, type: 3}
+      propertyPath: m_TagString
+      value: SurfaceCollider
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcecf18715b40b240b27d5f34ee27e2e, type: 3}
 --- !u!4 &1944175352 stripped
@@ -75690,8 +75730,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.009999999, z: 0.010499998}
-  m_Center: {x: -0.0000000037252903, y: 0.00000000476079, z: 0.0052500013}
+  m_Size: {x: 0.02, y: 0.009999999, z: 0.01196863}
+  m_Center: {x: -0.0000000034813106, y: 0.0000000047684416, z: 0.005984325}
 --- !u!1 &1945777530
 GameObject:
   m_ObjectHideFlags: 0
