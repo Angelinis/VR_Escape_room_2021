@@ -607,6 +607,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chair_7
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 369e0167ebcf2f249932484ed1db4bbf, type: 3}
+      propertyPath: m_TagString
+      value: SurfaceCollider
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 369e0167ebcf2f249932484ed1db4bbf, type: 3}
 --- !u!4 &16119138 stripped
@@ -823,6 +827,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 369e0167ebcf2f249932484ed1db4bbf, type: 3}
       propertyPath: m_Name
       value: Chair_6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 369e0167ebcf2f249932484ed1db4bbf, type: 3}
+      propertyPath: m_TagString
+      value: SurfaceCollider
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 369e0167ebcf2f249932484ed1db4bbf, type: 3}
@@ -3283,7 +3291,7 @@ GameObject:
   - component: {fileID: 72708002}
   m_Layer: 0
   m_Name: Door257
-  m_TagString: Untagged
+  m_TagString: SurfaceCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4494,6 +4502,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d015794385076ba49be72618d89b2fba, type: 3}
       propertyPath: m_Name
       value: table_v2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d015794385076ba49be72618d89b2fba, type: 3}
+      propertyPath: m_TagString
+      value: SurfaceCollider
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d015794385076ba49be72618d89b2fba, type: 3}
@@ -7731,6 +7743,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: US School Desk (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e840a514ec49e44479c73c2b9efd77af, type: 3}
+      propertyPath: m_TagString
+      value: SurfaceCollider
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e840a514ec49e44479c73c2b9efd77af, type: 3}
 --- !u!4 &213892973 stripped
@@ -8406,6 +8422,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d015794385076ba49be72618d89b2fba, type: 3}
       propertyPath: m_Name
       value: table_v1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d015794385076ba49be72618d89b2fba, type: 3}
+      propertyPath: m_TagString
+      value: SurfaceCollider
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d015794385076ba49be72618d89b2fba, type: 3}
@@ -12829,6 +12849,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lockers_3
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f610a180da151e74dbd57025d77cdd65, type: 3}
+      propertyPath: m_TagString
+      value: SurfaceCollider
+      objectReference: {fileID: 0}
     - target: {fileID: 1047586390881199522, guid: f610a180da151e74dbd57025d77cdd65, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -13286,6 +13310,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 369e0167ebcf2f249932484ed1db4bbf, type: 3}
       propertyPath: m_Name
       value: Chair_5
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 369e0167ebcf2f249932484ed1db4bbf, type: 3}
+      propertyPath: m_TagString
+      value: SurfaceCollider
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 369e0167ebcf2f249932484ed1db4bbf, type: 3}
@@ -19583,7 +19611,7 @@ GameObject:
   - component: {fileID: 533627110}
   m_Layer: 0
   m_Name: Closet
-  m_TagString: Untagged
+  m_TagString: SurfaceCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19846,6 +19874,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 84d1ff7a191307643a1474b14a57f34a, type: 3}
       propertyPath: m_Name
       value: BookShelf
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 84d1ff7a191307643a1474b14a57f34a, type: 3}
+      propertyPath: m_TagString
+      value: SurfaceCollider
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84d1ff7a191307643a1474b14a57f34a, type: 3}
@@ -22190,6 +22222,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: US School Desk (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e840a514ec49e44479c73c2b9efd77af, type: 3}
+      propertyPath: m_TagString
+      value: SurfaceCollider
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e840a514ec49e44479c73c2b9efd77af, type: 3}
 --- !u!4 &591156931 stripped
@@ -23168,7 +23204,7 @@ GameObject:
   - component: {fileID: 621146388}
   m_Layer: 0
   m_Name: Wall_Part_2
-  m_TagString: Untagged
+  m_TagString: SurfaceCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23608,6 +23644,10 @@ PrefabInstance:
     - target: {fileID: 5769907748568228934, guid: 32a39a6c1cb745c43a009fe45daa0b15, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6317989382120128855, guid: 32a39a6c1cb745c43a009fe45daa0b15, type: 3}
+      propertyPath: m_TagString
+      value: SurfaceCollider
       objectReference: {fileID: 0}
     - target: {fileID: 7443552182841863451, guid: 32a39a6c1cb745c43a009fe45daa0b15, type: 3}
       propertyPath: m_IsActive
@@ -24287,6 +24327,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 36e73331d1434744299de96d943e4cbc, type: 3}
       propertyPath: m_Name
       value: Chairs_Together
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 36e73331d1434744299de96d943e4cbc, type: 3}
+      propertyPath: m_TagString
+      value: SurfaceCollider
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36e73331d1434744299de96d943e4cbc, type: 3}
@@ -26138,7 +26182,7 @@ GameObject:
   - component: {fileID: 673110701}
   m_Layer: 0
   m_Name: Wall_1
-  m_TagString: Untagged
+  m_TagString: SurfaceCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26448,7 +26492,7 @@ GameObject:
   - component: {fileID: 676712608}
   m_Layer: 0
   m_Name: Thirsty_Hallway
-  m_TagString: Untagged
+  m_TagString: SurfaceCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27244,6 +27288,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 7349e91c8f15ac24292e16dbd9b9689b, type: 3}
       propertyPath: m_Name
       value: Samsung_QLED_55__Studio_Stand_mat(1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7349e91c8f15ac24292e16dbd9b9689b, type: 3}
+      propertyPath: m_TagString
+      value: SurfaceCollider
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7349e91c8f15ac24292e16dbd9b9689b, type: 3}
@@ -29537,7 +29585,7 @@ GameObject:
   - component: {fileID: 746485142}
   m_Layer: 0
   m_Name: Wall_3
-  m_TagString: Untagged
+  m_TagString: SurfaceCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30567,7 +30615,7 @@ GameObject:
   - component: {fileID: 779562536}
   m_Layer: 0
   m_Name: Wall_4
-  m_TagString: Untagged
+  m_TagString: SurfaceCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32012,7 +32060,7 @@ GameObject:
   - component: {fileID: 816030976}
   m_Layer: 0
   m_Name: Door257
-  m_TagString: Untagged
+  m_TagString: SurfaceCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33292,6 +33340,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 369e0167ebcf2f249932484ed1db4bbf, type: 3}
       propertyPath: m_Name
       value: Chair_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 369e0167ebcf2f249932484ed1db4bbf, type: 3}
+      propertyPath: m_TagString
+      value: SurfaceCollider
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 369e0167ebcf2f249932484ed1db4bbf, type: 3}
@@ -34703,7 +34755,7 @@ GameObject:
   - component: {fileID: 862435949}
   m_Layer: 0
   m_Name: Wall_3
-  m_TagString: Untagged
+  m_TagString: SurfaceCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36644,7 +36696,7 @@ GameObject:
   - component: {fileID: 905729457}
   m_Layer: 0
   m_Name: BlockingPass_1
-  m_TagString: Untagged
+  m_TagString: SurfaceCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38099,6 +38151,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Little old car
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0dcb549b109f7104ab10af43ada11a26, type: 3}
+      propertyPath: m_TagString
+      value: SurfaceCollider
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0dcb549b109f7104ab10af43ada11a26, type: 3}
 --- !u!4 &942737270 stripped
@@ -38399,6 +38455,10 @@ PrefabInstance:
     - target: {fileID: 6317989382120128855, guid: 32a39a6c1cb745c43a009fe45daa0b15, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6317989382120128855, guid: 32a39a6c1cb745c43a009fe45daa0b15, type: 3}
+      propertyPath: m_TagString
+      value: SurfaceCollider
       objectReference: {fileID: 0}
     - target: {fileID: 7443552182841863451, guid: 32a39a6c1cb745c43a009fe45daa0b15, type: 3}
       propertyPath: m_IsActive
@@ -38977,6 +39037,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 369e0167ebcf2f249932484ed1db4bbf, type: 3}
       propertyPath: m_Name
       value: Chair_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 369e0167ebcf2f249932484ed1db4bbf, type: 3}
+      propertyPath: m_TagString
+      value: SurfaceCollider
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 369e0167ebcf2f249932484ed1db4bbf, type: 3}
@@ -39792,7 +39856,7 @@ GameObject:
   - component: {fileID: 985079288}
   m_Layer: 0
   m_Name: WallFirstFloor_4
-  m_TagString: Untagged
+  m_TagString: SurfaceCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -40644,6 +40708,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f610a180da151e74dbd57025d77cdd65, type: 3}
       propertyPath: m_Name
       value: Lockers_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f610a180da151e74dbd57025d77cdd65, type: 3}
+      propertyPath: m_TagString
+      value: SurfaceCollider
       objectReference: {fileID: 0}
     - target: {fileID: 1047586390881199522, guid: f610a180da151e74dbd57025d77cdd65, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -44972,7 +45040,7 @@ GameObject:
   - component: {fileID: 1132695653}
   m_Layer: 0
   m_Name: Wall_2
-  m_TagString: Untagged
+  m_TagString: SurfaceCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45330,6 +45398,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 369e0167ebcf2f249932484ed1db4bbf, type: 3}
       propertyPath: m_Name
       value: Chair_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 369e0167ebcf2f249932484ed1db4bbf, type: 3}
+      propertyPath: m_TagString
+      value: SurfaceCollider
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 369e0167ebcf2f249932484ed1db4bbf, type: 3}
@@ -46641,6 +46713,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 36e73331d1434744299de96d943e4cbc, type: 3}
       propertyPath: m_Name
       value: Chairs_Together (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 36e73331d1434744299de96d943e4cbc, type: 3}
+      propertyPath: m_TagString
+      value: SurfaceCollider
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36e73331d1434744299de96d943e4cbc, type: 3}
@@ -48474,7 +48550,7 @@ GameObject:
   - component: {fileID: 1211976788}
   m_Layer: 0
   m_Name: Closet
-  m_TagString: Untagged
+  m_TagString: SurfaceCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50101,6 +50177,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chair_4
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 369e0167ebcf2f249932484ed1db4bbf, type: 3}
+      propertyPath: m_TagString
+      value: SurfaceCollider
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 369e0167ebcf2f249932484ed1db4bbf, type: 3}
 --- !u!4 &1238719604 stripped
@@ -50508,6 +50588,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: f610a180da151e74dbd57025d77cdd65, type: 3}
       propertyPath: m_Name
       value: Lockers_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f610a180da151e74dbd57025d77cdd65, type: 3}
+      propertyPath: m_TagString
+      value: SurfaceCollider
       objectReference: {fileID: 0}
     - target: {fileID: 1047586390881199522, guid: f610a180da151e74dbd57025d77cdd65, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -51658,7 +51742,7 @@ GameObject:
   - component: {fileID: 1283030328}
   m_Layer: 0
   m_Name: Door257
-  m_TagString: Untagged
+  m_TagString: SurfaceCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54125,6 +54209,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: US School Desk (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e840a514ec49e44479c73c2b9efd77af, type: 3}
+      propertyPath: m_TagString
+      value: SurfaceCollider
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e840a514ec49e44479c73c2b9efd77af, type: 3}
 --- !u!4 &1343500975 stripped
@@ -54579,6 +54667,10 @@ PrefabInstance:
     - target: {fileID: 5769907748568228934, guid: 32a39a6c1cb745c43a009fe45daa0b15, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6317989382120128855, guid: 32a39a6c1cb745c43a009fe45daa0b15, type: 3}
+      propertyPath: m_TagString
+      value: SurfaceCollider
       objectReference: {fileID: 0}
     - target: {fileID: 7443552182841863451, guid: 32a39a6c1cb745c43a009fe45daa0b15, type: 3}
       propertyPath: m_IsActive
@@ -56035,6 +56127,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 011c56a37f370964da5a80d54eb97a6d, type: 3}
       propertyPath: m_Name
       value: Dog
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 011c56a37f370964da5a80d54eb97a6d, type: 3}
+      propertyPath: m_TagString
+      value: SurfaceCollider
       objectReference: {fileID: 0}
     - target: {fileID: 4202410657812394264, guid: 011c56a37f370964da5a80d54eb97a6d, type: 3}
       propertyPath: m_IsActive
@@ -61405,7 +61501,7 @@ GameObject:
   - component: {fileID: 1549003870}
   m_Layer: 0
   m_Name: WallFirstFloor_3
-  m_TagString: Untagged
+  m_TagString: SurfaceCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63019,6 +63115,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: US School Desk
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e840a514ec49e44479c73c2b9efd77af, type: 3}
+      propertyPath: m_TagString
+      value: SurfaceCollider
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e840a514ec49e44479c73c2b9efd77af, type: 3}
 --- !u!4 &1589707267 stripped
@@ -64414,7 +64514,7 @@ GameObject:
   - component: {fileID: 1632678936}
   m_Layer: 0
   m_Name: Wall_1
-  m_TagString: Untagged
+  m_TagString: SurfaceCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64876,7 +64976,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1647717927
 Transform:
   m_ObjectHideFlags: 0
@@ -67904,7 +68004,7 @@ GameObject:
   - component: {fileID: 1732367714}
   m_Layer: 0
   m_Name: Wall_1
-  m_TagString: Untagged
+  m_TagString: SurfaceCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68178,6 +68278,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 405724996}
     m_Modifications:
+    - target: {fileID: -8726442437315234610, guid: 344b5c38c21504d44b35ef6fdb12bc83, type: 3}
+      propertyPath: m_TagString
+      value: SurfaceCollider
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 344b5c38c21504d44b35ef6fdb12bc83, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -71126,7 +71230,7 @@ GameObject:
   - component: {fileID: 1830176394}
   m_Layer: 0
   m_Name: WallFirstFloor_2
-  m_TagString: Untagged
+  m_TagString: SurfaceCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -71889,6 +71993,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chair_1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 369e0167ebcf2f249932484ed1db4bbf, type: 3}
+      propertyPath: m_TagString
+      value: SurfaceCollider
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 369e0167ebcf2f249932484ed1db4bbf, type: 3}
 --- !u!4 &1853909786 stripped
@@ -72284,6 +72392,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d098b810f84c382448ac2770f05fa4ec, type: 3}
       propertyPath: m_Name
       value: Closet
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d098b810f84c382448ac2770f05fa4ec, type: 3}
+      propertyPath: m_TagString
+      value: SurfaceCollider
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d098b810f84c382448ac2770f05fa4ec, type: 3}
@@ -72978,7 +73090,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1868213511
 Transform:
   m_ObjectHideFlags: 0
@@ -73691,7 +73803,7 @@ GameObject:
   - component: {fileID: 1888337964}
   m_Layer: 0
   m_Name: Wall_3
-  m_TagString: Untagged
+  m_TagString: SurfaceCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74999,7 +75111,7 @@ GameObject:
   - component: {fileID: 1926942618}
   m_Layer: 0
   m_Name: WaterDispenser
-  m_TagString: Untagged
+  m_TagString: SurfaceCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75783,7 +75895,7 @@ GameObject:
   - component: {fileID: 1947586937}
   m_Layer: 0
   m_Name: Wall_1
-  m_TagString: Untagged
+  m_TagString: SurfaceCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -76125,6 +76237,10 @@ PrefabInstance:
     - target: {fileID: 5769907748568228934, guid: 32a39a6c1cb745c43a009fe45daa0b15, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6317989382120128855, guid: 32a39a6c1cb745c43a009fe45daa0b15, type: 3}
+      propertyPath: m_TagString
+      value: SurfaceCollider
       objectReference: {fileID: 0}
     - target: {fileID: 7443552182841863451, guid: 32a39a6c1cb745c43a009fe45daa0b15, type: 3}
       propertyPath: m_IsActive
@@ -76769,6 +76885,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 369e0167ebcf2f249932484ed1db4bbf, type: 3}
       propertyPath: m_Name
       value: Chair_3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 369e0167ebcf2f249932484ed1db4bbf, type: 3}
+      propertyPath: m_TagString
+      value: SurfaceCollider
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 369e0167ebcf2f249932484ed1db4bbf, type: 3}
@@ -80552,7 +80672,7 @@ GameObject:
   - component: {fileID: 2085741038}
   m_Layer: 0
   m_Name: BlockingPass_2
-  m_TagString: Untagged
+  m_TagString: SurfaceCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

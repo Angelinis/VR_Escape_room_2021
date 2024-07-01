@@ -48,8 +48,8 @@ public class AudioLocationHandler : MonoBehaviour
 
     
     //Hallway 1 Part 2
-    float minX_Hallway_1_1 = -0.18f;
-    float maxX_Hallway_1_1 = -1.7f;
+    float minX_Hallway_1_1 = -1.7f;
+    float maxX_Hallway_1_1 = -0.18f;
     float maxY_Hallway_1_1 = -1.61f;
     float minZ_Hallway_1_1 = -21.3f;
     float maxZ_Hallway_1_1 = -18.2f;
@@ -68,6 +68,13 @@ public class AudioLocationHandler : MonoBehaviour
     float minZ_Secretary = -28.0f;
     float maxZ_Secretary = -20.2f;
 
+    //Lab 151
+    float minX_Lab151 = -7.5f;
+    float maxX_Lab151 = -0.2f;
+    float maxY_Lab151 = -1.61f;
+    float minZ_Lab151 = -15.6f;
+    float maxZ_Lab151 = -10.2f;
+
     void Start()
     {
         audioManager = AudioManager.instance;
@@ -76,16 +83,16 @@ public class AudioLocationHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (sourceObject != null)
-        {
-            // Copy the X and Z positions from the source object to this object
-            Vector3 sourcePosition = new Vector3(sourceObject.position.x, sourceObject.position.y, sourceObject.position.z);
-            Debug.Log(sourcePosition);
-        }
-        else
-        {
-            Debug.LogError("Source object not assigned! Please assign a source object in the Unity Editor.");
-        }
+        // if (sourceObject != null)
+        // {
+        //     // Copy the X and Z positions from the source object to this object
+        //     Vector3 sourcePosition = new Vector3(sourceObject.position.x, sourceObject.position.y, sourceObject.position.z);
+        //     Debug.Log(sourcePosition);
+        // }
+        // else
+        // {
+        //     Debug.LogError("Source object not assigned! Please assign a source object in the Unity Editor.");
+        // }
     }
 
     public void OnActivate(string[] values)
@@ -154,15 +161,14 @@ public class AudioLocationHandler : MonoBehaviour
                     audioManager.PlayAccessibleDescription(secretary);
                 }
 
-                // if (sourcePosition.x >= minX_Hallway_2 && sourcePosition.x <= maxX_Hallway_2 &&
-                //      sourcePosition.y >= minY_Hallway_2 &&
-                //     sourcePosition.z >= minZ_Hallway_2 && sourcePosition.z <= maxZ_Hallway_2)
-                // {
-                //     audioManager.PlayAccessibleDescription(hallway_2);
-                // }
-            }
+                if (sourcePosition.x >= minX_Lab151 && sourcePosition.x <= maxX_Lab151 &&
+                     sourcePosition.y <= maxY_Lab151 &&
+                    sourcePosition.z >= minZ_Lab151 && sourcePosition.z <= maxZ_Lab151)
+                {
+                    audioManager.PlayAccessibleDescription(lab_151);
+                }
 
-            //
+            }
         }
     }
 }
