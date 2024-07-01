@@ -17,13 +17,16 @@ namespace Meta.WitAi.Data
 {
     public class AudioBuffer : MonoBehaviour
     {
+
+        private static bool _appEnded = false;
+
         #region Singleton
         private static AudioBuffer _instance;
         public static AudioBuffer Instance
         {
             get
             {
-                if (!_instance && Application.isPlaying)
+                if (!_instance && Application.isPlaying && !_appEnded)
                 {
                     _instance = FindObjectOfType<AudioBuffer>();
                     if (!_instance)
@@ -34,6 +37,14 @@ namespace Meta.WitAi.Data
                 }
                 return _instance;
             }
+            // get
+            // {
+            //     if (!_instance && Application.isPlaying)
+            //     {
+            //         _instance = FindObjectOfType<AudioBuffer>();
+            //     }
+            //     return _instance;
+            // }
         }
         #endregion
 
@@ -92,6 +103,42 @@ namespace Meta.WitAi.Data
 
             InitializeMicDataBuffer();
         }
+
+
+        //This part was changed
+        // void Start()
+        // {
+        //     // Ensure AudioBuffer instance exists
+        //     if (Instance == null)
+        //     {
+        //         var audioBufferObject = new GameObject("AudioBuffer");
+        //         _instance = audioBufferObject.AddComponent<AudioBuffer>();
+        //     }
+        // }
+
+        // void OnDestroy()
+        // {
+        //     if (Instance == this)
+        //     {
+        //         _instance = null;
+        //     }
+        // }
+
+        private void OnApplicationQuit()
+        {
+            // Clean up AudioBuffer or any other resources
+            _appEnded = true;
+            
+            if (_instance != null)
+            {   
+                
+                Destroy(_instance.gameObject);
+                _instance = null;
+            }
+        }
+
+        //Until this part
+
 
         private void OnEnable()
         {

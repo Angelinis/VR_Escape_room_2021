@@ -6,6 +6,7 @@ TagManager:
   tags:
   - SurfaceCollider
   - GameOverCollider
+  - VisibleObject
   layers:
   - Default
   - TransparentFX
