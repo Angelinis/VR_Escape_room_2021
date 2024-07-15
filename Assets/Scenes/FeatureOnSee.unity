@@ -48874,6 +48874,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1218771646}
   - component: {fileID: 1218771645}
+  - component: {fileID: 1218771647}
   m_Layer: 0
   m_Name: OnSeenFeature
   m_TagString: Untagged
@@ -48894,6 +48895,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraTarget: {fileID: 290481275}
+  prePrompt: 
   objects:
   - objName: 
     objPosition: {x: 0, y: 0, z: 0}
@@ -48925,6 +48927,7 @@ MonoBehaviour:
     objPosition: {x: 0, y: 0, z: 0}
   - objName: 
     objPosition: {x: 0, y: 0, z: 0}
+  pathToImage: Assets/fafafa.jpg
 --- !u!4 &1218771646
 Transform:
   m_ObjectHideFlags: 0
@@ -48940,6 +48943,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1218771647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1218771644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f86b26d80bdb9474b9bab6423a02fb92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jsonFile: {fileID: 4900000, guid: f0d13cac4dbf38f488ba20145a93b3fe, type: 3}
+  jsonAlternativeFile: {fileID: 4900000, guid: 61c9b046c259d23459e3b9121168de7c, type: 3}
 --- !u!1 &1218890432
 GameObject:
   m_ObjectHideFlags: 0

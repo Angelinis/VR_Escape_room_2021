@@ -43,6 +43,7 @@ public class ActivateVoice : MonoBehaviour
             if (!_isActive)
             {
                 Activate();
+                Debug.Log("activated");
             }
             else
             {

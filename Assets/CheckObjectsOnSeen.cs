@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System.IO;
 
 [System.Serializable]
 public class ObjectData
@@ -43,13 +43,30 @@ public class CheckObjectsOnSeen : MonoBehaviour
 
     private bool active;
 
+    public string prePrompt;
+
     public ObjectData[] objects = new ObjectData[15]; 
+
+    private GeminiManager artificialInteligence;
+
+    public string pathToImage; 
+
+    private string alternativePrompt;
 
     void Awake ()
     {
         GameObject visibleObject = GameObject.FindGameObjectWithTag ("VisibleObject");
         renderers = visibleObject.GetComponentsInChildren<Renderer> ();
         active = false;
+        artificialInteligence = GetComponent<GeminiManager>();
+        // prePrompt = "You are a guide for a blind person in a Virtual Scene. Please provide an accessible " +
+        // "description from the point of user's point of view (User POV) and the list of contents. " +
+        // "The accessible description needs to be short. Keep it below 1200 characters. Omit any of (0.00, 0.00, 0.00) in your response.";
+        
+        alternativePrompt = "What is this picture?";
+
+        // alternativePrompt = "Based on the image, can you provide make a list of the elements you recognize?";
+
     }
 
     void Update() 
@@ -60,14 +77,19 @@ public class CheckObjectsOnSeen : MonoBehaviour
         {
             if(!active)
             {
+                byte[] imageBytes = File.ReadAllBytes(pathToImage);
+
                 active = true;
-                OutputVisibleRenderers(renderers);
+                string prompt = OutputVisibleRenderers(renderers);
+                StartCoroutine(artificialInteligence.SendMultimodalDataToGAS(alternativePrompt, imageBytes));
+                // StartCoroutine(artificialInteligence.SendDataToGAS(prePrompt + " " + prompt));
+
             }
             
         }
     }
 
-    void OutputVisibleRenderers (Renderer[] renderers)
+    private string OutputVisibleRenderers (Renderer[] renderers)
     {
         ResetObjectsArray();
 
@@ -77,7 +99,7 @@ public class CheckObjectsOnSeen : MonoBehaviour
 
         // ObjectCamera objectCamera = new  ObjectCamera("Camera", cameraPosition,cameraRotation);
 
-        ObjectData objectCamera = new  ObjectData("Camera", cameraPosition);
+        ObjectData objectCamera = new  ObjectData("User POV", cameraPosition);
 
         objects[0] = objectCamera;
 
@@ -129,6 +151,7 @@ public class CheckObjectsOnSeen : MonoBehaviour
         }
         Debug.Log(result);
 
+        return result;
 
     }
 
