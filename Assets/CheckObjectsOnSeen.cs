@@ -103,16 +103,34 @@ public class CheckObjectsOnSeen : MonoBehaviour
     }
 
     
-     private IEnumerator CaptureScreenshot()
+
+
+    //  private IEnumerator CaptureScreenshot()
+    //  {
+    //     //File.ReadAllBytes only works with Unity Editor - Needs to be updated for working inside the Meta Quest
+
+    //       screenshotCount ++;
+    //       screenshotFileName = "/Screenshot_" + screenshotCount + ".png";
+    //       screenShotPath = Application.streamingAssetsPath +  screenshotFileName;
+    //       ScreenCapture.CaptureScreenshot(screenShotPath);
+    //       yield return null;
+    //       AssetDatabase.Refresh();
+
+    //       yield return new WaitForSeconds(0.1f);
+
+    //       byte[] screenshotBytes = File.ReadAllBytes(screenShotPath);
+          
+    //       StartCoroutine(artificialInteligence.SendMultimodalDataToGAS(alternativePrompt, screenshotBytes));
+    //  }
+
+        private IEnumerator CaptureScreenshot()
      {
         //File.ReadAllBytes only works with Unity Editor - Needs to be updated for working inside the Meta Quest
 
           screenshotCount ++;
           screenshotFileName = "/Screenshot_" + screenshotCount + ".png";
-          screenShotPath = Application.streamingAssetsPath +  screenshotFileName;
+          screenShotPath = Application.persistentDataPath +  screenshotFileName;
           ScreenCapture.CaptureScreenshot(screenShotPath);
-          yield return null;
-          AssetDatabase.Refresh();
 
           yield return new WaitForSeconds(0.1f);
 
