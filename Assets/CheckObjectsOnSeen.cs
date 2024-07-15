@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using UnityEditor;
 
 [System.Serializable]
 public class ObjectData
@@ -49,9 +50,15 @@ public class CheckObjectsOnSeen : MonoBehaviour
 
     private GeminiManager artificialInteligence;
 
-    public string pathToImage; 
-
     private string alternativePrompt;
+
+    private int screenshotCount = 0;
+
+    private string screenshotFileName = "";
+    
+    private string screenShotPath = "";
+
+    private string prompt;
 
     void Awake ()
     {
@@ -77,17 +84,42 @@ public class CheckObjectsOnSeen : MonoBehaviour
         {
             if(!active)
             {
-                byte[] imageBytes = File.ReadAllBytes(pathToImage);
+
+                //Code to send text and an image to the Gemini API
+                StartCoroutine(CaptureScreenshot());
 
                 active = true;
-                string prompt = OutputVisibleRenderers(renderers);
-                StartCoroutine(artificialInteligence.SendMultimodalDataToGAS(alternativePrompt, imageBytes));
+
+
+                
+                prompt = OutputVisibleRenderers(renderers);
+ 
+                //Code to send text to the Gemini API
                 // StartCoroutine(artificialInteligence.SendDataToGAS(prePrompt + " " + prompt));
 
             }
             
         }
     }
+
+    
+     private IEnumerator CaptureScreenshot()
+     {
+        //File.ReadAllBytes only works with Unity Editor - Needs to be updated for working inside the Meta Quest
+
+          screenshotCount ++;
+          screenshotFileName = "/Screenshot_" + screenshotCount + ".png";
+          screenShotPath = Application.streamingAssetsPath +  screenshotFileName;
+          ScreenCapture.CaptureScreenshot(screenShotPath);
+          yield return null;
+          AssetDatabase.Refresh();
+
+          yield return new WaitForSeconds(0.1f);
+
+          byte[] screenshotBytes = File.ReadAllBytes(screenShotPath);
+          
+          StartCoroutine(artificialInteligence.SendMultimodalDataToGAS(alternativePrompt, screenshotBytes));
+     }
 
     private string OutputVisibleRenderers (Renderer[] renderers)
     {
