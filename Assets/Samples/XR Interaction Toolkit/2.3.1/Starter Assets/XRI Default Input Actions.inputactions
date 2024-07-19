@@ -1373,6 +1373,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Activate AI",
+                    "type": "Button",
+                    "id": "bdc4b7a0-64b3-4a8f-be45-8ccb85948d0e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1527,6 +1536,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Activate Help",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5a32e3ae-1f9d-4576-90bc-a88a877e770c",
+                    "path": "<XRController>{RightHand}/secondaryButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Activate AI",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

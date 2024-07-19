@@ -8,11 +8,16 @@ public class MainMenu : MonoBehaviour
 {
     private AudioManager audioManager;
     public ActionBasedController xrController;
+    public bool isBlind;
 
     void Start()
     {
-        audioManager = AudioManager.instance;
-        audioManager.PlayDescription(0);
+        if(isBlind)
+        {
+            audioManager = AudioManager.instance;
+            audioManager.PlayDescription(0);
+        }
+        
     }
 
     void Update()

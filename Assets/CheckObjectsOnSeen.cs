@@ -2,13 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
-using UnityEditor;
+// using UnityEditor;
+using UnityEngine.InputSystem;
+
+using UnityEngine.EventSystems;
+using UnityEngine.XR;
+using UnityEngine.XR.Interaction.Toolkit;
+
+using GoogleTextToSpeech.Scripts.Data;
+using GoogleTextToSpeech.Scripts;
+using System;
+using UnityEngine.Networking;
+
 
 [System.Serializable]
 public class ObjectData
 {
     public string objName;
     public Vector3 objPosition;
+
 
     // Constructor to initialize with values
     public ObjectData(string objectDataName, Vector3 objectDataPosition)
@@ -60,6 +72,27 @@ public class CheckObjectsOnSeen : MonoBehaviour
 
     private string prompt;
 
+    private AudioManager audioManager;
+
+    public InputActionProperty activateButton;
+
+    public AudioSource audioSource;
+
+
+
+    [SerializeField] private VoiceScriptableObject voice;
+    [SerializeField] private TextToSpeech textToSpeech;
+    private Action<AudioClip> _audioClipReceived;
+    private Action<BadRequestData> _errorReceived;
+
+    private bool isWaitingForAudioResponse;
+
+    void Start()
+    {
+        audioManager = AudioManager.instance;
+        isWaitingForAudioResponse = false;
+    }
+
     void Awake ()
     {
         GameObject visibleObject = GameObject.FindGameObjectWithTag ("VisibleObject");
@@ -70,7 +103,9 @@ public class CheckObjectsOnSeen : MonoBehaviour
         // "description from the point of user's point of view (User POV) and the list of contents. " +
         // "The accessible description needs to be short. Keep it below 1200 characters. Omit any of (0.00, 0.00, 0.00) in your response.";
         
-        alternativePrompt = "What is this picture?";
+        alternativePrompt = "Descreva o cenário, destacando os elementos e características principais. Explore a arquitetura," +
+        "e elementos que compõem o ambiente." + 
+        "Crie uma accesivel para uma pessoa cega em menos de 700 caracteres, capturando a essência do local sem considerar os controles visíveis.";
 
         // alternativePrompt = "Based on the image, can you provide make a list of the elements you recognize?";
 
@@ -79,8 +114,9 @@ public class CheckObjectsOnSeen : MonoBehaviour
     void Update() 
     {
 
-        //This is for Desktop Testing:
-         if (Input.GetKeyDown(KeyCode.C))
+        
+          if (UnityEngine.Input.GetKeyDown(KeyCode.C))
+        //  if (activateButton.action.WasPressedThisFrame())
         {
             if(!active)
             {
@@ -136,8 +172,41 @@ public class CheckObjectsOnSeen : MonoBehaviour
 
           byte[] screenshotBytes = File.ReadAllBytes(screenShotPath);
           
-          StartCoroutine(artificialInteligence.SendMultimodalDataToGAS(alternativePrompt, screenshotBytes));
-     }
+          StartCoroutine(artificialInteligence.SendMultimodalDataToGAS(alternativePrompt, screenshotBytes, (response) => {
+            if (response != null)
+            {
+ 
+                Debug.Log("Response received: " + response);
+
+                if (!isWaitingForAudioResponse) 
+                {
+                    isWaitingForAudioResponse = true;
+                    _errorReceived += ErrorReceived;
+                    _audioClipReceived += AudioClipReceived;
+                    textToSpeech.GetSpeechAudioFromGoogle(response, voice, _audioClipReceived, _errorReceived);
+                }
+            }
+            else
+            {
+                Debug.Log("Error occurred during request.");
+            }}));
+
+        
+    }
+
+         
+    private void ErrorReceived(BadRequestData badRequestData)
+    {
+        Debug.Log($"Error {badRequestData.error.code} : {badRequestData.error.message}");
+    }
+
+    private void AudioClipReceived(AudioClip clip)
+    {
+        audioSource.Stop();
+        audioSource.clip = clip;
+        audioSource.Play();
+        isWaitingForAudioResponse = false;
+    }
 
     private string OutputVisibleRenderers (Renderer[] renderers)
     {

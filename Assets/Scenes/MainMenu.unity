@@ -1516,7 +1516,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
@@ -1895,7 +1895,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9bf37e7e3ece5ca458ee9955e28b8578, type: 3}
   sfxSource: {fileID: 762633264}
   descriptionClips:
-  - {fileID: 8300000, guid: 1bb4f16ad98956942a6eca584ce2accc, type: 3}
+  - {fileID: 8300000, guid: 322444f25c15f3f49bdbeaf336e2a098, type: 3}
   descriptionSource: {fileID: 1504326884}
 --- !u!4 &1163653372
 Transform:
@@ -3300,7 +3300,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1910331204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3314,6 +3314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xrController: {fileID: 1827174105}
+  isBlind: 1
 --- !u!4 &1910331205
 Transform:
   m_ObjectHideFlags: 0

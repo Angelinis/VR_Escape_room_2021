@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 using System.IO;
-
+using System;
 
 [System.Serializable]
 public class GeminiURL
@@ -92,7 +92,7 @@ public class GeminiManager : MonoBehaviour
     // }
 
 
-    public IEnumerator SendMultimodalDataToGAS(string prompt, byte[] imageData)
+    public IEnumerator SendMultimodalDataToGAS(string prompt, byte[] imageData, Action<string> callback)
     {
         WWWForm form = new WWWForm();
         form.AddField("parameter", prompt);  // Assuming 'parameter' is the key for text data in GAS doPost function
@@ -113,10 +113,12 @@ public class GeminiManager : MonoBehaviour
         {
             string response = www.downloadHandler.text;
             Debug.Log("Response: " + response);
+            callback(response);
         }
         else
         {
             Debug.Log("Error: " + www.error);
+            callback(null); 
         }
     }
     // Update is called once per frame
