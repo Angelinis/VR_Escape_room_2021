@@ -21,6 +21,7 @@ public class TrainingManager : MonoBehaviour
     public GameObject trainingScene2;
     public GameObject trainingScene2Environment;
     public GameObject trainingScene3;
+    public GameObject trainingScene3Part2;
 
 
     private bool congratulationsPlayed = false;
@@ -80,9 +81,14 @@ public class TrainingManager : MonoBehaviour
 
             if (!objectVRScene3.activeSelf && !congratulationsPlayed && justOnce)
             {
-                StartCoroutine(DelayedFinalAction());
+                //Adding two more training steps
+                // StartCoroutine(DelayedFinalAction());
+                audioManager.PlayDescription(5);
+                trainingScene3Part2.SetActive(true);
                 justOnce = false;
             }
+
+
 
         }
 

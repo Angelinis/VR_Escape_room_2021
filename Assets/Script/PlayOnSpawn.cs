@@ -6,10 +6,10 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class PlayOnSpawn : MonoBehaviour
 {
     private AudioManager audioManager;
-    public ActionBasedController xrController;
-    // private int pressedTimes = 1;
-    private Queue<int> clipQueue = new Queue<int>();
-    private Coroutine currentCoroutine;
+    // public ActionBasedController xrController;
+    // // private int pressedTimes = 1;
+    // private Queue<int> clipQueue = new Queue<int>();
+    // private Coroutine currentCoroutine;
 
     void Start()
     {

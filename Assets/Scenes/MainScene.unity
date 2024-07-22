@@ -28658,7 +28658,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &724862542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36977,7 +36977,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a66b734a63b48a244965494c5abed1da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xrController: {fileID: 1537649898}
 --- !u!114 &911304967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61321,17 +61320,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1536098865}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1537649898 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9014170783705847993, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
-  m_PrefabInstance: {fileID: 631612874}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: caff514de9b15ad48ab85dcff5508221, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1545921227
 PrefabInstance:
   m_ObjectHideFlags: 0

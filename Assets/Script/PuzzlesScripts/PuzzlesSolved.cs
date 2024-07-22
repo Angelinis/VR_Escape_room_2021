@@ -81,6 +81,11 @@ public class PuzzlesSolved : MonoBehaviour
         {
             audioManager.PlaySFX(5);
         }
+
+        if((puzzleNumber == 6))
+        {
+            audioManager.PlaySFX(2);
+        }
     }
 
 }

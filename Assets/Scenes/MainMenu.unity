@@ -332,7 +332,7 @@ GameObject:
   - component: {fileID: 262295482}
   - component: {fileID: 262295481}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Moon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3452,7 +3452,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 8921016b3e6bde6488f2d1d5dd2f28fa, type: 2}
     - target: {fileID: 919132149155446097, guid: f37468a8a59d3e84d806031cd536c70c, type: 3}
       propertyPath: m_Name
-      value: DomKrasnKirpichObjExpo
+      value: Building
       objectReference: {fileID: 0}
     - target: {fileID: 2424825838668500803, guid: f37468a8a59d3e84d806031cd536c70c, type: 3}
       propertyPath: m_LocalPosition.y
