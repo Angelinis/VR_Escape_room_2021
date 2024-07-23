@@ -79,7 +79,6 @@ public class CheckObjectsOnSeen : MonoBehaviour
     public AudioSource audioSource;
 
 
-
     [SerializeField] private VoiceScriptableObject voice;
     [SerializeField] private TextToSpeech textToSpeech;
     private Action<AudioClip> _audioClipReceived;
@@ -87,25 +86,39 @@ public class CheckObjectsOnSeen : MonoBehaviour
 
     private bool isWaitingForAudioResponse;
 
+    public bool isTraining = false;
+
+    public bool isMainScene = false;
+
+    public AudioClip loadingAudio;
+
+
+    public TrainingManager trainingManager;
+
     void Start()
     {
         audioManager = AudioManager.instance;
         isWaitingForAudioResponse = false;
+        
     }
 
     void Awake ()
     {
-        GameObject visibleObject = GameObject.FindGameObjectWithTag ("VisibleObject");
-        renderers = visibleObject.GetComponentsInChildren<Renderer> ();
+        if(!isTraining)
+        {
+            GameObject visibleObject = GameObject.FindGameObjectWithTag ("VisibleObject");
+            renderers = visibleObject.GetComponentsInChildren<Renderer> ();
+        }
         active = false;
         artificialInteligence = GetComponent<GeminiManager>();
         // prePrompt = "You are a guide for a blind person in a Virtual Scene. Please provide an accessible " +
         // "description from the point of user's point of view (User POV) and the list of contents. " +
         // "The accessible description needs to be short. Keep it below 1200 characters. Omit any of (0.00, 0.00, 0.00) in your response.";
         
-        alternativePrompt = "Descreva o cenário, destacando os elementos e características principais. Explore a arquitetura," +
+        alternativePrompt = "Descreva o cenário virtual, destacando os elementos e características principais. Explore a arquitetura," +
         "e elementos que compõem o ambiente." + 
-        "Crie uma accesivel para uma pessoa cega em menos de 700 caracteres, capturando a essência do local sem considerar os controles visíveis.";
+        "Crie uma descrição acessível para uma pessoa cega em menos de 600 caracteres, capturando a essência do local." +
+        " Exclua qualquer informação sobre os controles.";
 
         // alternativePrompt = "Based on the image, can you provide make a list of the elements you recognize?";
 
@@ -115,8 +128,8 @@ public class CheckObjectsOnSeen : MonoBehaviour
     {
 
         
-          if (UnityEngine.Input.GetKeyDown(KeyCode.C))
-        //  if (activateButton.action.WasPressedThisFrame())
+        //   if (UnityEngine.Input.GetKeyDown(KeyCode.C))
+         if (activateButton.action.WasPressedThisFrame())
         {
             if(!active)
             {
@@ -126,9 +139,12 @@ public class CheckObjectsOnSeen : MonoBehaviour
 
                 active = true;
 
-
+                if(!isTraining)
+                {
+                    prompt = OutputVisibleRenderers(renderers);
+                }
                 
-                prompt = OutputVisibleRenderers(renderers);
+                
  
                 //Code to send text to the Gemini API
                 // StartCoroutine(artificialInteligence.SendDataToGAS(prePrompt + " " + prompt));
@@ -168,6 +184,8 @@ public class CheckObjectsOnSeen : MonoBehaviour
           screenShotPath = Application.persistentDataPath +  screenshotFileName;
           ScreenCapture.CaptureScreenshot(screenShotPath);
 
+          audioManager.PlayAccessibleDescription(loadingAudio);
+
           yield return new WaitForSeconds(0.1f);
 
           byte[] screenshotBytes = File.ReadAllBytes(screenShotPath);
@@ -185,6 +203,8 @@ public class CheckObjectsOnSeen : MonoBehaviour
                     _audioClipReceived += AudioClipReceived;
                     textToSpeech.GetSpeechAudioFromGoogle(response, voice, _audioClipReceived, _errorReceived);
                 }
+
+
             }
             else
             {
@@ -206,6 +226,13 @@ public class CheckObjectsOnSeen : MonoBehaviour
         audioSource.clip = clip;
         audioSource.Play();
         isWaitingForAudioResponse = false;
+
+        if(isTraining && !isMainScene)
+        {
+            StartCoroutine(trainingManager.DelayedFinalAction());
+        }
+        
+                
     }
 
     private string OutputVisibleRenderers (Renderer[] renderers)

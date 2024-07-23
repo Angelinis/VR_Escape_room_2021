@@ -21,6 +21,8 @@ public class PuzzlesSolved : MonoBehaviour
     public GameObject objectToActive2;
     // public GameObject objectToActive3;
 
+    public TrainingManager trainingManager;
+
 
     void Start()
     {
@@ -85,6 +87,8 @@ public class PuzzlesSolved : MonoBehaviour
         if((puzzleNumber == 6))
         {
             audioManager.PlaySFX(2);
+            trainingManager.finalScene = true;
+            trainingManager.CallFinalScene();
         }
     }
 

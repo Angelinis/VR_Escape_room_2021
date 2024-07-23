@@ -22,11 +22,14 @@ public class TrainingManager : MonoBehaviour
     public GameObject trainingScene2Environment;
     public GameObject trainingScene3;
     public GameObject trainingScene3Part2;
+    public GameObject trainingScene4;
 
 
     private bool congratulationsPlayed = false;
     private bool descriptionPlayed = false;
     private bool justOnce = true;
+
+    public bool finalScene = false;
 
     void Start()
     {
@@ -92,6 +95,30 @@ public class TrainingManager : MonoBehaviour
 
         }
 
+        
+        if (trainingScene4.activeSelf)
+        {
+            if (!descriptionPlayed)
+            {
+                audioManager.PlayDescription(6);
+                descriptionPlayed = true;
+                congratulationsPlayed = false;
+                justOnce = true;
+            }
+
+            // if (!objectVRScene3.activeSelf && !congratulationsPlayed && justOnce)
+            // {
+            //     //Adding two more training steps
+            //     // StartCoroutine(DelayedFinalAction());
+            //     audioManager.PlayDescription(5);
+            //     trainingScene3Part2.SetActive(true);
+            //     justOnce = false;
+            // }
+
+
+
+        }
+
     }
 
     public int RequireRotationXROrigin()
@@ -103,8 +130,12 @@ public class TrainingManager : MonoBehaviour
 
     IEnumerator DelayedAction(GameObject sceneToActivate, GameObject sceneToDeactivate)
     {
-
-        yield return new WaitForSeconds(2);
+        if(finalScene)
+        {
+            yield return new WaitForSeconds(5);
+        } else {
+            yield return new WaitForSeconds(2);
+        }
 
         audioManager.PlayDescription(3);
 
@@ -117,10 +148,14 @@ public class TrainingManager : MonoBehaviour
         sceneToActivate.SetActive(true);
     }
 
-    IEnumerator DelayedFinalAction()
+    public void CallFinalScene(){
+        StartCoroutine(DelayedAction(trainingScene4, trainingScene3));
+    }
+
+    public IEnumerator DelayedFinalAction()
     {
 
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(15);
 
         audioManager.PlayDescription(4);
 

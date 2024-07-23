@@ -116,13 +116,15 @@ namespace Meta.WitAi.Data
         //     }
         // }
 
-        // void OnDestroy()
-        // {
-        //     if (Instance == this)
-        //     {
-        //         _instance = null;
-        //     }
-        // }
+        void OnDestroy()
+        {
+           if (_instance != null)
+            {   
+                
+                Destroy(_instance.gameObject);
+                _instance = null;
+            }
+        }
 
         private void OnApplicationQuit()
         {

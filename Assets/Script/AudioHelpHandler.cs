@@ -12,15 +12,18 @@ public class AudioHelpHandler : MonoBehaviour
     private WasUsed puzzle3Completed;
     private WasUsed puzzle4Completed;
     private WasUsed puzzle5Completed;
+    public bool isTraining = false;
     // Start is called before the first frame update
     void Start()
     {
         audioManager = AudioManager.instance;
+        if(!isTraining){        
         puzzle1Completed = object_1.GetComponent<WasUsed>();
         puzzle2Completed = object_2.GetComponent<WasUsed>();
         puzzle3Completed = object_3.GetComponent<WasUsed>();
         puzzle4Completed = object_4.GetComponent<WasUsed>();
         puzzle5Completed = object_5.GetComponent<WasUsed>();
+        }
     }
 
     // Update is called once per frame
@@ -32,6 +35,10 @@ public class AudioHelpHandler : MonoBehaviour
     {
         if(values[0] == "ajuda"){
             Debug.Log("Playing respective clip, according to the puzzle");
+            if(isTraining){
+                audioManager.PlayAccessibleDescription(puzzle_1);
+                return;
+            }
 
             if(!puzzle1Completed.wasItUsed)
             {

@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class AudioLocationHandler : MonoBehaviour
 {
-    public AudioClip lab_256, hallway_1, hallway_2, stairs, lab_151, secretary;
+    public AudioClip lab_256, hallway_1, hallway_2, stairs, lab_151, secretary, training;
     private AudioManager audioManager;
 
     public Transform sourceObject; 
+
+    public bool isTraining = false;
     
     //Lab 256 
     float minX_Lab256 = 2.7f;
@@ -99,6 +101,14 @@ public class AudioLocationHandler : MonoBehaviour
     {
         if(values[0] == "Onde"){
             Debug.Log("Playing respective clip, according to location");
+            
+            if(isTraining)
+            {
+                audioManager.PlayAccessibleDescription(training);
+                return;
+            }
+
+
             if (sourceObject != null)
             {
                 // Copy the X and Z positions from the source object to this object

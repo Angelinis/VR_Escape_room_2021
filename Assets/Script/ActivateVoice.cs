@@ -29,6 +29,8 @@ public class ActivateVoice : MonoBehaviour
     private AudioManager audioManager;
 
     public AudioClip loadingAudio;
+    
+    public bool isTraining = false;
 
     void Start()
     {
@@ -71,10 +73,20 @@ public class ActivateVoice : MonoBehaviour
         if (!_deactivateAndAbort)
         {
             _request.DeactivateAudio();
+                   if(isTraining){
+            audioManager.PlaySFX(2);
+        } else {
+            audioManager.PlaySFX(6);
+        }
         }
         else
         {
             _request.Cancel();
+                   if(isTraining){
+            audioManager.PlaySFX(2);
+        } else {
+            audioManager.PlaySFX(6);
+        }
         }
     }
 
@@ -99,6 +111,12 @@ public class ActivateVoice : MonoBehaviour
     {
         
         _isActive = false;
+        if(isTraining){
+            audioManager.PlaySFX(2);
+        } else {
+            audioManager.PlaySFX(6);
+        }
+        
         // RefreshActive();
     }
 }
