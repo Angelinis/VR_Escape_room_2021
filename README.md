@@ -4,7 +4,7 @@ This is a virtual reality escape game which was built using Unity and the XR Int
 
 This game has a duration of 15 minutes. There are five puzzles that the player should complete for going out.
 
-![homepage](https://raw.githubusercontent.com/Angelinis/VR_Escape_room_2021/blob/main/screenshot.png)
+![homepage](https://raw.githubusercontent.com/Angelinis/VR_Escape_room_2021/main/screenshot.png)
 
 # Technical Changes
 
