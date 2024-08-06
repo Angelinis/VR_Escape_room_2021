@@ -1,5 +1,11 @@
 # VR_Escape_room_2021
 
+This is a virtual reality escape game which was built using Unity and the XR Interaction Toolkit. To be spicific, this project uses Unity Editor 2021.3.31f1.
+
+This game has a duration of 15 minutes. There are five puzzles that the player should complete for going out.
+
+![homepage](https://raw.githubusercontent.com/Angelinis/VR_Escape_room_2021/blob/main/screenshot.png)
+
 # Technical Changes
 
 The `Audio_Manager` object possess a script to control all audio objects volume. It also saves some clips from the game as Sfx clips and Description Clips.
@@ -18,3 +24,5 @@ The walking sounds come from the `Dynamic Move Provider (Script)` and the `Edite
 Tip: The building plane has a proportion of 6 meters in Real, and 10 in the plane 100%. Which provides a conversion rate of 0.60.
 
 The `Training Manager` script has been created to manage the training scene. It takes as inputs three empties: Scene1, Scene2, and Scene3. Besides that, it takes as input the `XR Origin` of the Scenes, because there are three different `XR Origin`.
+
+A `Wit AI` manager was included inside the game, this feature allows the user to use voice commands.
