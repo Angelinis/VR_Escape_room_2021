@@ -175,49 +175,91 @@ public class CheckObjectsOnSeen : MonoBehaviour
     //       StartCoroutine(artificialInteligence.SendMultimodalDataToGAS(alternativePrompt, screenshotBytes));
     //  }
 
-        private IEnumerator CaptureScreenshot()
-     {
-        //File.ReadAllBytes only works with Unity Editor - Needs to be updated for working inside the Meta Quest
+       private IEnumerator CaptureScreenshot()
+{
+    // Increment screenshot count and set the screenshot path
+   screenshotCount++;
+    string screenshotFileName = "/Screenshot_" + screenshotCount + "_" + Screen.width + "X" + Screen.height + ".png";
+    string screenShotPath = Application.persistentDataPath + screenshotFileName;
 
-          screenshotCount ++;
-          screenshotFileName = "/Screenshot_" + screenshotCount + ".png";
-          screenShotPath = Application.persistentDataPath +  screenshotFileName;
-          ScreenCapture.CaptureScreenshot(screenShotPath);
+    // Wait for the end of the frame to ensure screen rendering is complete
+    yield return new WaitForEndOfFrame();
+    yield return new WaitForSeconds(4f); // Additional wait time to ensure rendering
 
-          audioManager.PlayAccessibleDescription(loadingAudio);
+    // Create a new Texture2D to capture the screen content
+    Texture2D screenImage = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
+    // Capture the screen content into the Texture2D
+    screenImage.ReadPixels(new Rect(0, 0, Screen.width, Screen.height), 0, 0);
+    screenImage.Apply();
 
-          yield return new WaitForSeconds(0.1f);
+    // Convert the Texture2D to PNG format
+    byte[] imageBytes = screenImage.EncodeToPNG();
 
-          byte[] screenshotBytes = File.ReadAllBytes(screenShotPath);
-          
-          StartCoroutine(artificialInteligence.SendMultimodalDataToGAS(alternativePrompt, screenshotBytes, (response) => {
-            if (response != null)
-            {
- 
-                Debug.Log("Response received: " + response);
-
-                if (!isWaitingForAudioResponse) 
-                {
-                    isWaitingForAudioResponse = true;
-                    _errorReceived += ErrorReceived;
-                    _audioClipReceived += AudioClipReceived;
-                    textToSpeech.GetSpeechAudioFromGoogle(response, voice, _audioClipReceived, _errorReceived);
-                }
-
-
-            }
-            else
-            {
-                Debug.Log("Error occurred during request.");
-            }}));
-
-        
+    // Save the PNG to a file
+    try
+    {
+        System.IO.File.WriteAllBytes(screenShotPath, imageBytes);
+        Debug.Log("Screenshot saved to: " + screenShotPath);
     }
+    catch (Exception ex)
+    {
+        Debug.LogError("Failed to save screenshot file: " + ex.Message);
+    }
+
+    // Optionally, you can clean up the Texture2D to free memory
+    Destroy(screenImage);
+
+    // Play accessible description audio
+    audioManager.PlayAccessibleDescription(loadingAudio);
+
+    // Yield to ensure the audio has time to play
+
+    // Check if file exists before attempting to read
+    if (File.Exists(screenShotPath))
+    {
+        try
+        {
+            byte[] screenshotBytes = File.ReadAllBytes(screenShotPath);
+
+            StartCoroutine(artificialInteligence.SendMultimodalDataToGAS(alternativePrompt, screenshotBytes, (response) => {
+                if (response != null)
+                {
+                    Debug.Log("Response received: " + response);
+
+                    if (!isWaitingForAudioResponse)
+                    {
+                        isWaitingForAudioResponse = true;
+                        _errorReceived += ErrorReceived;
+                        _audioClipReceived += AudioClipReceived;
+                        textToSpeech.GetSpeechAudioFromGoogle(response, voice, _audioClipReceived, _errorReceived);
+                    }
+                }
+                else
+                {
+                    Debug.Log("Error occurred during request.");
+                    active = false;
+                    audioManager.PlaySFX(2);
+                }
+            }));
+        }
+        catch (Exception ex)
+        {
+            Debug.LogError("Failed to read screenshot file: " + ex.Message);
+        }
+    }
+    else
+    {
+        Debug.LogError("Screenshot file not found: " + screenShotPath);
+    }
+}
+
 
          
     private void ErrorReceived(BadRequestData badRequestData)
     {
         Debug.Log($"Error {badRequestData.error.code} : {badRequestData.error.message}");
+        active = false;
+        audioManager.PlaySFX(2);
     }
 
     private void AudioClipReceived(AudioClip clip)
@@ -226,6 +268,7 @@ public class CheckObjectsOnSeen : MonoBehaviour
         audioSource.clip = clip;
         audioSource.Play();
         isWaitingForAudioResponse = false;
+        
 
         if(isTraining && !isMainScene)
         {

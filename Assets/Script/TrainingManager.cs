@@ -24,6 +24,7 @@ public class TrainingManager : MonoBehaviour
     public GameObject trainingScene3Part2;
     public GameObject trainingScene4;
 
+    public UserData userData;
 
     private bool congratulationsPlayed = false;
     private bool descriptionPlayed = false;
@@ -100,10 +101,18 @@ public class TrainingManager : MonoBehaviour
         {
             if (!descriptionPlayed)
             {
-                audioManager.PlayDescription(6);
-                descriptionPlayed = true;
-                congratulationsPlayed = false;
-                justOnce = true;
+                if(userData.internetConnection)
+                {
+                    audioManager.PlayDescription(6);
+                    descriptionPlayed = true;
+                    congratulationsPlayed = false;
+                    justOnce = true;
+                } else {
+                    StartCoroutine(DelayedFinalActionAlternative());
+                    descriptionPlayed = true;
+                    justOnce = true;
+                }
+
             }
 
             // if (!objectVRScene3.activeSelf && !congratulationsPlayed && justOnce)
@@ -166,6 +175,19 @@ public class TrainingManager : MonoBehaviour
         SceneManager.LoadScene("MainScene");
     }
 
+    public IEnumerator DelayedFinalActionAlternative()
+    {
+
+        yield return new WaitForSeconds(3);
+
+        audioManager.PlayDescription(4);
+
+        yield return new WaitForSeconds(8);
+        
+        Destroy(audioManager.gameObject);
+
+        SceneManager.LoadScene("MainScene");
+    }
 
 
 }

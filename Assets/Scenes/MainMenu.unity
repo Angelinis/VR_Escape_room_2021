@@ -1516,7 +1516,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
@@ -1893,6 +1893,8 @@ MonoBehaviour:
   uiAudioSource: {fileID: 1995839352}
   sfxClips:
   - {fileID: 8300000, guid: 9bf37e7e3ece5ca458ee9955e28b8578, type: 3}
+  - {fileID: 8300000, guid: 3bc1c4c29bde2dd41ad6176aa624dd76, type: 3}
+  - {fileID: 8300000, guid: f6167cb777455544cb41df57f25f116b, type: 3}
   sfxSource: {fileID: 762633264}
   descriptionClips:
   - {fileID: 8300000, guid: 322444f25c15f3f49bdbeaf336e2a098, type: 3}
@@ -3237,17 +3239,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9014170783705847996, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
   m_PrefabInstance: {fileID: 787026048}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1827174105 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9014170783705847993, guid: 895f6f3c2d334633b5800312285058d2, type: 3}
-  m_PrefabInstance: {fileID: 787026048}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: caff514de9b15ad48ab85dcff5508221, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1889311631
 GameObject:
   m_ObjectHideFlags: 0
@@ -3313,7 +3304,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e363dd7df2a98bc4c89e7399f858c95f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xrController: {fileID: 1827174105}
+  activateButtonRight:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Activate Button Right
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: b49f210f-e2d2-4530-bdf2-22c97db18872
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -5818737355812073202, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  activateButtonLeft:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Activate Button Left
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 708a2846-4fa9-48a4-9b6c-9b213cb86ceb
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -5339524857869802256, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  userData: {fileID: 11400000, guid: c04f89cba4892614c887a52c1b3a663d, type: 2}
   isBlind: 1
 --- !u!4 &1910331205
 Transform:
