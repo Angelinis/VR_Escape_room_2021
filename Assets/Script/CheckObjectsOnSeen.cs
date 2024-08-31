@@ -21,30 +21,12 @@ public class ObjectData
     public string objName;
     public Vector3 objPosition;
 
-
-    // Constructor to initialize with values
     public ObjectData(string objectDataName, Vector3 objectDataPosition)
     {
         objName = objectDataName;
         objPosition = objectDataPosition;
     }
 }
-
-// [System.Serializable]
-// public class ObjectCamera
-// {
-//     public string objName;
-//     public Vector3 objPosition;
-//     public Quaternion objRotation;
-
-//     // Constructor to initialize with values
-//     public ObjectData(string objectDataName, Vector3 objectDataPosition, Quaternion objectDataRotation)
-//     {
-//         objName = objectDataName;
-//         objPosition = objectDataPosition;
-//         objRotation = objectDataRotation;
-//     }
-// }
 
 public class CheckObjectsOnSeen : MonoBehaviour
 {
@@ -65,10 +47,6 @@ public class CheckObjectsOnSeen : MonoBehaviour
     private string alternativePrompt;
 
     private int screenshotCount = 0;
-
-    private string screenshotFileName = "";
-    
-    private string screenShotPath = "";
 
     private string prompt;
 
@@ -95,10 +73,13 @@ public class CheckObjectsOnSeen : MonoBehaviour
 
     public TrainingManager trainingManager;
 
+    public Camera assignedCamera;
+
     void Start()
     {
         audioManager = AudioManager.instance;
         isWaitingForAudioResponse = false;
+        assignedCamera.gameObject.SetActive(false);
         
     }
 
@@ -155,47 +136,26 @@ public class CheckObjectsOnSeen : MonoBehaviour
     }
 
     
-
-
-    //  private IEnumerator CaptureScreenshot()
-    //  {
-    //     //File.ReadAllBytes only works with Unity Editor - Needs to be updated for working inside the Meta Quest
-
-    //       screenshotCount ++;
-    //       screenshotFileName = "/Screenshot_" + screenshotCount + ".png";
-    //       screenShotPath = Application.streamingAssetsPath +  screenshotFileName;
-    //       ScreenCapture.CaptureScreenshot(screenShotPath);
-    //       yield return null;
-    //       AssetDatabase.Refresh();
-
-    //       yield return new WaitForSeconds(0.1f);
-
-    //       byte[] screenshotBytes = File.ReadAllBytes(screenShotPath);
-          
-    //       StartCoroutine(artificialInteligence.SendMultimodalDataToGAS(alternativePrompt, screenshotBytes));
-    //  }
-
-       private IEnumerator CaptureScreenshot()
+    private IEnumerator CaptureScreenshot()
 {
-    // Increment screenshot count and set the screenshot path
-   screenshotCount++;
+    assignedCamera.gameObject.SetActive(true);
+    yield return new WaitForEndOfFrame();
+
+    screenshotCount++;
     string screenshotFileName = "/Screenshot_" + screenshotCount + "_" + Screen.width + "X" + Screen.height + ".png";
     string screenShotPath = Application.persistentDataPath + screenshotFileName;
 
-    // Wait for the end of the frame to ensure screen rendering is complete
-    yield return new WaitForEndOfFrame();
-    yield return new WaitForSeconds(4f); // Additional wait time to ensure rendering
+    RenderTexture screenTexture = new RenderTexture(Screen.width, Screen.height, 16);
+    assignedCamera.targetTexture = screenTexture;
+    RenderTexture.active = screenTexture;
+    assignedCamera.Render();
 
-    // Create a new Texture2D to capture the screen content
-    Texture2D screenImage = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
-    // Capture the screen content into the Texture2D
-    screenImage.ReadPixels(new Rect(0, 0, Screen.width, Screen.height), 0, 0);
-    screenImage.Apply();
+    Texture2D renderedTexture = new Texture2D(Screen.width, Screen.height);
+    renderedTexture.ReadPixels(new Rect(0, 0, Screen.width, Screen.height), 0, 0);
+    RenderTexture.active = null;
 
-    // Convert the Texture2D to PNG format
-    byte[] imageBytes = screenImage.EncodeToPNG();
+    byte[] imageBytes = renderedTexture.EncodeToPNG();
 
-    // Save the PNG to a file
     try
     {
         System.IO.File.WriteAllBytes(screenShotPath, imageBytes);
@@ -206,20 +166,19 @@ public class CheckObjectsOnSeen : MonoBehaviour
         Debug.LogError("Failed to save screenshot file: " + ex.Message);
     }
 
-    // Optionally, you can clean up the Texture2D to free memory
-    Destroy(screenImage);
-
-    // Play accessible description audio
     audioManager.PlayAccessibleDescription(loadingAudio);
-
-    // Yield to ensure the audio has time to play
 
     // Check if file exists before attempting to read
     if (File.Exists(screenShotPath))
     {
         try
         {
+
             byte[] screenshotBytes = File.ReadAllBytes(screenShotPath);
+
+                        
+                        
+            assignedCamera.gameObject.SetActive(false);
 
             StartCoroutine(artificialInteligence.SendMultimodalDataToGAS(alternativePrompt, screenshotBytes, (response) => {
                 if (response != null)
@@ -245,11 +204,15 @@ public class CheckObjectsOnSeen : MonoBehaviour
         catch (Exception ex)
         {
             Debug.LogError("Failed to read screenshot file: " + ex.Message);
+            active = false;
+            audioManager.PlaySFX(2);
         }
     }
     else
     {
         Debug.LogError("Screenshot file not found: " + screenShotPath);
+        active = false;
+        audioManager.PlaySFX(2);
     }
 }
 
