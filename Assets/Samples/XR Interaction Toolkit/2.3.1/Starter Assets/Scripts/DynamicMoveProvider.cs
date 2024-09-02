@@ -130,6 +130,14 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
         
         private Vector3 initialPosition; 
 
+            //Stairs
+        float minX_Stairs = 2.8f;
+        float maxX_Stairs = 5.7f;
+        float minY_Stairs = -1.60f;
+        float maxY_Stairs = 1.0f;
+        float minZ_Stairs = -22.9f;
+        float maxZ_Stairs = -18.0f;
+
         /// <inheritdoc />
         protected override void Awake()
         {
@@ -259,7 +267,15 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
                             if (Time.time - lastUpDownTime > upDownInterval){
                                 upDownAudioSource.clip = downClip;
                                 if(!isFirstTime){
-                                    upDownAudioSource.Play();
+                                    
+                                    if (newPosition.x >= minX_Stairs && newPosition.x <= maxX_Stairs &&
+                                    newPosition.y >= minY_Stairs && newPosition.y <= maxY_Stairs &&
+                                    newPosition.z >= minZ_Stairs && newPosition.z <= maxZ_Stairs)
+                                    {
+                                        upDownAudioSource.Play();
+                                    }
+
+
                                 }
                                 isFirstTime = false;
                                 lastUpDownTime = Time.time; // Update the last step time
@@ -271,7 +287,12 @@ namespace UnityEngine.XR.Interaction.Toolkit.Samples.StarterAssets
                             if (Time.time - lastUpDownTime > upDownInterval){
                                 upDownAudioSource.clip = upClip;
                                 if(!isFirstTime){
-                                    upDownAudioSource.Play();
+                                    if (newPosition.x >= minX_Stairs && newPosition.x <= maxX_Stairs &&
+                                    newPosition.y >= minY_Stairs && newPosition.y <= maxY_Stairs &&
+                                    newPosition.z >= minZ_Stairs && newPosition.z <= maxZ_Stairs)
+                                    {
+                                        upDownAudioSource.Play();
+                                    }
                                 }
                                 isFirstTime = false;
                                 lastUpDownTime = Time.time; // Update the last step time
