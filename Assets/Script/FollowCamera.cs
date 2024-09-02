@@ -5,6 +5,7 @@ using UnityEngine;
 public class FollowCamera : MonoBehaviour
 {
     public Transform sourceObject; // Assign the source object in the Unity Editor
+    public bool followRotation = false;
 
     void Update()
     {
@@ -14,6 +15,11 @@ public class FollowCamera : MonoBehaviour
             // Copy the X and Z positions from the source object to this object
             Vector3 newPosition = new Vector3(sourceObject.position.x, transform.position.y, sourceObject.position.z);
             transform.position = newPosition;
+
+            if(followRotation)
+            {
+                transform.rotation = sourceObject.rotation;
+            }
         }
         else
         {

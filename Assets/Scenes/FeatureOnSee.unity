@@ -8965,7 +8965,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
@@ -15110,6 +15110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sourceObject: {fileID: 1910811935}
+  followRotation: 0
 --- !u!114 &415400296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27245,6 +27246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sourceObject: {fileID: 1910811935}
+  followRotation: 0
 --- !u!1001 &692837319
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41593,6 +41595,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sourceObject: {fileID: 1910811935}
+  followRotation: 0
 --- !u!4 &1025461343
 Transform:
   m_ObjectHideFlags: 0
@@ -43014,6 +43017,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sourceObject: {fileID: 1910811935}
+  followRotation: 0
 --- !u!4 &1069822906
 Transform:
   m_ObjectHideFlags: 0
@@ -63349,6 +63353,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1592348612}
   - component: {fileID: 1592348613}
+  - component: {fileID: 1592348614}
   m_Layer: 0
   m_Name: ScreenShotCamera
   m_TagString: Untagged
@@ -63414,6 +63419,20 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &1592348614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1592348611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e51c095865581c448aee5c4a267faf96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sourceObject: {fileID: 1910811935}
+  followRotation: 1
 --- !u!4 &1593803000 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 582480816384568578, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}

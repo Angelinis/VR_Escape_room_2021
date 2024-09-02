@@ -15129,6 +15129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sourceObject: {fileID: 1910811935}
+  followRotation: 0
 --- !u!114 &415400296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25905,6 +25906,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sourceObject: {fileID: 1910811935}
+  followRotation: 1
 --- !u!20 &659905027
 Camera:
   m_ObjectHideFlags: 0
@@ -27314,6 +27316,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sourceObject: {fileID: 1910811935}
+  followRotation: 0
 --- !u!1001 &692837319
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41607,6 +41610,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sourceObject: {fileID: 1910811935}
+  followRotation: 0
 --- !u!4 &1025461343
 Transform:
   m_ObjectHideFlags: 0
@@ -43028,6 +43032,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sourceObject: {fileID: 1910811935}
+  followRotation: 0
 --- !u!4 &1069822906
 Transform:
   m_ObjectHideFlags: 0

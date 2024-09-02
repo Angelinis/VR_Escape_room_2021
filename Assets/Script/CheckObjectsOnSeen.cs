@@ -237,6 +237,11 @@ public class CheckObjectsOnSeen : MonoBehaviour
         {
             StartCoroutine(trainingManager.DelayedFinalAction());
         }
+
+        if(isMainScene)
+        {
+            active = false;
+        }
         
                 
     }
