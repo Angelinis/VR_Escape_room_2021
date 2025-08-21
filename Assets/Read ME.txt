@@ -1,0 +1,37 @@
+Startworld - by Marsy 								                 Marsy#9998
+
+Want to support me (100% optional) 
+
+https://www.patreon.com/Marsychu <3
+
+also available for DL at my patreon
+
+You can visit this world here: 
+https://vrchat.com/home/world/wrld_a45bd66e-85b1-4924-83c9-0652840f439e
+
+instructions:
+
+1.  Import latest VRCSDK3- WORLD
+2.  Import Udon sharp by merlin https://github.com/MerlinVR/UdonSharp/releases
+3.  Import Post processing through the package manager (window -> Package M..)
+4.  Import TextMesh Pro through the package manager
+5.  Recommended CyanEMU https://github.com/CyanLaser/CyanEmu
+
+6.  Import Startworld - Marsy.unitypackage
+7.  drag "Startworld main scene" into the hiarchy
+8.  Delete the other scenes
+
+If you don't see text corecctly even after Importing TextMesh pro essentials,
+unload the scene and load it again, you can do this by making a new scene and unloading
+startworld scene, then loading it again, and delete the newly created scene. 
+
+<3
+=====================================================
+
+Credits: 
+
+Sopra for Post processing UI
+Cyanlaser for EMU
+MerlinVR for Udon sharp
+wolfie for Video player
+and everyone else i forgot<3

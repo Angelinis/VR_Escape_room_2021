@@ -8965,7 +8965,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
@@ -56646,6 +56646,10 @@ PrefabInstance:
     - target: {fileID: 7967470502078206994, guid: b064c8cc86416a74aa90f5f0d3c604dd, type: 3}
       propertyPath: m_Name
       value: Debuglogger
+      objectReference: {fileID: 0}
+    - target: {fileID: 7967470502078206994, guid: b064c8cc86416a74aa90f5f0d3c604dd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8084754453104666564, guid: b064c8cc86416a74aa90f5f0d3c604dd, type: 3}
       propertyPath: m_PresetInfoIsWorld

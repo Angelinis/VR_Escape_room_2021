@@ -103,14 +103,22 @@ public class CheckObjectsOnSeen : MonoBehaviour
 
         // alternativePrompt = "Based on the image, can you provide make a list of the elements you recognize?";
 
+        // string testPrompt_1 = "From now on, please act as an Orientation and Mobility Specialist. Focus on the environmental details and provide a comprehensive description from this perspective. Highlight key aspects relevant to navigation and accessibility to assist users in understanding the space effectively.";
+        // string testPrompt_2 = "From now on, please act as a Sighted Guide. Concentrate on the environmental details pertinent to this role and provide observations that would be important for effective assistance in navigating the space.";
+        // string testPrompt_3 = "This is a template for your response. Replace the placeholders (in all caps) with specific details. Use the following format: ``Hello! I'll be assisting you today. You are currently located at LOCATION. From your position, you can find a ELEMENT at your ORIENTATION o'clock, a ELEMENT at your ORIENTATION o'clock, and a ELEMENT at your ORIENTATION o'clock. Feel free to explore the PLACE, but be cautious of potential collisions with OBSTACLE, OBSTACLE, or OBSTACLE. If you need any additional information, just let me know!'' Adjust any details as needed!";
+        // string testPrompt_4 = "When I ask you to describe this image, please create a DALL-E prompt that I can use to recreate this image. Choose the appropriate tools based on what needs to be visualized.";
+        // string testPrompt_5 = "When analyzing the following scene, focus solely on elements that could be classified as OBSTACLES and IMPORTANT ELEMENTS for navigating by a visually impaired individual. Please disregard any UNIMPORTANT information.";
+        // string testPrompt_6 = "When analyzing the upcoming data, concentrate exclusively on the USER POV. Describe the scene for a visually impaired individual by detailing the positions and descriptions of the ELEMENTS. Please ignore any UNIMPORTANT information.";
+        // alternativePrompt = testPrompt_6 + ". Your output must have a maximum of 700 characters";
+
     }
 
     void Update() 
     {
 
         
-        //   if (UnityEngine.Input.GetKeyDown(KeyCode.C))
-         if (activateButton.action.WasPressedThisFrame())
+          if (UnityEngine.Input.GetKeyDown(KeyCode.C))
+        //  if (activateButton.action.WasPressedThisFrame())
         {
             if(!active)
             {
@@ -122,7 +130,7 @@ public class CheckObjectsOnSeen : MonoBehaviour
 
                 if(!isTraining)
                 {
-                    prompt = OutputVisibleRenderers(renderers);
+                    // prompt = OutputVisibleRenderers(renderers);
                 }
                 
                 
@@ -190,6 +198,7 @@ public class CheckObjectsOnSeen : MonoBehaviour
                         isWaitingForAudioResponse = true;
                         _errorReceived += ErrorReceived;
                         _audioClipReceived += AudioClipReceived;
+                        //Not wanting to play the answer
                         textToSpeech.GetSpeechAudioFromGoogle(response, voice, _audioClipReceived, _errorReceived);
                     }
                 }

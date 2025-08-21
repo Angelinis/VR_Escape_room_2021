@@ -1739,6 +1739,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sourceObject: {fileID: 908786112}
+  followRotation: 0
 --- !u!136 &938974117
 CapsuleCollider:
   m_ObjectHideFlags: 0

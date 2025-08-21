@@ -1,0 +1,368 @@
+Using pre-set license
+Built from '2021.3/staging' branch; Version is '2021.3.31f1 (3409e2af086f) revision 3410402'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19045) 64bit CoreSingleLanguage' Language: 'es' Physical Memory: 16147 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2021.3.31f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker2
+-projectPath
+C:/Users/Angelo/Projects Unity/VR_Escape_room_2021
+-logFile
+Logs/AssetImportWorker2.log
+-srvPort
+50807
+Successfully changed project path to: C:/Users/Angelo/Projects Unity/VR_Escape_room_2021
+C:/Users/Angelo/Projects Unity/VR_Escape_room_2021
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [9280] Host "[IP] 192.168.0.11 [Port] 0 [Flags] 2 [Guid] 2240296452 [EditorId] 2240296452 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-R04OA4V) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+
+Player connection [9280] Host "[IP] 192.168.0.11 [Port] 0 [Flags] 2 [Guid] 2240296452 [EditorId] 2240296452 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-R04OA4V) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+
+[Physics::Module] Initialized MultithreadedJobDispatcher with {0} workers.
+Refreshing native plugins compatible for Editor in 154.03 ms, found 15 plugins.
+Preloading 2 native plugins for Editor in 3.33 ms.
+Initialize engine version: 2021.3.31f1 (3409e2af086f)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.31f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/Angelo/Projects Unity/VR_Escape_room_2021/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 3050 Laptop GPU (ID=0x25a2)
+    Vendor:   NVIDIA
+    VRAM:     3964 MB
+    Driver:   32.0.15.5612
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.31f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.31f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.31f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56240
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.31f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.31f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.31f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.006342 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Android Extension - Scanning For ADB Devices 168 ms
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 78.44 ms, found 15 plugins.
+Preloading 2 native plugins for Editor in 0.15 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.700 seconds
+Domain Reload Profiling:
+	ReloadAssembly (700ms)
+		BeginReloadAssembly (72ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (554ms)
+			LoadAssemblies (71ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (83ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (22ms)
+			SetupLoadedEditorAssemblies (412ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (243ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (79ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (60ms)
+				ProcessInitializeOnLoadMethodAttributes (30ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.008191 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for Android target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 81.43 ms, found 15 plugins.
+Preloading 2 native plugins for Editor in 0.15 ms.
+Package Manager log level set to [2]
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Cannot connect to Unity Package Manager local server
+Mono: successfully reloaded assembly
+- Completed reload, in  1.414 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1415ms)
+		BeginReloadAssembly (100ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (17ms)
+		EndReloadAssembly (1228ms)
+			LoadAssemblies (90ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (241ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (58ms)
+			SetupLoadedEditorAssemblies (814ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (16ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (82ms)
+				BeforeProcessingInitializeOnLoad (103ms)
+				ProcessInitializeOnLoadAttributes (570ms)
+				ProcessInitializeOnLoadMethodAttributes (37ms)
+				AfterProcessingInitializeOnLoad (6ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 1.23 ms, found 15 plugins.
+Preloading 2 native plugins for Editor in 0.11 ms.
+Unloading 5203 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 100 unused Assets / (49.5 KB). Loaded Objects now: 5640.
+Memory consumption went from 196.6 MB to 196.6 MB.
+Total: 3.640900 ms (FindLiveObjects: 0.370000 ms CreateObjectMapping: 0.211000 ms MarkObjects: 2.944900 ms  DeleteObjects: 0.113000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:CustomObjectIndexerAttribute: bc11b3a6c3213fcdd17b65e7da85e133 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 1325.745934 seconds.
+  path: Assets/Textures & Skyboxes
+  artifactKey: Guid(6b440908d983053418037db1dce53259) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Textures & Skyboxes using Guid(6b440908d983053418037db1dce53259) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bbc679f72ba2aab666f5f80c73ae812c') in 0.020446 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.425817 seconds.
+  path: Assets/Textures
+  artifactKey: Guid(31dea532efe13624ea6c8800956e7483) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 1
+Start importing Assets/Textures using Guid(31dea532efe13624ea6c8800956e7483) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8b45c70855a2497ca452956822553aa') in 0.009754 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.805414 seconds.
+  path: Assets/Textures & Skyboxes/0001.png
+  artifactKey: Guid(0e5e4d042f5d5e343b7ac7b5d777e6d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Textures & Skyboxes/0001.png using Guid(0e5e4d042f5d5e343b7ac7b5d777e6d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b2a915400bdebf082c815975862efb9') in 0.094124 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Textures & Skyboxes/Sky_3.mat
+  artifactKey: Guid(a93d27d74f0fb574f9bbb6a2dbc86e97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Textures & Skyboxes/Sky_3.mat using Guid(a93d27d74f0fb574f9bbb6a2dbc86e97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '11b92006455fbd7c8378e965b089ca8b') in 0.338050 seconds 
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Textures & Skyboxes/hehehe.jpg
+  artifactKey: Guid(8362183c11afddb45835f395616d4f37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Textures & Skyboxes/hehehe.jpg using Guid(8362183c11afddb45835f395616d4f37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '517c9833e78fcca858a5246dddf65690') in 0.037811 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Textures & Skyboxes/Sky_8.mat
+  artifactKey: Guid(4323fde32dbcebf4195ad58c05f28e84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Textures & Skyboxes/Sky_8.mat using Guid(4323fde32dbcebf4195ad58c05f28e84) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0870d7bba6f3092ad316d2487fb21c79') in 0.301517 seconds 
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Textures & Skyboxes/Skybox.mat
+  artifactKey: Guid(9e68269aa4f86f04ba495044533c2393) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Textures & Skyboxes/Skybox.mat using Guid(9e68269aa4f86f04ba495044533c2393) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c166a58c41dc958d68cd7d78e0db32d3') in 0.035698 seconds 
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Textures & Skyboxes/Galaxy 1.mat
+  artifactKey: Guid(6c6a03bf7b6e2ca4dbdd4f4a04ff5d93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Textures & Skyboxes/Galaxy 1.mat using Guid(6c6a03bf7b6e2ca4dbdd4f4a04ff5d93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '25c05d1737bf221c25808a2ec13d60d9') in 0.245538 seconds 
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Textures & Skyboxes/ezgif-1-24f0774660.png
+  artifactKey: Guid(2e40f97247d71fa4ea550b085f0586af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Textures & Skyboxes/ezgif-1-24f0774660.png using Guid(2e40f97247d71fa4ea550b085f0586af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4fc3388ed395aaac346a80cd9050187d') in 0.061830 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 2.451775 seconds.
+  path: Assets/Textures & Skyboxes/DeepSpaceBlueWithPlanet
+  artifactKey: Guid(cee818ddb451da14380ab4aa34f65aed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Textures & Skyboxes/DeepSpaceBlueWithPlanet using Guid(cee818ddb451da14380ab4aa34f65aed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '321610070a479520366a16232c49fd08') in 0.009759 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.080009 seconds.
+  path: Assets/Textures & Skyboxes/DeepSpaceBlueWithPlanet/backImage.png
+  artifactKey: Guid(04550512a36deb34887e513ee0f31545) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Textures & Skyboxes/DeepSpaceBlueWithPlanet/backImage.png using Guid(04550512a36deb34887e513ee0f31545) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5364b633d09d45ff42a96744d69bd712') in 0.045067 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Textures & Skyboxes/DeepSpaceBlueWithPlanet/leftImage.png
+  artifactKey: Guid(0373ee03f989db143826ef682bb33f93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Textures & Skyboxes/DeepSpaceBlueWithPlanet/leftImage.png using Guid(0373ee03f989db143826ef682bb33f93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3da42fd57a389f5be1c802ee784a9259') in 0.048455 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 6.407838 seconds.
+  path: Assets/Textures/Avatar-ayN-Image-2019431f1_4_sta.file_56bfecfe-88fd-4b1a-a1d6-e403125cd066.2.png
+  artifactKey: Guid(0b299789b19d67843b4835ec08873b64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 1
+Start importing Assets/Textures/Avatar-ayN-Image-2019431f1_4_sta.file_56bfecfe-88fd-4b1a-a1d6-e403125cd066.2.png using Guid(0b299789b19d67843b4835ec08873b64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e6e2a1ed9a165a832e3d9a2d84cc964') in 0.126888 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Textures/Metal_Gold_001_ambientOcclusion.jpg
+  artifactKey: Guid(294c72854cddd5e418ff40a632363230) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Textures/Metal_Gold_001_ambientOcclusion.jpg using Guid(294c72854cddd5e418ff40a632363230) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '71ed004fbe7407aca178941b91331fe8') in 0.062658 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Textures/startworld png.mat
+  artifactKey: Guid(c403518f3710aab499cddcefde155aa8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Textures/startworld png.mat using Guid(c403518f3710aab499cddcefde155aa8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a8c302a9c19295b69d1f34454cce2281') in 0.053839 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Textures/Seamless_Grey_Fabric_Texture_NORMAL.jpg
+  artifactKey: Guid(97ad02e52bfe9c147b29e38b130bf510) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Textures/Seamless_Grey_Fabric_Texture_NORMAL.jpg using Guid(97ad02e52bfe9c147b29e38b130bf510) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad8b2ead07f2e3335a4f16182e797b8f') in 0.038199 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Textures/Seamless_Grey_Fabric_Texture.jpg
+  artifactKey: Guid(c5052a8f8d8194a4b87e58d12614d2c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Textures/Seamless_Grey_Fabric_Texture.jpg using Guid(c5052a8f8d8194a4b87e58d12614d2c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '96fc5581e7e0a847c9ded7c31a530354') in 0.038705 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Textures/Avatar-NYA_-Image-2019431f1_4_st.file_5f2f2352-b71e-4f01-afc7-7e8c71aaaab3.1.png
+  artifactKey: Guid(d344e162647a7d4409f90ef9f2443827) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Textures/Avatar-NYA_-Image-2019431f1_4_st.file_5f2f2352-b71e-4f01-afc7-7e8c71aaaab3.1.png using Guid(d344e162647a7d4409f90ef9f2443827) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'caca4307104a869744252198d6845104') in 0.119215 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Textures/Avatar-Meow_-Image-2019431f1_4_s.file_6d0205cc-0d8e-4dd9-8375-c6687ea26373.2.png
+  artifactKey: Guid(f0078c8f01685c64aa8a42b00686508e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Textures/Avatar-Meow_-Image-2019431f1_4_s.file_6d0205cc-0d8e-4dd9-8375-c6687ea26373.2.png using Guid(f0078c8f01685c64aa8a42b00686508e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f34083954a208554e3344d8ea112d135') in 0.123639 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Textures/Fabric_Lace_019_height.png
+  artifactKey: Guid(dadd5cb2ae70ce748aa3660d01596fa7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Textures/Fabric_Lace_019_height.png using Guid(dadd5cb2ae70ce748aa3660d01596fa7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3c560c7cbcf95fb4bf5faf623469229') in 0.038348 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Textures/startworld png.png
+  artifactKey: Guid(734114de38e5ba04fb56d7d12c8eb6ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Textures/startworld png.png using Guid(734114de38e5ba04fb56d7d12c8eb6ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fd9568edfc123f9d98dd7e861201aabe') in 0.042457 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 4.571084 seconds.
+  path: Assets/Textures/Menus
+  artifactKey: Guid(ea5c33883389590419a8f8093b1310e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Textures/Menus using Guid(ea5c33883389590419a8f8093b1310e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7f8aa7279f54b6efeea627c9c07dff55') in 0.010135 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 9.406857 seconds.
+  path: Assets/UnityTechnologies/SpaceRobotKyle/Materials
+  artifactKey: Guid(39973b395d67e46bcb3ac2889cec975d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/UnityTechnologies/SpaceRobotKyle/Materials using Guid(39973b395d67e46bcb3ac2889cec975d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8207c8c8bdc85663f87a4f8e692cc722') in 0.009396 seconds 
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.078674 seconds.
+  path: Assets/UnityTechnologies/SpaceRobotKyle/Materials/Robot_Color 1.mat
+  artifactKey: Guid(ea88ff6c6c1797349afd8a519d6449a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/UnityTechnologies/SpaceRobotKyle/Materials/Robot_Color 1.mat using Guid(ea88ff6c6c1797349afd8a519d6449a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f711b290903190354346dff4dd2d3f4b') in 0.060146 seconds 
+Number of asset objects unloaded after import = 2
