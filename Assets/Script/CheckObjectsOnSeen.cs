@@ -117,8 +117,8 @@ public class CheckObjectsOnSeen : MonoBehaviour
     {
 
         
-          if (UnityEngine.Input.GetKeyDown(KeyCode.C))
-        //  if (activateButton.action.WasPressedThisFrame())
+        //   if (UnityEngine.Input.GetKeyDown(KeyCode.C))
+         if (activateButton.action.WasPressedThisFrame())
         {
             if(!active)
             {
