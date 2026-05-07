@@ -14,7 +14,9 @@ namespace GoogleTextToSpeech.Scripts
         public static void SaveTextToMp3(AudioData audioData)
         {
             var bytes = Convert.FromBase64String(audioData.audioContent);
-            File.WriteAllBytes(Application.temporaryCachePath + "/" + Mp3FileName, bytes);
+             string path = Application.temporaryCachePath + "/" + Mp3FileName;
+            File.WriteAllBytes(path, bytes);
+            Debug.Log("Audio MP3 saved to: " + path);
         }
 
         public void LoadClipFromMp3(Action<AudioClip> onClipLoaded)

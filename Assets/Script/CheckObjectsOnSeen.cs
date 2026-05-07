@@ -4,6 +4,7 @@ using UnityEngine;
 using System.IO;
 // using UnityEditor;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
 
 using UnityEngine.EventSystems;
 using UnityEngine.XR;
@@ -31,6 +32,8 @@ public class ObjectData
 public class CheckObjectsOnSeen : MonoBehaviour
 {
     private Renderer[] renderers;
+
+    public LabelSpawner labelSpawner;
 
     private Metadata metadata;
 
@@ -75,11 +78,16 @@ public class CheckObjectsOnSeen : MonoBehaviour
 
     public Camera assignedCamera;
 
+    public Camera originalCamera;
+
+
+    public Shader replacementShader;
+
     void Start()
     {
         audioManager = AudioManager.instance;
         isWaitingForAudioResponse = false;
-        assignedCamera.gameObject.SetActive(false);
+        assignedCamera.gameObject.SetActive(true);
         
     }
 
@@ -96,12 +104,12 @@ public class CheckObjectsOnSeen : MonoBehaviour
         // "description from the point of user's point of view (User POV) and the list of contents. " +
         // "The accessible description needs to be short. Keep it below 1200 characters. Omit any of (0.00, 0.00, 0.00) in your response.";
         
-        alternativePrompt = "Descreva o cenário virtual, destacando os elementos e características principais. Explore a arquitetura," +
-        "e elementos que compõem o ambiente." + 
-        "Crie uma descrição acessível para uma pessoa cega em menos de 600 caracteres, capturando a essência do local." +
-        " Exclua qualquer informação sobre os controles.";
+        // alternativePrompt = "Descreva o cenário virtual, destacando os elementos e características principais. Explore a arquitetura," +
+        // "e elementos que compõem o ambiente." + 
+        // "Crie uma descrição acessível para uma pessoa cega em menos de 600 caracteres, capturando a essência do local." +
+        // " Exclua qualquer informação sobre os controles.";
 
-        // alternativePrompt = "Based on the image, can you provide make a list of the elements you recognize?";
+        alternativePrompt = "Please, describe the next image for a blind person!";
 
         // string testPrompt_1 = "From now on, please act as an Orientation and Mobility Specialist. Focus on the environmental details and provide a comprehensive description from this perspective. Highlight key aspects relevant to navigation and accessibility to assist users in understanding the space effectively.";
         // string testPrompt_2 = "From now on, please act as a Sighted Guide. Concentrate on the environmental details pertinent to this role and provide observations that would be important for effective assistance in navigating the space.";
@@ -117,22 +125,14 @@ public class CheckObjectsOnSeen : MonoBehaviour
     {
 
         
-        //   if (UnityEngine.Input.GetKeyDown(KeyCode.C))
-         if (activateButton.action.WasPressedThisFrame())
+          if (UnityEngine.Input.GetKeyDown(KeyCode.C))
+        //  if (activateButton.action.WasPressedThisFrame())
         {
-            if(!active)
             {
 
                 //Code to send text and an image to the Gemini API
                 StartCoroutine(CaptureScreenshot());
 
-                active = true;
-
-                if(!isTraining)
-                {
-                    // prompt = OutputVisibleRenderers(renderers);
-                }
-                
                 
  
                 //Code to send text to the Gemini API
@@ -143,24 +143,70 @@ public class CheckObjectsOnSeen : MonoBehaviour
         }
     }
 
-    
+private Texture2D renderedTexture;
+private RenderTexture screenTexture;    
     private IEnumerator CaptureScreenshot()
 {
-    assignedCamera.gameObject.SetActive(true);
+    
+    // assignedCamera.gameObject.SetActive(true);
+
+    // labelSpawner.ApplyFrustumLabelCulling(assignedCamera);
+
     yield return new WaitForEndOfFrame();
 
     screenshotCount++;
     string screenshotFileName = "/Screenshot_" + screenshotCount + "_" + Screen.width + "X" + Screen.height + ".png";
-    string screenShotPath = Application.persistentDataPath + screenshotFileName;
+    string screenshotOriginalFileName = "/ScreenshotOriginal_" + screenshotCount + "_" + Screen.width + "X" + Screen.height + ".png";
 
-    RenderTexture screenTexture = new RenderTexture(Screen.width, Screen.height, 16);
+    string screenShotPath = Application.persistentDataPath + screenshotFileName;
+    string screenShotOriginalPath = Application.persistentDataPath + screenshotOriginalFileName;
+
+
+    // Color oldAmbient = RenderSettings.ambientLight;
+    // AmbientMode oldMode = RenderSettings.ambientMode;
+    //        RenderSettings.ambientMode = AmbientMode.Flat;
+    //     RenderSettings.ambientLight = Color.white; // Bright white light everywhere
+
+   Color oldAmbient = RenderSettings.ambientLight;
+    AmbientMode oldMode = RenderSettings.ambientMode;
+    float oldIntensity = RenderSettings.ambientIntensity;
+
+    RenderSettings.ambientMode = AmbientMode.Flat;
+    RenderSettings.ambientLight = new Color(0.3f, 0.3f, 0.3f); // Darker gray for better contrast
+    RenderSettings.ambientIntensity = 0.5f;
+
+//     RenderSettings.ambientMode = AmbientMode.Flat;
+// RenderSettings.ambientLight = new Color(0.4f, 0.4f, 0.4f); // 40% brightness
+// RenderSettings.ambientIntensity = 0.7f;
+
+
+
+    // 3. Reuse textures to avoid memory leaks
+    if (screenTexture == null) 
+        screenTexture = new RenderTexture(Screen.width, Screen.height, 24); // 24 for better depth
+
     assignedCamera.targetTexture = screenTexture;
-    RenderTexture.active = screenTexture;
     assignedCamera.Render();
 
-    Texture2D renderedTexture = new Texture2D(Screen.width, Screen.height);
+    // 4. Read pixels
+    RenderTexture.active = screenTexture;
+    if (renderedTexture == null)
+        renderedTexture = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
+    
     renderedTexture.ReadPixels(new Rect(0, 0, Screen.width, Screen.height), 0, 0);
+    renderedTexture.Apply();
+
+    // 5. Clean up
+    assignedCamera.targetTexture = null;
     RenderTexture.active = null;
+
+    RenderSettings.ambientLight = oldAmbient;
+    RenderSettings.ambientMode = oldMode;
+    RenderSettings.ambientIntensity = oldIntensity;
+
+
+
+    // GL.wireframe = false;
 
     byte[] imageBytes = renderedTexture.EncodeToPNG();
 
@@ -174,55 +220,92 @@ public class CheckObjectsOnSeen : MonoBehaviour
         Debug.LogError("Failed to save screenshot file: " + ex.Message);
     }
 
+ // 3. Reuse textures to avoid memory leaks
+
+    // labelSpawner.RestoreAllLabels();
+    // labelSpawner.SetOutlinesEnabled(false);
+
+    if (screenTexture == null) 
+        screenTexture = new RenderTexture(Screen.width, Screen.height, 24);
+
+    originalCamera.targetTexture = screenTexture;
+    originalCamera.Render();
+
+     RenderTexture.active = screenTexture;
+    if (renderedTexture == null)
+        renderedTexture = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
+    
+    renderedTexture.ReadPixels(new Rect(0, 0, Screen.width, Screen.height), 0, 0);
+    renderedTexture.Apply();
+
+    // 5. Clean up
+    originalCamera.targetTexture = null;
+    RenderTexture.active = null;
+
+    // labelSpawner.SetOutlinesEnabled(true);
+
+    byte[] imageOriginalBytes = renderedTexture.EncodeToPNG();
+
+    try
+    {
+        System.IO.File.WriteAllBytes(screenShotOriginalPath, imageOriginalBytes);
+        Debug.Log("Screenshot saved to: " + screenShotOriginalPath);
+    }
+    catch (Exception ex)
+    {
+        Debug.LogError("Failed to save screenshot file: " + ex.Message);
+    }
+
+
     audioManager.PlayAccessibleDescription(loadingAudio);
 
     // Check if file exists before attempting to read
-    if (File.Exists(screenShotPath))
-    {
-        try
-        {
+    // if (File.Exists(screenShotPath))
+    // {
+    //     try
+    //     {
 
-            byte[] screenshotBytes = File.ReadAllBytes(screenShotPath);
+    //         byte[] screenshotBytes = File.ReadAllBytes(screenShotPath);
 
                         
                         
-            assignedCamera.gameObject.SetActive(false);
+    //         // assignedCamera.gameObject.SetActive(false);
 
-            StartCoroutine(artificialInteligence.SendMultimodalDataToGAS(alternativePrompt, screenshotBytes, (response) => {
-                if (response != null)
-                {
-                    Debug.Log("Response received: " + response);
+    //         StartCoroutine(artificialInteligence.SendMultimodalDataToGAS(alternativePrompt, screenshotBytes, (response) => {
+    //             if (response != null)
+    //             {
+    //                 Debug.Log("Response received: " + response);
 
-                    if (!isWaitingForAudioResponse)
-                    {
-                        isWaitingForAudioResponse = true;
-                        _errorReceived += ErrorReceived;
-                        _audioClipReceived += AudioClipReceived;
-                        //Not wanting to play the answer
-                        textToSpeech.GetSpeechAudioFromGoogle(response, voice, _audioClipReceived, _errorReceived);
-                    }
-                }
-                else
-                {
-                    Debug.Log("Error occurred during request.");
-                    active = false;
-                    audioManager.PlaySFX(2);
-                }
-            }));
-        }
-        catch (Exception ex)
-        {
-            Debug.LogError("Failed to read screenshot file: " + ex.Message);
-            active = false;
-            audioManager.PlaySFX(2);
-        }
-    }
-    else
-    {
-        Debug.LogError("Screenshot file not found: " + screenShotPath);
-        active = false;
-        audioManager.PlaySFX(2);
-    }
+    //                 if (!isWaitingForAudioResponse)
+    //                 {
+    //                     isWaitingForAudioResponse = true;
+    //                     _errorReceived += ErrorReceived;
+    //                     _audioClipReceived += AudioClipReceived;
+    //                     //Not wanting to play the answer
+    //                     textToSpeech.GetSpeechAudioFromGoogle(response, voice, _audioClipReceived, _errorReceived);
+    //                 }
+    //             }
+    //             else
+    //             {
+    //                 Debug.Log("Error occurred during request.");
+    //                 active = false;
+    //                 audioManager.PlaySFX(2);
+    //             }
+    //         }));
+    //     }
+    //     catch (Exception ex)
+    //     {
+    //         Debug.LogError("Failed to read screenshot file: " + ex.Message);
+    //         active = false;
+    //         audioManager.PlaySFX(2);
+    //     }
+    // }
+    // else
+    // {
+    //     Debug.LogError("Screenshot file not found: " + screenShotPath);
+    //     active = false;
+    //     audioManager.PlaySFX(2);
+    // }
 }
 
 
