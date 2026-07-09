@@ -1,6 +1,7 @@
 using System;
 using GoogleTextToSpeech.Scripts.Data;
 using UnityEngine;
+using System.Text.RegularExpressions;
 using Input = GoogleTextToSpeech.Scripts.Data.Input;
 
 [System.Serializable]
@@ -32,8 +33,26 @@ namespace GoogleTextToSpeech.Scripts
             apiKey = keyPassword.key;
         }
 
+private string CleanTextForSpeech(string input)
+{
+    if (string.IsNullOrEmpty(input)) 
+        return string.Empty;
+
+    // 1. Standard string replace (only needs 2 arguments)
+    string cleaned = input.Replace("*", "");
+
+    // 2. Regex replace - MUST have 3 arguments: (input, pattern, replacement)
+    cleaned = Regex.Replace(cleaned, @"[^\p{L}\p{N}\s\.,;:!\?\-\'""]", "");
+    // 3. Regex replace - MUST have 3 arguments: (input, pattern, replacement)
+    cleaned = Regex.Replace(cleaned, @"\s+", " ").Trim();
+
+    return cleaned;
+}
+
         public void GetSpeechAudioFromGoogle(string textToConvert, VoiceScriptableObject voice, Action<AudioClip> audioClipReceived,  Action<BadRequestData> errorReceived)
         {
+
+            string cleanedText = CleanTextForSpeech(textToConvert);
 
             _actionRequestReceived += (requestData => RequestReceived(requestData,audioClipReceived));
 
@@ -48,7 +67,7 @@ namespace GoogleTextToSpeech.Scripts
                 input =
                     new Input()
                     {
-                        text = textToConvert
+                        text = cleanedText
                     },
                 voice =
                     new Voice()

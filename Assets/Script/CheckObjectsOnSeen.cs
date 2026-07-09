@@ -93,12 +93,12 @@ public class CheckObjectsOnSeen : MonoBehaviour
 
     void Awake ()
     {
-        if(!isTraining)
-        {
-            GameObject visibleObject = GameObject.FindGameObjectWithTag ("VisibleObject");
-            renderers = visibleObject.GetComponentsInChildren<Renderer> ();
-        }
-        active = false;
+        // if(!isTraining)
+        // {
+        //     GameObject visibleObject = GameObject.FindGameObjectWithTag ("VisibleObject");
+        //     renderers = visibleObject.GetComponentsInChildren<Renderer> ();
+        // }
+        // active = false;
         artificialInteligence = GetComponent<GeminiManager>();
         // prePrompt = "You are a guide for a blind person in a Virtual Scene. Please provide an accessible " +
         // "description from the point of user's point of view (User POV) and the list of contents. " +
@@ -109,7 +109,7 @@ public class CheckObjectsOnSeen : MonoBehaviour
         // "Crie uma descrição acessível para uma pessoa cega em menos de 600 caracteres, capturando a essência do local." +
         // " Exclua qualquer informação sobre os controles.";
 
-        alternativePrompt = "Please, describe the next image for a blind person!";
+        alternativePrompt = "Please, describe the next image";
 
         // string testPrompt_1 = "From now on, please act as an Orientation and Mobility Specialist. Focus on the environmental details and provide a comprehensive description from this perspective. Highlight key aspects relevant to navigation and accessibility to assist users in understanding the space effectively.";
         // string testPrompt_2 = "From now on, please act as a Sighted Guide. Concentrate on the environmental details pertinent to this role and provide observations that would be important for effective assistance in navigating the space.";
@@ -125,13 +125,13 @@ public class CheckObjectsOnSeen : MonoBehaviour
     {
 
         
-          if (UnityEngine.Input.GetKeyDown(KeyCode.C))
+          if (UnityEngine.Input.GetKeyDown(KeyCode.Space))
         //  if (activateButton.action.WasPressedThisFrame())
         {
             {
 
                 //Code to send text and an image to the Gemini API
-                StartCoroutine(CaptureScreenshot());
+                StartCoroutine(CaptureMuseumImage());
 
                 
  
@@ -142,6 +142,45 @@ public class CheckObjectsOnSeen : MonoBehaviour
             
         }
     }
+
+    private IEnumerator CaptureMuseumImage()
+    {
+        yield return new WaitForEndOfFrame();
+        string screenshotFileName = "/Screenshot_" + screenshotCount + "_" + Screen.width + "X" + Screen.height + ".png";
+ 
+        string screenShotPath = Application.persistentDataPath + screenshotFileName;
+
+        if (screenTexture == null) 
+        screenTexture = new RenderTexture(Screen.width, Screen.height, 24); // 24 for better depth
+
+    assignedCamera.targetTexture = screenTexture;
+    assignedCamera.Render();
+
+    // 4. Read pixels
+    RenderTexture.active = screenTexture;
+    if (renderedTexture == null)
+        renderedTexture = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
+    
+    renderedTexture.ReadPixels(new Rect(0, 0, Screen.width, Screen.height), 0, 0);
+    renderedTexture.Apply();
+
+    // 5. Clean up
+    assignedCamera.targetTexture = null;
+    RenderTexture.active = null;
+
+    byte[] imageBytes = renderedTexture.EncodeToPNG();
+
+    try
+    {
+        System.IO.File.WriteAllBytes(screenShotPath, imageBytes);
+        Debug.Log("Screenshot saved to: " + screenShotPath);
+    }
+    catch (Exception ex)
+    {
+        Debug.LogError("Failed to save screenshot file: " + ex.Message);
+    }
+    }
+
 
 private Texture2D renderedTexture;
 private RenderTexture screenTexture;    
@@ -157,9 +196,11 @@ private RenderTexture screenTexture;
     screenshotCount++;
     string screenshotFileName = "/Screenshot_" + screenshotCount + "_" + Screen.width + "X" + Screen.height + ".png";
     string screenshotOriginalFileName = "/ScreenshotOriginal_" + screenshotCount + "_" + Screen.width + "X" + Screen.height + ".png";
+    string screenshotGroundFileName = "/ScreenshotGroundofTruth_" + screenshotCount + "_" + Screen.width + "X" + Screen.height + ".png";
 
     string screenShotPath = Application.persistentDataPath + screenshotFileName;
     string screenShotOriginalPath = Application.persistentDataPath + screenshotOriginalFileName;
+    string screenShotGroundPath = Application.persistentDataPath + screenshotGroundFileName;
 
 
     // Color oldAmbient = RenderSettings.ambientLight;
@@ -200,14 +241,6 @@ private RenderTexture screenTexture;
     assignedCamera.targetTexture = null;
     RenderTexture.active = null;
 
-    RenderSettings.ambientLight = oldAmbient;
-    RenderSettings.ambientMode = oldMode;
-    RenderSettings.ambientIntensity = oldIntensity;
-
-
-
-    // GL.wireframe = false;
-
     byte[] imageBytes = renderedTexture.EncodeToPNG();
 
     try
@@ -220,11 +253,11 @@ private RenderTexture screenTexture;
         Debug.LogError("Failed to save screenshot file: " + ex.Message);
     }
 
- // 3. Reuse textures to avoid memory leaks
+    labelSpawner.SetOutlinesEnabled(false);
 
-    // labelSpawner.RestoreAllLabels();
-    // labelSpawner.SetOutlinesEnabled(false);
 
+
+    //////////// Ground of Truth Screenshot
     if (screenTexture == null) 
         screenTexture = new RenderTexture(Screen.width, Screen.height, 24);
 
@@ -243,6 +276,57 @@ private RenderTexture screenTexture;
     RenderTexture.active = null;
 
     // labelSpawner.SetOutlinesEnabled(true);
+
+    byte[] imageGroundBytes = renderedTexture.EncodeToPNG();
+
+    try
+    {
+        System.IO.File.WriteAllBytes(screenShotGroundPath, imageGroundBytes);
+        Debug.Log("Screenshot saved to: " + screenShotGroundPath);
+    }
+    catch (Exception ex)
+    {
+        Debug.LogError("Failed to save screenshot file: " + ex.Message);
+    }
+
+    // 5. Clean up
+    originalCamera.targetTexture = null;
+    RenderTexture.active = null;
+
+    //////
+
+
+
+    RenderSettings.ambientLight = oldAmbient;
+    RenderSettings.ambientMode = oldMode;
+    RenderSettings.ambientIntensity = oldIntensity;
+
+
+
+    // GL.wireframe = false;
+
+ // 3. Reuse textures to avoid memory leaks
+
+    // labelSpawner.RestoreAllLabels();
+ 
+    if (screenTexture == null) 
+        screenTexture = new RenderTexture(Screen.width, Screen.height, 24);
+
+    originalCamera.targetTexture = screenTexture;
+    originalCamera.Render();
+
+     RenderTexture.active = screenTexture;
+    if (renderedTexture == null)
+        renderedTexture = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
+    
+    renderedTexture.ReadPixels(new Rect(0, 0, Screen.width, Screen.height), 0, 0);
+    renderedTexture.Apply();
+
+    // 5. Clean up
+    originalCamera.targetTexture = null;
+    RenderTexture.active = null;
+
+    labelSpawner.SetOutlinesEnabled(true);
 
     byte[] imageOriginalBytes = renderedTexture.EncodeToPNG();
 

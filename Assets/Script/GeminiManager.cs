@@ -13,47 +13,48 @@ public class GeminiURL
 
 public class GeminiManager : MonoBehaviour
 {
-    private string gasURL;
+    // public string audioGasURL;
     // [SerializeField] private string prompt;
-    public TextAsset jsonFile;
+    // public TextAsset jsonFile;
 
-    private string alternativeGasURL;
+    public string alternativeGasURL;
 
-    public TextAsset jsonAlternativeFile;
+    // public TextAsset jsonAlternativeFile;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        GeminiURL geminiURL = JsonUtility.FromJson<GeminiURL>(jsonFile.text);
+        // GeminiURL geminiURL = JsonUtility.FromJson<GeminiURL>(jsonFile.text);
 
-        GeminiURL geminiAlternativeURL = JsonUtility.FromJson<GeminiURL>(jsonAlternativeFile.text);
+        // GeminiURL geminiAlternativeURL = JsonUtility.FromJson<GeminiURL>(jsonAlternativeFile.text);
         
-        alternativeGasURL = geminiAlternativeURL.key;
 
-        gasURL = geminiURL.key;
+
+        // alternativeGasURL = geminiAlternativeURL.key;
+
 
     }
 
 
-    public IEnumerator SendDataToGAS(string prompt)
-    {
-        WWWForm form = new WWWForm();
-        form.AddField("parameter", prompt);
-        UnityWebRequest www = UnityWebRequest.Post(gasURL,form);
+    // public IEnumerator SendDataToGAS(string prompt)
+    // {
+    //     WWWForm form = new WWWForm();
+    //     form.AddField("parameter", prompt);
+    //     UnityWebRequest www = UnityWebRequest.Post(gasURL,form);
      
-        yield return www.SendWebRequest();  
-        string response = "";
+    //     yield return www.SendWebRequest();  
+    //     string response = "";
 
-        if(www.result == UnityWebRequest.Result.Success)
-        {
-            response = www.downloadHandler.text;
-        } else 
-        {
-            response = "There was an error!";
-        }
-        Debug.Log(response);
-    }
+    //     if(www.result == UnityWebRequest.Result.Success)
+    //     {
+    //         response = www.downloadHandler.text;
+    //     } else 
+    //     {
+    //         response = "There was an error!";
+    //     }
+    //     Debug.Log(response);
+    // }
 
     // public IEnumerator SendMultimodalDataToGAS(string prompt, byte[] imageData)
     // {
@@ -92,7 +93,7 @@ public class GeminiManager : MonoBehaviour
     // }
 
 
-    public IEnumerator SendMultimodalDataToGAS(string prompt, byte[] imageData, Action<string> callback)
+    public IEnumerator SendMultimodalDataToGAS(string prompt, byte[] imageData, string userData, Action<string> callback)
     {
         WWWForm form = new WWWForm();
         form.AddField("parameter", prompt);  // Assuming 'parameter' is the key for text data in GAS doPost function
@@ -102,6 +103,46 @@ public class GeminiManager : MonoBehaviour
          form.AddField("imageData", base64String); 
         // form.AddBinaryData("imageData", imageData, "image.jpg", "image/jpeg");  // Add the image data as binary
         // form.AddField("imageData", System.Convert.ToBase64String(imageData)); 
+
+        form.AddField("mimeType","image/jpeg");
+
+        form.AddField("userData", userData);
+
+        UnityWebRequest www = UnityWebRequest.Post(alternativeGasURL, form);
+
+        
+
+        yield return www.SendWebRequest();
+
+        if (www.result == UnityWebRequest.Result.Success)
+        {
+            string response = www.downloadHandler.text;
+            Debug.Log("Response: " + response);
+            callback(response);
+        }
+        else
+        {
+            Debug.Log("Error: " + www.error);
+            callback(null); 
+        }
+    }
+
+
+    public IEnumerator SendAudioDataToGAS(string prompt, byte[] audioData, string userData, Action<string> callback)
+    {
+        WWWForm form = new WWWForm();
+        form.AddField("parameter", prompt);  // Assuming 'parameter' is the key for text data in GAS doPost function
+        
+        string base64String = System.Convert.ToBase64String(audioData);
+
+        // audio/wav
+
+         form.AddField("imageData", base64String); 
+        // form.AddBinaryData("imageData", imageData, "image.jpg", "image/jpeg");  // Add the image data as binary
+        // form.AddField("imageData", System.Convert.ToBase64String(imageData)); 
+        form.AddField("mimeType", "audio/wav");
+
+         form.AddField("userData", userData);
 
         UnityWebRequest www = UnityWebRequest.Post(alternativeGasURL, form);
 

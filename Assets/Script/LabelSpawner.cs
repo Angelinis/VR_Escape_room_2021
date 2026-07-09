@@ -4,6 +4,9 @@ using System.Collections.Generic;
 
 public class LabelSpawner : MonoBehaviour
 {
+    [Header("Visibility & Performance")]
+    [Tooltip("If false, labels will always remain active regardless of visibility checks.")]
+    public bool TurnONOFFCollider = true;
     public Camera mainCamera;
     public GameObject labelPrefab;
     public Vector3 offset = Vector3.zero; // Base offset from the target's pivot
@@ -182,12 +185,14 @@ public class LabelSpawner : MonoBehaviour
             // --- 4. Visibility Culling (Distance, Frustum, Multi-Raycast Occlusion) ---
             bool isVisible = IsLabelEffectivelyVisible(data, dist, currentLabelBasePosition, forceFullUpdate);
 
-           // 1. Toggle Label active state based on visibility
-            if (data.labelTransform.gameObject.activeSelf != isVisible)
+            // 1. Toggle Label active state based on visibility
+            if (TurnONOFFCollider)
             {
-                data.labelTransform.gameObject.SetActive(isVisible);
+                if (data.labelTransform.gameObject.activeSelf != isVisible)
+                {
+                    data.labelTransform.gameObject.SetActive(isVisible);
+                }
             }
-
             // 2. ALWAYS check the Outline separately, so it never gets stuck!
             if (data.outline != null && data.outline.enabled != isVisible)
             {
@@ -315,12 +320,12 @@ private bool IsLabelEffectivelyVisible(LabelData data, float distanceToCamera, V
     /// <summary>
     /// Sets the enabled state of all outlines associated with the labels.
     /// </summary>
-    // public void SetOutlinesEnabled(bool enabled)
-    // {
-    //     foreach (LabelData label in labels)
-    //     {
-    //         if (label.outline != null)
-    //             label.outline.enabled = enabled;
-    //     }
-    // }
+    public void SetOutlinesEnabled(bool enabled)
+    {
+        foreach (LabelData label in labels)
+        {
+            if (label.outline != null)
+                label.outline.enabled = enabled;
+        }
+    }
 }

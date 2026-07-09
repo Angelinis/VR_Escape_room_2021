@@ -15,7 +15,7 @@ C:/Users/angelo/Unity/VR_Escape_room_2021
 -logFile
 Logs/AssetImportWorker2.log
 -srvPort
-54433
+51982
 Successfully changed project path to: C:/Users/angelo/Unity/VR_Escape_room_2021
 C:/Users/angelo/Unity/VR_Escape_room_2021
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,13 +47,13 @@ C:/Users/angelo/Unity/VR_Escape_room_2021
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [6612] Host "[IP] 172.20.0.1 [Port] 0 [Flags] 2 [Guid] 727661974 [EditorId] 727661974 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-FRPR941) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [1584] Host "[IP] 10.227.238.125 [Port] 0 [Flags] 2 [Guid] 2293079663 [EditorId] 2293079663 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-FRPR941) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [6612] Host "[IP] 172.20.0.1 [Port] 0 [Flags] 2 [Guid] 727661974 [EditorId] 727661974 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-FRPR941) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [1584] Host "[IP] 10.227.238.125 [Port] 0 [Flags] 2 [Guid] 2293079663 [EditorId] 2293079663 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-FRPR941) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
 [Physics::Module] Initialized MultithreadedJobDispatcher with {0} workers.
-Refreshing native plugins compatible for Editor in 111.06 ms, found 15 plugins.
-Preloading 2 native plugins for Editor in 2.16 ms.
+Refreshing native plugins compatible for Editor in 142.31 ms, found 15 plugins.
+Preloading 2 native plugins for Editor in 3.43 ms.
 Initialize engine version: 2021.3.31f1 (3409e2af086f)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.31f1/Editor/Data/Resources/UnitySubsystems
 [Subsystems] Discovering subsystems at path C:/Users/angelo/Unity/VR_Escape_room_2021/Assets
@@ -68,99 +68,100 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.31f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.31f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.31f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56408
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56524
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.31f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.31f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.31f1/Editor/Data/PlaybackEngines/MetroSupport/UnityEditor.UWP.Extensions.dll
-Registered in 0.005329 seconds.
+Registered in 0.005772 seconds.
 Native extension for UWP target not found
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Android Extension - Scanning For ADB Devices 381 ms
-Refreshing native plugins compatible for Editor in 94.30 ms, found 15 plugins.
-Preloading 2 native plugins for Editor in 0.23 ms.
+Android Extension - Scanning For ADB Devices 216 ms
+Refreshing native plugins compatible for Editor in 96.63 ms, found 15 plugins.
+Preloading 2 native plugins for Editor in 0.22 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.026 seconds
+- Completed reload, in  0.818 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1027ms)
-		BeginReloadAssembly (87ms)
+	ReloadAssembly (819ms)
+		BeginReloadAssembly (83ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (870ms)
-			LoadAssemblies (86ms)
+		EndReloadAssembly (657ms)
+			LoadAssemblies (82ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (81ms)
+			SetupTypeCache (85ms)
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (23ms)
-			SetupLoadedEditorAssemblies (728ms)
+			SetupLoadedEditorAssemblies (512ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (516ms)
+				InitializePlatformSupportModulesInManaged (310ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (95ms)
-				BeforeProcessingInitializeOnLoad (2ms)
-				ProcessInitializeOnLoadAttributes (75ms)
-				ProcessInitializeOnLoadMethodAttributes (39ms)
+				RefreshPlugins (97ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (68ms)
+				ProcessInitializeOnLoadMethodAttributes (35ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.010726 seconds.
+Registered in 0.009419 seconds.
 Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory is not a mono symbol file
 Native extension for UWP target not found
 Native extension for WindowsStandalone target not found
 Native extension for Android target not found
-Refreshing native plugins compatible for Editor in 65.53 ms, found 15 plugins.
-Preloading 2 native plugins for Editor in 0.22 ms.
+Refreshing native plugins compatible for Editor in 82.67 ms, found 15 plugins.
+Preloading 2 native plugins for Editor in 0.16 ms.
 Package Manager log level set to [2]
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] Cannot connect to Unity Package Manager local server
 [Package Manager] Server::EnsureServerProcessIsRunning -- launch failed, reason: Unity was launched with the -noUpm command-line argument
 [Package Manager] Cannot connect to Unity Package Manager local server
 Mono: successfully reloaded assembly
-- Completed reload, in  1.298 seconds
+- Completed reload, in  1.468 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1298ms)
-		BeginReloadAssembly (90ms)
+	ReloadAssembly (1468ms)
+		BeginReloadAssembly (81ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (4ms)
+			DisableScriptedObjects (3ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (13ms)
-		EndReloadAssembly (1134ms)
-			LoadAssemblies (86ms)
+		EndReloadAssembly (1321ms)
+			LoadAssemblies (84ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (198ms)
+			SetupTypeCache (232ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (48ms)
-			SetupLoadedEditorAssemblies (774ms)
+			RebuildScriptCaches (49ms)
+			SetupLoadedEditorAssemblies (920ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (14ms)
+				InitializePlatformSupportModulesInManaged (13ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (66ms)
-				BeforeProcessingInitializeOnLoad (78ms)
-				ProcessInitializeOnLoadAttributes (580ms)
-				ProcessInitializeOnLoadMethodAttributes (31ms)
-				AfterProcessingInitializeOnLoad (4ms)
+				RefreshPlugins (83ms)
+				BeforeProcessingInitializeOnLoad (96ms)
+				ProcessInitializeOnLoadAttributes (602ms)
+				ProcessInitializeOnLoadMethodAttributes (120ms)
+				AfterProcessingInitializeOnLoad (6ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (4ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.11 seconds
-Refreshing native plugins compatible for Editor in 0.88 ms, found 15 plugins.
-Preloading 2 native plugins for Editor in 0.13 ms.
-Unloading 5216 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 100 unused Assets / (49.9 KB). Loaded Objects now: 5666.
-Memory consumption went from 198.4 MB to 198.4 MB.
-Total: 2.663500 ms (FindLiveObjects: 0.251300 ms CreateObjectMapping: 0.157600 ms MarkObjects: 2.171500 ms  DeleteObjects: 0.082100 ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 0.99 ms, found 15 plugins.
+Preloading 2 native plugins for Editor in 0.12 ms.
+Unloading 6780 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 105 unused Assets / (52.5 KB). Loaded Objects now: 7227.
+Memory consumption went from 253.8 MB to 253.8 MB.
+Total: 3.723600 ms (FindLiveObjects: 0.363200 ms CreateObjectMapping: 0.184200 ms MarkObjects: 3.058300 ms  DeleteObjects: 0.117100 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -177,25 +178,105 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 20196.425129 seconds.
-  path: Packages/com.unity.collab-proxy/Lib/Editor/PlasticSCM/Unity.Plastic.Newtonsoft.Json.dll
-  artifactKey: Guid(e5fb93667cf08524f94b12181dbe3546) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+  Time since last request: 481.135190 seconds.
+  path: Assets/Oculus/Voice/Documentation/Samples/LiveUnderstanding/LiveUnderstanding.jpg
+  artifactKey: Guid(46f63a0a90188954eb3a578b4defe785) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Number of updated assets reloaded before import = 0
-Start importing Packages/com.unity.collab-proxy/Lib/Editor/PlasticSCM/Unity.Plastic.Newtonsoft.Json.dll using Guid(e5fb93667cf08524f94b12181dbe3546) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3fa481067b7cb55d7a559fa88559c49b') in 0.064499 seconds 
-Number of asset objects unloaded after import = 0
+Start importing Assets/Oculus/Voice/Documentation/Samples/LiveUnderstanding/LiveUnderstanding.jpg using Guid(46f63a0a90188954eb3a578b4defe785) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '128fc1ab6185989fea062a26b601cbd8') in 0.147562 seconds 
+Number of asset objects unloaded after import = 2
 ========================================================================
 Received Import Request.
-  Time since last request: 7.248748 seconds.
-  path: Assets/Oculus/Voice/Lib/Wit.ai/Lib/Wit/Runtime/Json
-  artifactKey: Guid(bf4668473862d154685123ce465e7d8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+  Time since last request: 0.000020 seconds.
+  path: Assets/Objects FBX/PKS_Laptoplow/PKS_Laptop_low/Textures/T_PKS_Laptop_low_Normal.png
+  artifactKey: Guid(318866abec7f7b644b0245286d3b990c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Number of updated assets reloaded before import = 0
-Start importing Assets/Oculus/Voice/Lib/Wit.ai/Lib/Wit/Runtime/Json using Guid(bf4668473862d154685123ce465e7d8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '267992ac8bf8cf2b58002ff18a812188') in 0.029686 seconds 
-Number of asset objects unloaded after import = 0
+Start importing Assets/Objects FBX/PKS_Laptoplow/PKS_Laptop_low/Textures/T_PKS_Laptop_low_Normal.png using Guid(318866abec7f7b644b0245286d3b990c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e2d5b6085112adb4431227f7afc3911') in 0.076211 seconds 
+Number of asset objects unloaded after import = 2
 ========================================================================
 Received Import Request.
-  Time since last request: 1.448768 seconds.
-  path: Assets/Oculus/Voice/Lib/Wit.ai/Lib/Wit/Runtime/Json/ColorConverter.cs
-  artifactKey: Guid(a8211bee17356ba498fd206c0c54e117) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+  Time since last request: 0.000019 seconds.
+  path: Assets/Objects FBX/Random Materials/textures/texture_wood_0h.jpg
+  artifactKey: Guid(da8182a1d59de4d4da70ed80b6febe67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Number of updated assets reloaded before import = 0
-Start importing Assets/Oculus/Voice/Lib/Wit.ai/Lib/Wit/Runtime/Json/ColorConverter.cs using Guid(a8211bee17356ba498fd206c0c54e117) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '69e8eb182ee41ded96cf9949ab349b91') in 0.041747 seconds 
-Number of asset objects unloaded after import = 0
+Start importing Assets/Objects FBX/Random Materials/textures/texture_wood_0h.jpg using Guid(da8182a1d59de4d4da70ed80b6febe67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0bcd8df611ca13689698bb1041ca2bbd') in 0.123083 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Samples/XR Interaction Toolkit/2.3.1/XR Device Simulator/UI/Mouse/MouseR.png
+  artifactKey: Guid(14e910c1fb9c7514a8106ffd25f1d892) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Samples/XR Interaction Toolkit/2.3.1/XR Device Simulator/UI/Mouse/MouseR.png using Guid(14e910c1fb9c7514a8106ffd25f1d892) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4104a4e3e7c79067c9e7055c58c62cf7') in 0.061744 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 255.690269 seconds.
+  path: Assets/Objects FBX/art-museum-vr/Materials/Floor 1.mat
+  artifactKey: Guid(a3c0c3395dcfc4c4a9d78f20f0da8e3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Objects FBX/art-museum-vr/Materials/Floor 1.mat using Guid(a3c0c3395dcfc4c4a9d78f20f0da8e3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cdde5badca155dfcbebebf5f1fb2bbaf') in 0.084946 seconds 
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 5.239572 seconds.
+  path: Assets/Objects FBX/art-museum-vr/Materials/Wall.mat
+  artifactKey: Guid(a3c0c3395dcfc4c4a9d78f20f0da8e3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Objects FBX/art-museum-vr/Materials/Wall.mat using Guid(a3c0c3395dcfc4c4a9d78f20f0da8e3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb8b70bc22752289ed341b83d6098cce') in 0.038269 seconds 
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 10.313781 seconds.
+  path: Assets/Objects FBX/art-museum-vr/Materials/Wall 1.mat
+  artifactKey: Guid(34f1a7f643038d645baa1d154fbe7f8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Objects FBX/art-museum-vr/Materials/Wall 1.mat using Guid(34f1a7f643038d645baa1d154fbe7f8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2061e2e15296926c9af7a9e777cfede6') in 0.028200 seconds 
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 4.254485 seconds.
+  path: Assets/Objects FBX/art-museum-vr/Materials/Roof.mat
+  artifactKey: Guid(34f1a7f643038d645baa1d154fbe7f8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Objects FBX/art-museum-vr/Materials/Roof.mat using Guid(34f1a7f643038d645baa1d154fbe7f8c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '663c5039dfa2407f8a3551df3b305e25') in 0.020071 seconds 
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 312.613770 seconds.
+  path: Assets/Objects FBX/art-museum-vr/Materials/red_plaster_weathered_diff_1k.jpg
+  artifactKey: Guid(8366c09609d5ac1458d71fc49de4e149) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Objects FBX/art-museum-vr/Materials/red_plaster_weathered_diff_1k.jpg using Guid(8366c09609d5ac1458d71fc49de4e149) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f931d2b709b02a810a20da79018e68d') in 0.058858 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 184.259867 seconds.
+  path: Assets/Objects FBX/art-museum-vr/Materials/painted_plaster_wall_diff_1k.jpg
+  artifactKey: Guid(f5692a871436ce04cb6ba197b89d65c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Objects FBX/art-museum-vr/Materials/painted_plaster_wall_diff_1k.jpg using Guid(f5692a871436ce04cb6ba197b89d65c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38dd3db271b276b696d5907cdff7d6cf') in 0.062347 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 315.354858 seconds.
+  path: Assets/Objects FBX/art-museum-vr/Materials/clay_plaster_diff_1k.jpg
+  artifactKey: Guid(4deb25ad4efb22d4281f76d9060adad1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Objects FBX/art-museum-vr/Materials/clay_plaster_diff_1k.jpg using Guid(4deb25ad4efb22d4281f76d9060adad1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f0456f87c29f1846d96ce3074c69fa4c') in 0.060654 seconds 
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 127.190108 seconds.
+  path: Assets/Objects FBX/art-museum-vr/Materials/Floor.mat
+  artifactKey: Guid(2c4f54d35a5151e408c920b34df1c5e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Objects FBX/art-museum-vr/Materials/Floor.mat using Guid(2c4f54d35a5151e408c920b34df1c5e8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a5e55859b3d2ef52ade2cf1364e5278b') in 0.687480 seconds 
+Number of asset objects unloaded after import = 3
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Objects FBX/art-museum-vr/Materials/Wall.mat
+  artifactKey: Guid(a3c0c3395dcfc4c4a9d78f20f0da8e3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Number of updated assets reloaded before import = 0
+Start importing Assets/Objects FBX/art-museum-vr/Materials/Wall.mat using Guid(a3c0c3395dcfc4c4a9d78f20f0da8e3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aaafddf7fab31dd4f2b19658a7071837') in 0.041419 seconds 
+Number of asset objects unloaded after import = 3
