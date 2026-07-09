@@ -12,7 +12,7 @@ public class ExperimentManager : MonoBehaviour
 {
     public string prePrompt;
     public string prompt;
-    public Texture2D screenshotTexture;
+    public Texture2D defaultTexture;
     public GameObject userMenuInterface;
     public GameObject chatInterface;
     public GameObject audioInterface; 
@@ -40,19 +40,28 @@ public class ExperimentManager : MonoBehaviour
     private bool recording;
 
     private AudioClip clip;
+    private int screenshotCount = 0;
+
     private byte[] bytes;
+    private byte[] defaultBytesTexture;
 
     [Header("Time Settings")]
     [SerializeField] private GameObject objectToActivate;
     [SerializeField] private float delayInSeconds = 300f; // 5 minutes
 
     private Coroutine timerCoroutine;
- 
+
+    private Texture2D renderedTexture;
+    private RenderTexture screenTexture;    
+
+    public Camera assignedCamera;
+    public TMP_InputField chatInputField;
+
     void Start()
     {
         audioManager = AudioManager.instance;
         isWaitingForAudioResponse = false;
-        screenshotBytes = screenshotTexture.EncodeToJPG();
+        defaultBytesTexture = defaultTexture.EncodeToJPG();
     }
 
     // Update is called once per frame
@@ -60,15 +69,17 @@ public class ExperimentManager : MonoBehaviour
     {
         if(audioInterface.activeSelf)
         {
-                    if (UnityEngine.Input.GetKeyDown(KeyCode.Space))
+                    if (UnityEngine.Input.GetKeyDown(KeyCode.Return))
         {
             {
 
                 StartRecording();
+                StartCoroutine(CaptureScreenshot());
+
             }
             
         } 
-        if (UnityEngine.Input.GetKeyUp(KeyCode.Space))
+        if (UnityEngine.Input.GetKeyUp(KeyCode.Return))
         {
             byte[] userRecording = StopRecording();
             SendAudioToGemini(userRecording);
@@ -76,7 +87,15 @@ public class ExperimentManager : MonoBehaviour
         }
 
         }
-        
+
+        if(chatInterface.activeSelf)
+        {
+            if (UnityEngine.Input.GetKey(KeyCode.LeftControl) && UnityEngine.Input.GetKeyDown(KeyCode.Return) && !chatInputField.isFocused)
+            {
+               StartCoroutine(CaptureScreenshot());
+            }
+            
+        }
 
     }
         
@@ -110,6 +129,10 @@ public class ExperimentManager : MonoBehaviour
 
             try
         {
+            if(screenshotBytes == null)
+            {
+                screenshotBytes = defaultBytesTexture;
+            }
                         
             StartCoroutine(artificialInteligence.SendMultimodalDataToGAS(finalPrompt, screenshotBytes, userDataPrompt, (response) => {
                 if (response != null)
@@ -117,15 +140,6 @@ public class ExperimentManager : MonoBehaviour
                     Debug.Log("Response received: " + response);
 
                     botMessageTMP.text = response;
-
-                    // if (!isWaitingForAudioResponse)
-                    // {
-                    //     isWaitingForAudioResponse = true;
-                    //     _errorReceived += ErrorReceived;
-                    //     _audioClipReceived += AudioClipReceived;
-                    //     //Not wanting to play the answer
-                    //     textToSpeech.GetSpeechAudioFromGoogle(response, voice, _audioClipReceived, _errorReceived);
-                    // }
                 }
                 else
                 {
@@ -133,12 +147,16 @@ public class ExperimentManager : MonoBehaviour
                     audioManager.PlaySFX(2);
                 }
             }));
+            
         }
         catch (Exception ex)
         {
             Debug.LogError("Failed to read screenshot file: " + ex.Message);
             audioManager.PlaySFX(2);
         }
+
+        //Cleaning
+         screenshotBytes = null; 
     }
 
        public void StartRecording()
@@ -215,7 +233,7 @@ public byte[] StopRecording()
 
     try
     {
-        StartCoroutine(artificialInteligence.SendAudioDataToGAS(finalPrompt, audioBytes, userDataPrompt, (response) => {
+        StartCoroutine(artificialInteligence.SendAudioDataToGAS(finalPrompt, audioBytes, screenshotBytes, userDataPrompt, (response) => {
             if (response != null)
             {
                 Debug.Log("Response received: " + response);
@@ -280,5 +298,59 @@ public byte[] StopRecording()
                 Debug.LogWarning("Target object is not assigned in the inspector.", this);
             }
         }
+
+
+    private IEnumerator CaptureScreenshot()
+{
+
+    // assignedCamera.gameObject.SetActive(true);
+    
+    yield return new WaitForEndOfFrame();
+
+    screenshotCount++;
+    string screenshotFileName = "/Screenshot_" + screenshotCount + "_" + Screen.width + "X" + Screen.height + ".png";
+
+    string screenShotPath = Application.persistentDataPath + screenshotFileName;
+
+
+    if (screenTexture == null) 
+        screenTexture = new RenderTexture(Screen.width, Screen.height, 24); // 24 for better depth
+
+    assignedCamera.targetTexture = screenTexture;
+    assignedCamera.Render();
+
+    // 4. Read pixels
+    RenderTexture.active = screenTexture;
+    if (renderedTexture == null)
+        renderedTexture = new Texture2D(Screen.width, Screen.height, TextureFormat.RGB24, false);
+    
+    renderedTexture.ReadPixels(new Rect(0, 0, Screen.width, Screen.height), 0, 0);
+    renderedTexture.Apply();
+
+    // 5. Clean up
+    assignedCamera.targetTexture = null;
+    RenderTexture.active = null;
+
+    // assignedCamera.gameObject.SetActive(false);
+
+
+    screenshotBytes = renderedTexture.EncodeToPNG();
+
+    // Debug.Log("Screenshot captured");
+
+    // try
+    // {
+    //     System.IO.File.WriteAllBytes(screenShotPath, screenshotBytes);
+    //     Debug.Log("Screenshot saved to: " + screenShotPath);
+    // }
+    // catch (Exception ex)
+    // {
+    //     Debug.LogError("Failed to save screenshot file: " + ex.Message);
+    // }
+
+
+}
+
+
 
 }

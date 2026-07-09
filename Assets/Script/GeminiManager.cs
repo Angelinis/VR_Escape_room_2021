@@ -104,7 +104,7 @@ public class GeminiManager : MonoBehaviour
         // form.AddBinaryData("imageData", imageData, "image.jpg", "image/jpeg");  // Add the image data as binary
         // form.AddField("imageData", System.Convert.ToBase64String(imageData)); 
 
-        form.AddField("mimeType","image/jpeg");
+        form.AddField("mimeType","image/PNG");
 
         form.AddField("userData", userData);
 
@@ -128,12 +128,15 @@ public class GeminiManager : MonoBehaviour
     }
 
 
-    public IEnumerator SendAudioDataToGAS(string prompt, byte[] audioData, string userData, Action<string> callback)
+    public IEnumerator SendAudioDataToGAS(string prompt, byte[] audioData, byte[] imageData , string userData, Action<string> callback)
     {
         WWWForm form = new WWWForm();
         form.AddField("parameter", prompt);  // Assuming 'parameter' is the key for text data in GAS doPost function
         
         string base64String = System.Convert.ToBase64String(audioData);
+
+        string base64Image = System.Convert.ToBase64String(imageData);
+
 
         // audio/wav
 
@@ -142,7 +145,10 @@ public class GeminiManager : MonoBehaviour
         // form.AddField("imageData", System.Convert.ToBase64String(imageData)); 
         form.AddField("mimeType", "audio/wav");
 
-         form.AddField("userData", userData);
+        form.AddField("userData", userData);
+        
+        form.AddField("otherData", base64Image); 
+
 
         UnityWebRequest www = UnityWebRequest.Post(alternativeGasURL, form);
 
